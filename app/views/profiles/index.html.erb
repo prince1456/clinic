@@ -1,0 +1,20 @@
+<table class="table table-responsive table-striped">
+  <thead>
+    <th>Picture</th>
+    <th>Full Name</th>
+    <th>phone nuber</th>
+    <th>address</th>
+    <th>last visit</th>
+  </thead>
+  <tbod>
+    <% @profiles.each do |profile| %>
+        <td><%= profile.image  %></td>
+      <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
+      <td><%= profile.phone_number %></td>
+      <td><%= profile.address %></td>
+      <td></td>
+    <% end %>
+  </tbod>
+  
+
+</table>
