@@ -9,9 +9,13 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "create post",new_post_path %>
+      <%= link_to "all posts",posts_path%>
+    </nav>
     <% if current_user.present? %>
       <div class="container">
-        
+
         <%= yield %>
       </div>
     <% else %>
