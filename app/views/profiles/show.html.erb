@@ -1,0 +1,17 @@
+  <%= @profile.first_name %>
+  <br> <%= @profile.last_name %>
+  <br><%= @profile.phone_number %>
+  <br><%= @profile.address %>
+  <br><%= @profile.emr_name %>
+  <br><%= @profile.emr_phone %>
+  <br><%= image_tag @profile.image if @profile.image.present? %>
+  <br><%= @profile.gender %>
+  <br><%= @profile.nationality %>
+  <br><%= @profile.married %>
+  <br><%= @profile.job %>
+
+  <%= link_to "Edit profile", edit_profile_path(@profile) %>
+  <br>
+  <% if current_user.role == "doctor" %>
+    <%= link_to "make a file ", "" %>
+  <% end %>

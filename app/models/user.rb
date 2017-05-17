@@ -13,4 +13,8 @@ class User < ApplicationRecord
   has_many :subscriptions, dependent: :destroy
 
 
+  def fullname
+    "#{first_name} #{last_name}".squeeze(" ").strip.titleize
+  end
+
 end
