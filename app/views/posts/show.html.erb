@@ -2,14 +2,26 @@
   <h1><%= @post.title %></h1>
   <h3><%= @post.author %></h3>
   <p><%= @post.content %></p>
+
   <% if @post.picture.present? %>
     <%= image_tag @post.picture%>
   <% end %>
+  <% if @post.attachments.present? %>
+    <a class="btn btn-link" href='<%= @post.attachments.url %>'><%=File.basename(@post.attachments.url)%></a>
+  <% end %>
+  <% if @post.video.present? %>
+  <%= video_tag @post.video, :size => "320x240", :controls => true %>
+  <% end  %>
   <br>
   <%= link_to 'Edit', edit_post_path(@post) %>
   <%= link_to "Delete",post_path(@post),
                         method: :Delete,
                         data: {confirm: "Are you sure?"}%>
+  <% if @post.liked_by?(current_user) %>
+    <%= link_to "liked", post_like_path(@post, @post.like_for(current_user)) ,method: :delete %>
+  <% else %>
+    <%= link_to "like" ,post_likes_path(@post) ,method: :post %>
+  <% end %>
 </div>
 
 <div>
@@ -22,9 +34,9 @@
   <% @post.comments.each do |comment| %>
   <p><%= comment.content %></p>
   <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-  |
-  <%= link_to "Delete",comment_path(comment),
-                        method: :Delete,
-                        data: {confirm: "Are you sure?"}%>
+  <%= link_to "Delete", post_comment_path(@post, comment),
+                      method: :delete,
+                      remote: true,
+                      data: {confirm: "Are you sure?"} %>
   <% end %>
 </div>
