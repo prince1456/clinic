@@ -20,7 +20,6 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @post = Post.find(params[:id]).includes(:comments)
   end
 
   def edit
