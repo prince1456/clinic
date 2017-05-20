@@ -20,9 +20,6 @@ class User < ApplicationRecord
       end
       existing_chat_users.uniq
     end
-
-
-
   def fullname
     "#{first_name} #{last_name}".squeeze(" ").strip.titleize
   end

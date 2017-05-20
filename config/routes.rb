@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :profiles
+  resources :profiles do
+    resources :directories
+  end
 
   # Serve websocket cable requests in-process
     mount ActionCable.server => '/cable'
-
   root "pages#index"
   resources :posts do
 
