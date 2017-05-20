@@ -24,3 +24,6 @@
   <div>
     
   </div>
+  <% if current_user.role == "doctor" && current_user.role == "admin" %>
+    <%= link_to "make a file ", "" %>
+  <% end %>

@@ -3,12 +3,16 @@
   <head>
     <title>Clinic</title>
     <%= csrf_meta_tags %>
-
+    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav>
+      <%= link_to "create post",new_post_path %>
+      <%= link_to "all posts",posts_path%>
+    </nav>
     <% if current_user.present? %>
         <%= render "layouts/navbar" %>
         <div class="row">
@@ -19,7 +23,7 @@
                 <% else %>
                   <li><%= link_to "Profile", profiles_path %></li>
                   <li><%= link_to "create post",new_post_path %></li>
-                  
+
                 <% end %>
                 <li>chat history</li>
                 <li></li>
