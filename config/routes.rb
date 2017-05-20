@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :profiles
-
-
+  resources :profiles do
+    resources :directories
+  end
   root "pages#index"
   resources :posts do
     resources :comments

@@ -8,13 +8,13 @@
   </thead>
   <tbod>
     <% @profiles.each do |profile| %>
-        <td><%= profile.image  %></td>
+        <td><%=image_tag profile.image, :size => "320x240"  %></td>
       <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
       <td><%= profile.phone_number %></td>
       <td><%= profile.address %></td>
       <td></td>
     <% end %>
   </tbod>
-  
+
 
 </table>

@@ -31,7 +31,7 @@
   <% end %>
 </div>
 <div>
-  <% @post.comments.each do |comment| %>
+  <% @post.c.each do |comment| %>
   <p><%= comment.content %></p>
   <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
   <%= link_to "Delete", post_comment_path(@post, comment),

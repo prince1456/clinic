@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
-
-
+  has_many :chats, through: :subscriptions
+  has_many :directories, dependent: :destroy
   def fullname
     "#{first_name} #{last_name}".squeeze(" ").strip.titleize
   end

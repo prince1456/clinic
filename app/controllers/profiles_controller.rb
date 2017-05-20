@@ -3,17 +3,8 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
   end
-  def show
-  end
-  def edit
-
-  end
   def new
     @profile = Profile.new
-  end
-  def destory
-  end
-  def update
   end
   def create
     @profile = Profile.new(strong_params)
@@ -24,7 +15,25 @@ class ProfilesController < ApplicationController
       falsh[:alert] = "somethings wrong"
       render :new
     end
+  end
+  def show
+    @directory = Directory.new
+  end
 
+  def edit
+  end
+  def update
+    if @profile.update strong_params
+      redirect_to profile_path(@profile), notice: "profile updated"
+    else
+      flash[:alert] = "something went wrong"
+      render :edit
+    end
+  end
+  def destroy
+    @profile.destroy
+    flash[:notice] = "profile was deleted"
+    redirect_to profiles_path
   end
   private
   def find_params
@@ -35,5 +44,5 @@ class ProfilesController < ApplicationController
                                     :phone_number, :emr_name, :emr_phone,
                                     :gender, :age, :nationality, :married,
                                     :job, :image, :user_id)
-end
+  end
 end
