@@ -6,15 +6,17 @@
     <th>address</th>
     <th>last visit</th>
   </thead>
-  <tbod>
+  <tbody>
     <% @profiles.each do |profile| %>
-        <td><%=image_tag profile.image, :size => "320x240"  %></td>
+    <tr>
+      <td><%=image_tag profile.image, :size => "320x240"  %></td>
       <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
       <td><%= profile.phone_number %></td>
       <td><%= profile.address %></td>
-      <td></td>
+      <td>faf</td>
     <% end %>
-  </tbod>
+    </tr>
+  </tbody>
 
 
 </table>
