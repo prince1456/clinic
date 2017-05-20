@@ -9,8 +9,18 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
   has_many :comments, dependent: :destroy
-  has_many :messages, dependent: :destroy
-  has_many :subscriptions, dependent: :destroy
+  has_many :message
+    has_many :messages
+    has_many :subscriptions
+    has_many :chats, through: :subscriptions
+    def existing_chats_users
+      existing_chat_users = []
+      self.chats.each do |chat|
+      existing_chat_users.concat(chat.subscriptions.where.not(user_id: self.id).map {|subscription| subscription.user})
+      end
+      existing_chat_users.uniq
+    end
+
 
 
   def fullname

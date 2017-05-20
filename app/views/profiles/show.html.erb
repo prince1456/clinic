@@ -12,6 +12,6 @@
 
   <%= link_to "Edit profile", edit_profile_path(@profile) %>
   <br>
-  <% if current_user.role == "doctor" %>
+  <% if current_user.role == "doctor" && current_user.role == "admin" %>
     <%= link_to "make a file ", "" %>
   <% end %>
