@@ -5,26 +5,43 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 		</form>
-		<ul class="nav menu">
-      <% if current_user === "admin" %>
+		<ul class="nav menu text-center">
+      <% if current_user.role == "admin" %>
           <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
           <li><a href="tables.html"><i class="fa fa-user-md" aria-hidden="true"></i> Doctors</a></li>
           <li><a href="tables.html"><i class="fa fa-user-md" aria-hidden="true"></i> Patients</a></li>
           <li><a href="tables.html"><i class="fa fa-rss" aria-hidden="true"></i> Blogs</a></li>
-          <li><a href="tables.html"><i class="fa fa-users" aria-hidden="true"></i> Profiles</a></li>
-          <li><a href="tables.html"><i class="fa fa-comments" aria-hidden="true"></i> Chats</a></li>
+					<li><%= link_to profiles_path do %>
+									<i class="fa fa-users" aria-hidden="true"></i> Profile
+							<% end %>
+					</li>
+					<li><%= link_to chats_path do %>
+						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<% end %>
+					</li>
 
-      <% elsif current_user === 'dr' %>
+      <% elsif current_user.role == 'doctor' %>
           <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-          <li><a href="tables.html"><i class="fa fa-users" aria-hidden="true"></i> Profile</a></li>
+					<li><%= link_to profiles_path do %>
+									<i class="fa fa-users" aria-hidden="true"></i> Profile
+							<% end %>
+					</li>
           <li><a href="tables.html"><i class="fa fa-rss" aria-hidden="true"></i> Blogs</a></li>
-          <li><a href="tables.html"><i class="fa fa-comments" aria-hidden="true"></i> Chats</a></li>
+					<li><%= link_to chats_path do %>
+						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<% end %>
+					</li>
           <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Patients</a></li>
 
       <% else %>
           <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-          <li><a href="tables.html"><i class="fa fa-users" aria-hidden="true"></i> Profile</a></li>
-          <li><a href="tables.html"><i class="fa fa-comments" aria-hidden="true"></i> Chats</a></li>
+          <li><%= link_to profile_path(current_user.profile.id) do %>
+									<i class="fa fa-users" aria-hidden="true"></i> Profile
+							<% end %></li>
+          <li><%= link_to chats_path do %>
+						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<% end %>
+					</li>
       <% end %>
 				</ul>
 			</li>
