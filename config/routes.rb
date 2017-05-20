@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # Serve websocket cable requests in-process
     mount ActionCable.server => '/cable'
-  root "pages#index"
+    root "pages#index"
   resources :posts do
 
     resources :comments
@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   end
 
 get "/chats" => 'chats#index'
+get "/dashboard" => 'pages#dashboard'
   resources :users do
    resources :chats, only: [:index, :show, :create]
   end
+  
     resources :messages, only:[:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
