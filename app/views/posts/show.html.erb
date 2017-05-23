@@ -4,7 +4,7 @@
   <p><%= @post.content %></p>
 
   <% if @post.picture.present? %>
-    <%= image_tag @post.picture%>
+    <%= image_tag @post.picture_url(:large)%>
   <% end %>
   <% if @post.attachments.present? %>
     <a class="btn btn-link" href='<%= @post.attachments.url %>'><%=File.basename(@post.attachments.url)%></a>

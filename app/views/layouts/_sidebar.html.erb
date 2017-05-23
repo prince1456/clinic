@@ -7,7 +7,10 @@
 		</form>
 		<ul class="nav menu text-center">
       <% if current_user.role == "admin" %>
-          <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+          <li class="active"><%= link_to dashboard_path do %>
+																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+															<% end %>
+					</li>
           <li><a href="tables.html"><i class="fa fa-user-md" aria-hidden="true"></i> Doctors</a></li>
           <li><a href="tables.html"><i class="fa fa-user-md" aria-hidden="true"></i> Patients</a></li>
           <li><a href="tables.html"><i class="fa fa-rss" aria-hidden="true"></i> Blogs</a></li>
@@ -48,4 +51,5 @@
 			<li role="presentation" class="divider"></li>
 			<!-- <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li> -->
 		</ul>
-		<!-- <div class="attribution">Template by <a href="http://www.medialoot.com/item/lumino-admin-bootstrap-template/">Medialoot</a><br/><a href="http://www.glyphs.co" style="color: #333;">Icons by Glyphs</a></div> -->
+		<br>
+		<div class="attribution">Proudly developed by  <a href="http://www.uppercaseyvr.com">Uppercase</a></div>

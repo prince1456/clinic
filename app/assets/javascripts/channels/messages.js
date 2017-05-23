@@ -9,6 +9,7 @@ function createMessageChannel() {
           return $('#messages').append(this.renderMessage(data));
         },
         renderMessage: function(data) {
+          console.log(data)
     return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
   },
       });
