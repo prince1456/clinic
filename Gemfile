@@ -13,6 +13,8 @@ gem "mini_magick"
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'fog'
+gem "nested_form"
+
 
 
 

@@ -9,10 +9,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
   has_many :comments, dependent: :destroy
-  has_many :message
-    has_many :messages
-    has_many :subscriptions
-    has_many :chats, through: :subscriptions
+  has_many :messages
+  has_many :subscriptions
+  has_many :chats, through: :subscriptions
     def existing_chats_users
       existing_chat_users = []
       self.chats.each do |chat|
@@ -20,6 +19,10 @@ class User < ApplicationRecord
       end
       existing_chat_users.uniq
     end
+    def with_profile
+    build_profile if profile.nil?
+    self
+  end
   def fullname
     "#{first_name} #{last_name}".squeeze(" ").strip.titleize
   end

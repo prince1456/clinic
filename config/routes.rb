@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 get "/chats" => 'chats#index'
 get "/dashboard" => 'pages#dashboard'
 get "/doctors" => 'pages#doctors'
+get "/patients" =>'pages#patients'
 
   resources :users do
    resources :chats, only: [:index, :show, :create]
