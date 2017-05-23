@@ -2,6 +2,7 @@
   <h1><%= @post.title %></h1>
   <h3><%= @post.author %></h3>
   <p><%= @post.content %></p>
+
   <% if @post.picture.present? %>
     <%= image_tag @post.picture_url(:large)%>
   <% end %>
@@ -33,10 +34,6 @@
   <% @post.comments.each do |comment| %>
   <p><%= comment.content %></p>
   <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-  |
-  <%= link_to "Delete",comment_path(comment),
-                        method: :Delete,
-                        data: {confirm: "Are you sure?"}%>
   <%= link_to "Delete", post_comment_path(@post, comment),
                       method: :delete,
                       remote: true,

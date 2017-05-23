@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
   def strong_params
-    params.require(:profile).permit(:firt_name, :last_name, :address,
+    params.require(:profile).permit(:first_name, :last_name, :address,
                                     :phone_number, :emr_name, :emr_phone,
                                     :gender, :age, :nationality, :married,
                                     :job, :image, :user_id)
