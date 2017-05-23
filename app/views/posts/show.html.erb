@@ -3,7 +3,7 @@
   <h3><%= @post.author %></h3>
   <p><%= @post.content %></p>
   <% if @post.picture.present? %>
-    <%= image_tag @post.picture%>
+    <%= image_tag @post.picture_url(:large)%>
   <% end %>
   <% if @post.attachments.present? %>
     <a class="btn btn-link" href='<%= @post.attachments.url %>'><%=File.basename(@post.attachments.url)%></a>
@@ -30,7 +30,7 @@
   <% end %>
 </div>
 <div>
-  <% @post.c.each do |comment| %>
+  <% @post.comments.each do |comment| %>
   <p><%= comment.content %></p>
   <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
   |

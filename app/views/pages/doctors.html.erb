@@ -1,7 +1,4 @@
 <% @doctors.each do |doctor| %>
-  <% if doctor.profile.presence == nil %>
-    <%= doctor.email %>
-  <% else %>
-    <%= doctor.profile.first_name  %>
-  <% end %>
-  <% end %>
+        <%#= doctor.profile.first_name if doctor.profile.first_name != nil %>
+        <%= doctor.email %>
+<% end %>

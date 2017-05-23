@@ -1,1 +1,147 @@
-hi this is landing page
+    <!--PRELOADER-->
+			    	<div id='preloader'>
+			        		<div class='loading-data'></div>
+			    	</div>
+    <div id="wrap">
+
+		<nav class="navbar navbar-center navbar-fixed-top bg-color1 dark-bg" data-selector="nav">
+			<div class="container">
+				<button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<div class="row no-dev">
+					<div class="collapse navbar-collapse navMenuCollapse">
+						<div class="col-md-5">
+							<ul class="nav">
+								<li data-selector="nav li"><a href="#" data-selector="nav a">About</a></li>
+								<li data-selector="nav li"><a href="#" data-selector="nav a">Benefits</a></li>
+								<li data-selector="nav li"><a href="#" data-selector="nav a">Gallery</a></li>
+							</ul>
+						</div>
+						<div class="col-md-2 text-center hidden-sm hidden-xs"><a class="navbar-brand goto" href="#" data-selector="a.btn, a.download-btn, button.btn, a.goto">
+              <!-- <img src="./images/logo.png" height="25" alt="Your logo" data-selector="img"> -->
+            </a></div>
+						<div class="col-md-5">
+							<ul class="nav">
+								<li data-selector="nav li"><a href="#" data-selector="nav a">Stories</a></li>
+								<li data-selector="nav li"><a href="#" data-selector="nav a">Blog</a></li>
+								<li data-selector="nav li"><a href="#" data-selector="nav a">Download</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav><!-- INTRO HALF LEFT 3 BLOCK -->
+	<header id="intro-half-left-3" class="intro-block bg-color3 fixed-bg double-padding" style="background-image: url(<%= asset_path('bg37.jpg')%>);" data-selector="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="slogan">
+						<h1 data-selector="h1"><strong>Advanced Medicine.</strong><br>
+							Trusted Care.</h1>
+						<p data-selector="p">No fluff. Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
+					</div>
+					<a class="btn btn-lg btn-primary goto" href="#contact-full" data-selector="a.btn, a.download-btn, button.btn, a.goto"><i class="icon icon-speech" data-selector=".icon"></i> Free Consultation</a>
+					<a class="btn btn-lg btn-default goto" href="#content-full-right" data-selector="a.btn, a.download-btn, button.btn, a.goto"><i class="icon icon-info" data-selector=".icon"></i> About Clinic</a>
+				</div>
+			</div>
+		</div>
+	</header><!-- TEAM 4COL BLOCK -->
+
+
+		<section id="team-4col" class="team-block dark-bg bg-color1" data-selector="section">
+			<div class="container">
+				<h2 class="title text-center" data-selector="h2">Team</h2>
+				<div class="row">
+					<% @doctors.each do |doctor| %>
+					<div class="col-sm-3">
+						<% if doctor.profile != nil %>
+								<%= image_tag doctor.profile.image%>
+						<% else %>
+								<img src="http://www.lifeline.ae/lifeline-hospital/wp-content/uploads/2015/02/LLH-Doctors-Male-Avatar-300x300.png" class="screen" alt="Team 1" data-selector="img">
+						<% end %>
+						<!-- <img src="images/photo-team-1.jpg" class="screen" alt="Team 1" data-selector="img"> -->
+						<h3 class="name" data-selector="h3"><%= doctor.email %></h3>
+						<h4 class="occupation" data-selector="h4">occupation</h4>
+						<p class="editContent" data-selector="p">information about doctor</p>
+						<ul class="soc-list">
+						</ul>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</section><!-- RECENT POSTS 4 COL BLOCK -->
+
+		<section id="blog-4col" data-selector="section">
+			<div class="container">
+				<h2 class="title text-center" data-selector="h2">Recent posts</h2>
+				<div class="row">
+					<% @posts.each do |post| %>
+					<div class="col-sm-3">
+						<div class="post" data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle">
+							<div class="post-media">
+								<%= link_to post_path(post) do %>
+									<%= image_tag post.picture_url(:large), class:'img-responsive', alt: post.title, data:{selector: 'img'}%>
+								<% end %>
+							</div>
+							<div class="post-content">
+								<h4 class="title" data-selector="h4">
+									<%= link_to post_path(post) do  %>
+										<%= truncate(post.content, length: 50) %>
+									<% end %>
+							</div>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</section><!-- MAP HALF LEFT BLOCK -->
+
+		<section id="map-half-left" class="cover-bg" style="background-image: url(<%= asset_path('bg-contact.jpg')%>);" data-selector="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 editContent contact-box">
+						<h2 class="title" data-selector="h2">Location</h2>
+						<h3 class="sep-bottom" data-selector="h3"><i class="icon-pointer"></i> 14 Newell Ave.</h3>
+						<p data-selector="p">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible. </p>
+					</div>
+					<div class="col-md-6 col-md-offset-2">
+						<div class="embed-responsive embed-responsive-4by3">
+							<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101418.0024137826!2d-122.07938838781939!3d37.40608616286838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo+Alto%2C+CA%2C+USA!5e0!3m2!1sen!2sua!4v1429695851173"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!-- FOOTER -->
+		<footer id="footer" class="bg-color3" data-selector="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-push-6 text-right">
+						<ul class="soc-list">
+							<li><a href="#" target="_blank"><i class="icon icon-twitter2" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-facebook2" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-dribbble2" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-behance" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-googleplus2" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-linkedin2" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-instagram" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-pinterest" data-selector=".icon"></i></a></li>
+							<li><a href="#" target="_blank"><i class="icon icon-flickr" data-selector=".icon"></i></a></li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-md-pull-6">
+						<!-- <img class="logo" src="images/footer-logo.png" alt="" data-selector="img"> -->
+						<span class="editContent">© 2015 Select<br>Designed by <a href="http://uppercaseyvr.com/" target="_blank">Uppercase</a></span>
+					</div>
+				</div>
+			</div>
+		</footer></div><!-- /#wrap -->
+
+
+	<!-- MODALS BEGIN-->
+	<div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 class="modal-title">&nbsp;</h3>
+			</div>
+		</div>
+	</div>
