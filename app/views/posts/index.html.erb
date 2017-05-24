@@ -1,3 +1,9 @@
+<%= search_form_for @search do |f|%>
+  <%= f.label :title_cont, "title" %>
+  <%= f.text_field :title_cont %>
+  <%= f.submit "Search" %>
+<% end  %>
+
 <% @posts.each do |post| %>
 <h3><%= link_to post.title, post_path(post) %></h3>
 <% end %>

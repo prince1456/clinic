@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :find_params, only: [:edit, :show, :update, :destory]
   def index
-    @profiles = Profile.all
+    @search = Profile.search(params[:q])
+    @profiles = @search.result
   end
   def new
     @profile = Profile.new

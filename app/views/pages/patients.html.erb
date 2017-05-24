@@ -1,0 +1,8 @@
+<% @patients.each do |patient| %>
+  <% if patient.profile.presence == nil %>
+    <%= patient.email  %>
+  <% else %>
+    <%= patient.profile.first_name %>
+    <%= patient.profile.last_name %>
+  <% end %>
+<% end %>

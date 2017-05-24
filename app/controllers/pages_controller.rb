@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def dashboard
   end
+  def patients
+    @patients = User.where(role: "patient")
+  end
 end
