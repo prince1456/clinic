@@ -7,6 +7,8 @@ if message.save
       ActionCable.server.broadcast( "messages_#{message_params[:chat_id]}",
       #message and user hold the data we render on the page using javascript
       message: message.message,
+      user: message.user.profile.first_name,
+      time: message.message_time
 
       )
     else

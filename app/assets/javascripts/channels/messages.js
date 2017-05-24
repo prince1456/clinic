@@ -10,7 +10,7 @@ function createMessageChannel() {
         },
         renderMessage: function(data) {
           console.log(data)
-    return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
+    return "<p> <b>" + data.user + ": </b>" + data.message + "</p>" + data.time;
   },
       });
 return App.messages;

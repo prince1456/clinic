@@ -1,1 +1,2 @@
-<p><%= message.user.email %>: <%=message.message%></p>
+<%= time_ago(message.created_at) %><br>
+<p><%= message.user.profile.first_name %>: <%=message.message%></p> 
