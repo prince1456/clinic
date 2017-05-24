@@ -14,7 +14,7 @@ gem "font-awesome-rails"
 gem 'kaminari'
 gem 'fog'
 gem 'ransack'
-
+gem 'ckeditor'
 
 
 
