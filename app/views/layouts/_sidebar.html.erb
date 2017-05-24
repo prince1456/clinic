@@ -11,9 +11,18 @@
 																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
 															<% end %>
 					</li>
-          <li><a href="tables.html"><i class="fa fa-user-md" aria-hidden="true"></i> Doctors</a></li>
-          <li><a href="tables.html"><i class="fa fa-user-md" aria-hidden="true"></i> Patients</a></li>
-          <li><a href="tables.html"><i class="fa fa-rss" aria-hidden="true"></i> Blogs</a></li>
+					<li><%= link_to doctors_path do %>
+						<i class="fa fa-user-md" aria-hidden="true"></i> Doctors
+						<% end %>
+					</li>
+					<li><%= link_to  patients_path do %>
+						<i class="fa fa-user-md" aria-hidden="true"></i> Patients
+						<% end %>
+					</li>
+					<li><%= link_to blogs_path do %>
+							<i class="fa fa-rss" aria-hidden="true"></i> Posts</a>
+							<% end %>
+						</li>
 					<li><%= link_to profiles_path do %>
 									<i class="fa fa-users" aria-hidden="true"></i> Profile
 							<% end %>

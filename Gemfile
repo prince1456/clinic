@@ -16,6 +16,7 @@ gem 'fog'
 gem 'ransack'
 gem 'ckeditor'
 gem "cancancan"
+gem 'faker'
 
 
 

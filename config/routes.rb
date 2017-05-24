@@ -17,6 +17,7 @@ get "/chats" => 'chats#index'
 get "/dashboard" => 'pages#dashboard'
 get "/doctors" => 'pages#doctors'
 get "/patients" => 'pages#patients'
+get "/blogs" => 'pages#blogs'
 
   resources :users do
    resources :chats, only: [:index, :show, :create]
