@@ -11,9 +11,10 @@ class ApplicationController < ActionController::Base
       store_location_for(:user, dashboard_path)
     end
   end
-  # def after_sign_in_path_for(resource)
-  #   '/profiles/new'
-  # end
+  def user_admin?
+    current_user.admin == true
+  end
+  helper_method :user_admin?
   protected
 
   def configure_permitted_parameters
