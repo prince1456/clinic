@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   def index
     @search = Post.search(params[:q])
     @posts = @search.result
@@ -24,9 +25,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+     redirect_to root_path, alert: "access defined" unless can? :edit, @post
   end
 
   def update
+    redirect_to root_path, alert: "access defined" unless can? :update, @post
     if @post.update post_params
       flash[:notice] = "the post was updated "
       redirect_to post_path(@post), notice: "post have been updated"
@@ -36,6 +39,7 @@ class PostsController < ApplicationController
     end
   end
   def destroy
+    redirect_to root_path, alert: "access defined" unless can? :destroy, @post
     @post.destroy
     flash[:notice]= "your post was deleted"
     redirect_to posts_path
