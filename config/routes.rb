@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   resources :profiles do
     resources :directories
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
     mount ActionCable.server => '/cable'
     root "pages#index"
   resources :posts do
-
     resources :comments
     resources :likes, only: [:create, :destroy]
   end

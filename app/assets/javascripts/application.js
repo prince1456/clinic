@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require pages
+//= require ckeditor/init
 //= require_tree ./channels

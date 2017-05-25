@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   layout :layout_by_resource
 
  private
@@ -26,6 +27,10 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #   '/profiles/new'
   # end
+  def user_admin?
+    current_user.admin == true
+  end
+  helper_method :user_admin?
   protected
 
   def configure_permitted_parameters
