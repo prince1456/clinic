@@ -1,2 +1,29 @@
-<%= time_ago(message.created_at) %><br>
-<p><%= message.user.profile.first_name %>: <%=message.message%></p> 
+<% if message.user.id == current_user.id %>
+    <li class="left clearfix">
+        <span class="chat-img pull-left">
+          <%= image_tag message.user.profile.image_url(:thumb), class: "img-circle" %>
+        </span>
+        <div class="chat-body clearfix">
+          <div class="header">
+            <strong class="primary-font"><%= message.user.profile.first_name %></strong> <small class="text-muted"><%= time_ago(message.created_at) %></small>
+          </div>
+          <p>
+            <%=message.message%>
+          </p>
+        </div>
+      </li>
+<% else %>
+<li class="right clearfix">
+    <span class="chat-img pull-right">
+      <%= image_tag message.user.profile.image_url(:thumb), class: "img-circle" %>
+    </span>
+    <div class="chat-body clearfix">
+      <div class="header">
+        <strong class="primary-font"><%= message.user.profile.first_name %></strong> <small class="text-muted"><%= time_ago(message.created_at) %></small>
+      </div>
+      <p>
+        <%=message.message%>
+      </p>
+    </div>
+  </li>
+<% end %>

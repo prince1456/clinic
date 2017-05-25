@@ -3612,6 +3612,10 @@ ul.posts-line .post .title {
 	width: 70px;
 	height: 70px;
 }
+.chat-img img {
+	width: 70px;
+	height: 70px;
+}
 
 .chats-background{
 	background-color: #252c33;

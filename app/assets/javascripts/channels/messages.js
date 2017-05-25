@@ -10,7 +10,7 @@ function createMessageChannel() {
         },
         renderMessage: function(data) {
           console.log(data)
-    return "<p> <b>" + data.user + ": </b>" + data.message + "</p>" + data.time;
+    return "<li class="right clearfix"><span class="chat-img pull-right">" + data.user + ": </b>" + data.message + "</p>" + data.time;
   },
       });
 return App.messages;
