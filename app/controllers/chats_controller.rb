@@ -4,6 +4,9 @@ class ChatsController < ApplicationController
   def index
     chats = current_user.chats
     @existing_chats_users = current_user.existing_chats_users
+
+
+    
   end
   def create
     @other_user = User.find(params[:other_user])

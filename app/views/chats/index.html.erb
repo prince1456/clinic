@@ -1,31 +1,48 @@
-<div class="container">
-    <div class="col-md-2 col-sd-2 col-xs-10">
-      <ul>
-       <% if @existing_chats_users %>
-         <% @existing_chats_users.each do |other_user| %>
-          <% if other_user != current_user %>
-            <li>
-              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-              <%= image_tag other_user.profile.image %>
-              <% end %>
-            </li>
-           <% end %>
-         <% end %>
-        <% end %>
-      </ul>
-      All Users:
-      <ul>
-        <% User.all.each do |other_user| %>
-         <% if other_user != current_user %>
-           <li>
-             <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-             <%= image_tag other_user.profile.image %>
-             <% end %>
-           </li>
-          <% end %>
-        <% end %>
-      </ul>
+<div class="container chats">
+    <div class="col-md-3 col-sd-3 col-xs-12 chats-background">
+          <div class="row chat-list">
+               <% if @existing_chats_users %>
+                   <% @existing_chats_users.each do |other_user| %>
+                      <% if other_user != current_user %>
+                          <div class="chat-box row">
+                              <div class="pull-left"><%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                                                       <%= image_tag other_user.profile.image, class: "img-circle img-responsive" %>
+                                                       <% end %>
+                               </div>
+                               <div class="pull-right">
+                                   <h3><%= other_user.profile.first_name %></h3>
+                                    <br>
+                                    <h3>...</h3>
 
+                               </div>
+                          </div>
+                       <% end %>
+                   <% end %>
+              <% end %>
+          </div>
+          <br>
+          <h2>All Users:</h2>
+          <hr>
+          <br>
+          <div class="row chat-list">
+                <% User.all.each do |other_user| %>
+                     <% if other_user != current_user %>
+                         <div class="chat-box row">
+                             <div class="pull-left"><%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post, remote: true)  do %>
+                                                      <%= image_tag other_user.profile.image, class: "img-circle img-responsive" %>
+                                                      <% end %>
+                              </div>
+                              <div class="pull-right">
+                                  <h3> <%= other_user.profile.first_name %></h3>
+                                  <span>....</span>
+                              </div>
+                         </div>
+                         <br>
+                    <% end %>
+              <% end %>
+          </div>
     </div>
-    <div class="col-md-10 col-sd-10 col-xs-10"></div>
+    <div class="col-md-9 col-sd-9 col-xs-9">
+    
+    </div>
 </div>

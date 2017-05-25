@@ -11,6 +11,18 @@ class ApplicationController < ActionController::Base
       store_location_for(:user, dashboard_path)
     end
   end
+
+  layout :layout_by_resource
+
+ private
+
+ def layout_by_resource
+   if devise_controller?
+     "devise"
+   else
+     "application"
+   end
+ end
   # def after_sign_in_path_for(resource)
   #   '/profiles/new'
   # end

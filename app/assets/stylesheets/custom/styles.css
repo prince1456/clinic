@@ -3599,3 +3599,39 @@ ul.posts-line .post .title {
     max-height: 375px !important;
 
 }
+
+.chat-box{
+	line-height: 10px
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f0f0f0;
+	height: 90px;
+	overflow: hidden;
+
+}
+.chat-box img{
+	width: 70px;
+	height: 70px;
+}
+
+.chats-background{
+	background-color: #252c33;
+	/*padding-left: 56px !important;*/
+}
+.chat-list{
+	padding: 15px 30px 15px 30px;
+}
+.chats{
+	color: white;
+
+}
+.chat-box h3{
+
+	color: white;
+	font-size: 18px
+}
+.chat-box span{
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	float: right
+}

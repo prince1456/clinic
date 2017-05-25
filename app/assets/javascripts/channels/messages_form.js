@@ -1,7 +1,7 @@
 function messageForm(){
   var shiftDown = false;
   var chatForm = $("#new_message");
-  var messageBox = chatForm.children("textarea");
+  var messageBox = $('#message_message');
   $(document).keypress(function (e) {
       if(e.keyCode == 13) {
           if(messageBox.is(":focus") && !shiftDown) {
