@@ -6,8 +6,10 @@
                       <% if other_user != current_user %>
                           <div class="chat-box row">
                               <div class="pull-left"><%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-                                                       <%= image_tag other_user.profile.image, class: "img-circle img-responsive" %>
-                                                       <% end %>
+                                                       <% if other_user.profile.image.present? %>
+                                                         <%= image_tag other_user.profile.image, class: "img-circle img-responsive" %>
+                                                         <% end %>
+                                                        <% end %>
                                </div>
                                <div class="pull-right">
                                    <h3><%= other_user.profile.first_name %></h3>
@@ -43,6 +45,6 @@
           </div>
     </div>
     <div class="col-md-9 col-sd-9 col-xs-9">
-    
+
     </div>
 </div>

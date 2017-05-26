@@ -27,19 +27,11 @@
   (<%= @post.likes.count %>)
 </div>
 
-<div>
-  <%= simple_form_for [@post, @comment] do |f| %>
-    <%= f.input :content%>
-    <%= f.button :submit %>
-  <% end %>
+<div id="comment-form">
+  <%= render "/comments/form" %>
 </div>
-<div>
+<div id="comments">
   <% @post.comments.each do |comment| %>
-    <p><%= comment.content %></p>
-      <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-      <%= link_to "Delete", post_comment_path(@post, comment),
-                      method: :delete,
-                      remote: true,
-                      data: {confirm: "Are you sure?"} %>
+  <%= render "/comments/comment", comment: comment %>
   <% end %>
 </div>
