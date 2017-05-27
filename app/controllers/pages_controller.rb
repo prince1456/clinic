@@ -11,13 +11,15 @@ class PagesController < ApplicationController
 
   def dashboard
     @users = User.all
-    @posts = Post.all
     @comments= Comment.all
+    @posts = Post.all
+
   end
   def patients
     @patients = User.where(role: "patient")
   end
   def blogs
-    @blogs = Post.all.order(created_at: :desc)
+    @search = Post.search(params[:q])
+    @posts = @search.result
   end
 end

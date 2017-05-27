@@ -294,10 +294,11 @@ a.bg-danger:hover {
 }
 
 .panel-heading {
+
 	font-size: 18px;
 	font-weight: 300;
 	letter-spacing: 0.025em;
-	height: 66px;
+	height: 85px;
 	line-height: 45px;
 }
 
@@ -1167,6 +1168,9 @@ hr {
   .row [class^=col-sm-] {
     padding-bottom: 40px;
   }
+	.panel-heading{
+		height: 240px;
+	}
 }
 
 

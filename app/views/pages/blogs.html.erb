@@ -1,6 +1,10 @@
  <div class="row">
 
-
+   <%= search_form_for @search do |f|%>
+     <%= f.label :title_cont, "title" %>
+     <%= f.text_field :title_cont %>
+     <%= f.submit "Search" %>
+   <% end  %>
  </div>
  <div class="col-md-12">
    <div class="panel panel-default">

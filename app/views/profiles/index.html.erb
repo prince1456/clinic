@@ -7,14 +7,14 @@
   <thead>
     <th>Picture</th>
     <th>Full Name</th>
-    <th>phone nuber</th>
+    <th>phone number</th>
     <th>address</th>
     <th>last visit</th>
   </thead>
   <tbody>
     <% @profiles.each do |profile| %>
     <tr>
-      <td><%=image_tag profile.image, :size => "320x240"  %></td>
+      <td><%=image_tag profile.image_url(:thumb), :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
       <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
       <td><%= profile.phone_number %></td>
       <td><%= profile.address %></td>

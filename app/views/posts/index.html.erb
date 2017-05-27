@@ -1,9 +1,39 @@
-<%= search_form_for @search do |f|%>
-  <%= f.label :title_cont, "title" %>
-  <%= f.text_field :title_cont %>
-  <%= f.submit "Search" %>
-<% end  %>
 
-<% @posts.each do |post| %>
-<h3><%= link_to post.title, post_path(post) %></h3>
-<% end %>
+
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+          <div class="col-md-2 col-sm-2 col-xs-12"><%= link_to "New Post", new_post_path, class:'btn btn-default' %></div>
+          <div class="col-md-3 col-sm-3 col-md-offset-3 hidden-sm hidden-xs"> Number of post <b> <%= @posts.count %> </b></div>
+          <div class="col-md-4 col-sm-8 col-xs-12 ">
+                <%= search_form_for @search, class:'form-inline' do |f|%>
+                    <div class="form-group">
+                        <%= f.text_field :title_cont, class:'form-control', placeholder: "Search" %>
+                    </div>
+                  <%= f.submit "Search", class:'btn btn-default' %>
+                <% end  %>
+          </div>
+    </div>
+      <div class="panel-body">
+           <table class="table table-striped table-hover">
+             <thead>
+               <th>Id</th>
+               <th>Title</th>
+               <th>Content</th>
+               <th>Author</th>
+             </thead>
+             <tbody>
+               <% @posts.each do |post| %>
+               <tr>
+                 <td><%= post.id  %></td>
+                 <td><%= link_to post.title, post_path(post)  %></td>
+                 <td><%= truncate(post.content, length: 80) %></td>
+                 <td><%= post.author %></td>
+               </tr>
+               <% end %>
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+   </div>
