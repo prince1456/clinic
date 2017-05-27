@@ -4,10 +4,14 @@ class CommentsController < ApplicationController
     @post = Post.find params[:post_id]
     @comment.post = @post
     @comment.user = current_user
-    if @comment.save
-      redirect_to post_path(@post), notice: "comment created"
-    else
-      render "/posts/show", alert: "something went wrong"
+    respond_to do|format|
+      if @comment.save
+        format.html { redirect_to post_path(@post), notice: "Post created successfully!" }
+        format.js { render :create_success }
+      else
+        format.html{render "/posts/show", alert: "something went wrong"}
+        format.js {render :create_failure}
+      end
     end
   end
   def edit
@@ -27,7 +31,10 @@ class CommentsController < ApplicationController
     @post = Post.find params[:post_id]
     @comment  = Comment.find params[:id]
     @comment.destroy
-    redirect_to post_path(@post), notice: "comment is deleted"
+    respond_to do |format|
+      format.html {redirect_to post_path(@post), notice: "comment is deleted"}
+      format.js {render }
+    end
   end
   private
   def comment_params
