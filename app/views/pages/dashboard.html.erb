@@ -1,1 +1,77 @@
-hi this is my 
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="panel panel-blue panel-widget ">
+            <div class="row no-padding">
+              <div class="col-sm-3 col-lg-5 widget-left">
+                <svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>
+              </div>
+              <div class="col-sm-9 col-lg-7 widget-right">
+                <div class="large"><%= @users.where(role: "doctor").count %></div>
+                <div class="text-muted">Doctors</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="panel panel-orange panel-widget">
+            <div class="row no-padding">
+              <div class="col-sm-3 col-lg-5 widget-left">
+                <svg class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg>
+              </div>
+              <div class="col-sm-9 col-lg-7 widget-right">
+                <div class="large"><%= @posts.count %></div>
+                <div class="text-muted">Blogs Post</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="panel panel-teal panel-widget">
+            <div class="row no-padding">
+              <div class="col-sm-3 col-lg-5 widget-left">
+                <svg class="glyph stroked female user"><use xlink:href="#stroked-female-user"/></svg>
+              </div>
+              <div class="col-sm-9 col-lg-7 widget-right">
+                <div class="large"><%= @users.where(role: "patient").count %></div>
+                <div class="text-muted">Comments</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="panel panel-red panel-widget">
+            <div class="row no-padding">
+              <div class="col-sm-3 col-lg-5 widget-left">
+                <svg class="glyph stroked sound on"><use xlink:href="#stroked-sound-on"/></svg>
+              </div>
+              <div class="col-sm-9 col-lg-7 widget-right">
+                <div class="large">12</div>
+                <div class="text-muted">Notification</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--/.row-->
+
+
+      <!-- table -->
+      <div class="row">
+          <div class="col-md-6">
+    				<div class="panel panel-default">
+    					<div class="panel-heading">Basic Table</div>
+    					<div class="panel-body">
+    						<table class=" table table-style">
+    						    <thead>
+    						    <tr>
+    						        <th>Item ID</th>
+    						        <th>Item Name</th>
+    						        <th>Item Price</th>
+    						    </tr>
+    						    </thead>
+    						</table>
+    					</div>
+    				</div>
+    			</div>
+      </div>
+</div>

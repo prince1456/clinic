@@ -6,11 +6,20 @@ function createMessageChannel() {
         {
         received: function(data) {
           $("#messages").removeClass('hidden')
-          return $('#messages').append(this.renderMessage(data));
+          return $('#messages ul').append(this.renderMessage(data));
         },
         renderMessage: function(data) {
           console.log(data)
-    return "<li class="right clearfix"><span class="chat-img pull-right">" + data.user + ": </b>" + data.message + "</p>" + data.time;
+          var b ="<li class='right clearfix'> <span class='chat-img pull-right'>" + "<img class='img-circle' src=" + data.image + "></img>"  + "</span> <div class='chat-body clearfix'><div class='header'><small class='text-muted'>" + data.time +"</small> </div> <p>" + data.message + "</p> </div></li>"
+          var a = "<li class='left clearfix'> <span class='chat-img pull-left'>" + "<img class='img-circle' src=" + data.image + "></img>"  + "</span> <div class='chat-body clearfix'><div class='header'><small class='text-muted'>" + data.time +"</small> </div> <p>" + data.message + "</p> </div></li>"
+          console.log("username=" + data.user)
+          console.log(document.cookie)
+            if ("username=" + data.user === document.cookie){
+              return a;
+            } else{
+              return b;
+            }
+
   },
       });
 return App.messages;

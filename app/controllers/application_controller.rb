@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
-
+  before_action :set_user
   after_filter :store_action
 
   def store_action
@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
       store_location_for(:user, dashboard_path)
     end
   end
-
 
   layout :layout_by_resource
 
@@ -30,10 +29,20 @@ class ApplicationController < ActionController::Base
   def user_admin?
     current_user.admin == true
   end
+
   helper_method :user_admin?
+
+  def set_user
+    cookies[:username] = current_user.profile.first_name || 'guest'
+  end
   protected
 
   def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:sign_up, keys: [ :email,:password,:password_confirmation,profile_attributes:  [:id,:first_name, :last_name]])
   end
+
+
+
+
+
 end

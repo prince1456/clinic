@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @users = User.all
+    @posts = Post.all
+    @comments= Comment.all
   end
   def patients
     @patients = User.where(role: "patient")

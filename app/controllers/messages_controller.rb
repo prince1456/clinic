@@ -8,7 +8,8 @@ if message.save
       #message and user hold the data we render on the page using javascript
       message: message.message,
       user: message.user.profile.first_name,
-      time: message.message_time
+      time: message.message_time,
+      image: message.user.profile.image.thumb.url
 
       )
     else

@@ -1,9 +1,26 @@
-<% @doctors.each do |doctor| %>
-
-  <% if doctor.profile.presence == nil %>
-    <%= doctor.email %>
-  <% else %>
-  <%= doctor.profile.first_name %>
-  <%= doctor.profile.last_name %>
-  <% end %>
-  <% end %>
+<br>
+<h2>List of Doctors </h2>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>last_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @doctors.each do |doctor| %>
+    <tr>
+      <td>
+        <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
+      </td>
+      <td>
+            <%= doctor.profile.first_name %>
+      </td>
+      <td>
+            <%= doctor.profile.last_name %>
+      </td>
+    </tr>
+        <% end %>
+  </tbody>
+</table>

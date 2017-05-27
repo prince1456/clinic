@@ -1,8 +1,25 @@
-<% @patients.each do |patient| %>
-  <% if patient.profile.presence == nil %>
-    <%= patient.email  %>
-  <% else %>
-    <%= patient.profile.first_name %>
-    <%= patient.profile.last_name %>
-  <% end %>
+<br>
+<h2>List of patients </h2>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>last_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+    <tr>
+
+      <td> <%= link_to profile_path(patient) do %>
+              <%= image_tag patient.profile.image_url(:thumb), class: 'img-chatlist img-responsive img-rounded' %>
+          <% end %>
+      </td>
+     <td><%= patient.profile.first_name %></td>
+    <td><%= patient.profile.last_name %></td>
 <% end %>
+</tr>
+<tbody>
+
+</tbody>

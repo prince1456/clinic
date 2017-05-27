@@ -8,7 +8,7 @@ Version 1.0
 
 body {
 	background: #f1f4f7;
-	padding-top: 50px;
+	padding-top: 80px;
 	color: #5f6468;
 }
 
@@ -548,7 +548,7 @@ a.bg-danger:hover {
 		/*top: 50px;*/
 		bottom: 0;
 		left: 0;
-		z-index: 1000;
+
 		display: block;
 		margin: 0;
 		padding: 0;
@@ -3612,9 +3612,12 @@ ul.posts-line .post .title {
 	width: 70px;
 	height: 70px;
 }
-.chat-img img {
-	width: 70px;
-	height: 70px;
+.name-chatlist{
+	color: black;
+}
+.img-chatlist{
+	width: 70px !important;
+	height: 70px !important;
 }
 
 .chats-background{
@@ -3625,7 +3628,7 @@ ul.posts-line .post .title {
 	padding: 15px 30px 15px 30px;
 }
 .chats{
-	color: white;
+	padding-top: 50px
 
 }
 .chat-box h3{
@@ -3638,4 +3641,7 @@ ul.posts-line .post .title {
 	font-size: 18px;
 	font-weight: bold;
 	float: right
+}
+.table-right{
+	border-right: 1px gray solid;
 }
