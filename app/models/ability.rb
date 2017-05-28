@@ -7,6 +7,9 @@ class Ability
     can :manage, Post do |post|
       post.user == user
     end
+    can :manage, Post do
+       User.where(role: "admin")
+    end
 
     # can :manage, Comment do |comment|
     #   comment.user == user
@@ -19,7 +22,6 @@ class Ability
       # else
       #   can :read, :all
       # end
-    #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
