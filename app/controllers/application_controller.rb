@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   #   '/profiles/new'
   # end
   def user_admin?
-    current_user.admin == true
+    current_user.role == "admin"
   end
 
   helper_method :user_admin?
