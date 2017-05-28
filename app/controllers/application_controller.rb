@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_admin?
 
   def set_user
-    cookies[:username] = current_user|| 'guest'
+    cookies[:username] = current_user || 'guest'
   end
   protected
 
