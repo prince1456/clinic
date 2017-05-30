@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
   layout "firstpage", only: [:show]
   def index
     @search = Post.search(params[:q])

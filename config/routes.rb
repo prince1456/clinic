@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'users/new'
 
-  get 'users/create'
-
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   resources :profiles do
@@ -22,6 +20,7 @@ get "/dashboard" => 'pages#dashboard'
 get "/doctors" => 'pages#doctors'
 get "/patients" => 'pages#patients'
 get "/blogs" => 'pages#blogs'
+get "/about" => 'pages#about'
 
   resources :users do
    resources :chats, only: [:index, :show, :create]

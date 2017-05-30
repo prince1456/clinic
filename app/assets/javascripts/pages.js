@@ -3,6 +3,14 @@ $(document).ready(function() {
 
 	"use strict";
 
+
+
+
+	$('form input:submit').click( function(){
+	        $("form textarea").val('');
+	 });
+
+
 //------------------------------------------------------------------------
 //						PRELOADER SCRIPT
 //------------------------------------------------------------------------
@@ -56,25 +64,10 @@ $(document).ready(function() {
             $(".navbar-toggle").click()
         }
     });
-
-})
-
-
-
-
-$(document).ready(function(){
-
-	"use strict";
-
-
-
 //------------------------------------------------------------------------
 //						ANCHOR SMOOTHSCROLL SETTINGS
 //------------------------------------------------------------------------
 	$('a.goto, .navbar .nav a').smoothScroll({speed: 1200});
-
-
-
 
 //------------------------------------------------------------------------
 //						FULL HEIGHT SECTION SCRIPT
@@ -91,14 +84,14 @@ $(document).ready(function(){
 //                    MAGNIFIC POPUP(LIGHTBOX) SETTINGS
 //------------------------------------------------------------------------
 
-
-	$('.portfolio-list li').magnificPopup({
-		delegate: 'a:not(.btn, .link-item)',
-		type: 'image',
-		gallery: {
-			enabled: true
-		}
-	});
+	// 
+	// $('.portfolio-list li').magnificPopup({
+	// 	delegate: 'a:not(.btn, .link-item)',
+	// 	type: 'image',
+	// 	gallery: {
+	// 		enabled: true
+	// 	}
+	// });
 
 
 
@@ -133,7 +126,6 @@ if($('.video-bg')[0]) {
 //------------------------------------------------------------------------------------------
     var wow = new WOW();
     wow.init();
-
 
 
 })

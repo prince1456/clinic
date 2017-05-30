@@ -46,13 +46,15 @@
                 <!-- Blog Comments -->
 
 
-
-                <!-- Comments Form -->
-                <div class="well">
-                    <h4>Leave a Comment:</h4>
-                      <%= render "/comments/form" %>
-                </div>
-
+                  <!-- Comments Form -->
+                    <div class="well">
+                        <% if current_user.present?   %>
+                            <h4>Leave a Comment:</h4>
+                              <%= render "/comments/form" %>
+                            <% else %>
+                              <h4> For sending comment you need to sign in</h4>
+                        <% end %>
+                    </div>
                 <hr>
 
                 <!-- Posted Comments -->

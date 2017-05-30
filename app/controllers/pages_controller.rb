@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
-  layout "firstpage", :only => :index
+  layout "firstpage", only: [:index, :about]
+  before_action :authenticate_user!, except: [:index, :about]
   def index
     @posts = Post.all
     @doctors = User.where(role: "doctor")
+    @user = User.new
   end
 
   def doctors
@@ -21,5 +23,8 @@ class PagesController < ApplicationController
   def blogs
     @search = Post.search(params[:q])
     @posts = @search.result
+  end
+  def about
+
   end
 end

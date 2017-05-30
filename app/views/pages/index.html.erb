@@ -3,7 +3,7 @@
 			        		<div class='loading-data'></div>
 			    	</div>
     <div id="wrap">
-			
+
 	<header id="intro-half-left-3" class="intro-block bg-color3 fixed-bg double-padding" style="background-image: url(<%= asset_path('bg37.jpg')%>);" data-selector="header">
 		<div class="container">
 			<div class="row">
@@ -13,8 +13,10 @@
 							Trusted Care.</h1>
 						<p data-selector="p">No fluff. Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
 					</div>
-					<a class="btn btn-lg btn-primary goto" href="#contact-full" data-selector="a.btn, a.download-btn, button.btn, a.goto"><i class="icon icon-speech" data-selector=".icon"></i> Free Consultation</a>
-					<a class="btn btn-lg btn-default goto" href="#content-full-right" data-selector="a.btn, a.download-btn, button.btn, a.goto"><i class="icon icon-info" data-selector=".icon"></i> About Clinic</a>
+					<%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
+								<i class="icon icon-info" data-selector=".icon"></i> About Clinic
+					<% end %>
+
 				</div>
 			</div>
 		</div>
