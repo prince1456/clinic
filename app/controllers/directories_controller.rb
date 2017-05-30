@@ -32,6 +32,6 @@ class DirectoriesController < ApplicationController
   private
 
   def directory_params
-    params.require(:directory).permit(:file)
+    params.require(:directory).permit(:file, :name)
   end
 end

@@ -15,7 +15,10 @@
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#" class="text-center"><i class="fa fa-user-md" aria-hidden="true"></i> Profile</a></li>
+							<li><%= link_to profile_path(current_user.profile), class: 'text-center' do%>
+								<i class="fa fa-user-md" aria-hidden="true"></i>
+								<%= current_user.profile.last_name %>
+								<% end %></li>
 							<li> <%= link_to destroy_user_session_path, :method => :delete, class: "text-center" do  %>
                                                                   <i class="fa fa-sign-out" aria-hidden="true"></i>
                                                                 Logout

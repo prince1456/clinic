@@ -57,7 +57,7 @@
 			<div class="container">
 				<h2 class="title text-center" data-selector="h2">Recent posts</h2>
 				<div class="row">
-					<% @posts.take(4).each do |post| %>
+					<% @posts.last(4).each do |post| %>
 					<div class="col-sm-3">
 						<div class="post" data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle">
 							<div class="post-media">
