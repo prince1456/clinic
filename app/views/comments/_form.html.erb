@@ -1,4 +1,6 @@
-<%= simple_form_for [@post, @comment], remote: true do |f| %>
-  <%= f.input :content%>
-  <%= f.button :submit %>
+<%= simple_form_for [@post, @comment], remote: true,role: 'form' do |f| %>
+  <div class="form-group">
+    <%= f.input_field :content, class:'form-control', label: false%>
+  </div>
+  <%= f.button :submit, class:'ntm btn-default' %>
 <% end %>

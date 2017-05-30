@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "firstpage", only: [:show]
   def index
     @search = Post.search(params[:q])
     @posts = @search.result
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @posts= Post.all.order(id: :desc)
   end
 
   def edit

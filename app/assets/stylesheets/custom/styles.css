@@ -2900,7 +2900,8 @@ aside.blog-sidebar .recent-posts .post-info>* {
 }
 
 .post .post-content {
-  padding: 50px;
+  padding: 25px;
+	height: 120px;
   position: relative;
 }
 
@@ -3479,7 +3480,47 @@ ul.posts-line .post .title {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #00c0ff !important;
-}.navbar-default .navbar-nav > li > a:hover {
     color: black !important;
+		font-size: 16px !important;
+}.navbar-default .navbar-nav > li > a:hover {
+    color: white !important;
+}
+
+.img-responsive {
+    display: block;
+    overflow: hidden;
+}
+.image-frontend{
+	width: 100% !important;
+	height: 250px !important;
+}
+
+.text-white{
+	color: white;
+}
+.team-member{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.map-section{
+	height: auto;
+	padding-top: 25px;
+	padding-bottom: 25px
+}
+
+.footer{
+	height: auto;
+	padding-top:25px;
+	padding-bottom: 25px;
+}
+.navbar-default{
+	border: none !important;
+}
+
+.header-blog{
+	height: 200px;
+	background-image:url('/assets/banner-blog-post.jpg');
+	background-size: cover;
+	/*margin-top:60px;*/
 }
