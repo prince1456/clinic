@@ -1,8 +1,12 @@
 <div id="<%= dom_id(comment) %>">
-  <p><%= comment.content %></p>
-    <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-    <%= link_to "Delete", post_comment_path(@post, comment),
-                    method: :delete,
-                    remote: true,
-                    data: {confirm: "Are you sure?"} %>
+  <div class="media">
+      <a class="pull-left" href="#">
+          <%= image_tag comment.user.profile.image_url(:thumb), class: 'media-object' %>
+      <div class="media-body">
+          <h4 class="media-heading"><%= comment.user.profile.first_name %>
+              <small><% time_ago(comment.created_at) %></small>
+          </h4>
+          <%= comment.content %>
+      </div>
+  </div>
 </div>
