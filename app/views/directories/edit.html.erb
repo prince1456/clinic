@@ -1,6 +1,7 @@
 <div>
   <%= simple_form_for [@profile, @directory] do |f| %>
-  <%= f.file_field :file %>
+    <%= f.file_field :file %>
+    <%= f.input :name %>
     <%= f.button :submit %>
   <% end %>
 </div>
