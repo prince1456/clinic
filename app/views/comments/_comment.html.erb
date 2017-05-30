@@ -2,6 +2,7 @@
   <div class="media">
       <a class="pull-left" href="#">
           <%= image_tag comment.user.profile.image_url(:thumb), class: 'media-object' %>
+      </a>
       <div class="media-body">
           <h4 class="media-heading"><%= comment.user.profile.first_name %>
               <small><% time_ago(comment.created_at) %></small>
