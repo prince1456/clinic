@@ -15,9 +15,9 @@ function createMessageChannel() {
           console.log("username=" + data.user)
           console.log(document.cookie)
             if ("username=" + data.user === document.cookie){
-              return a;
-            } else{
               return b;
+            } else{
+              return a;
             }
 
   },
