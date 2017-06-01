@@ -57,7 +57,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'interactive_editor'
 end
-
+gem 'rails_12factor', group: :production
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
