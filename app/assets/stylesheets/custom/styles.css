@@ -560,7 +560,7 @@ a.bg-danger:hover {
 .sidebar ul.nav .active > a:focus, .sidebar ul.nav li.parent a.active:focus {
 	color: #fff;
 	background-color: #30a5ff;
-}*/
+}
 
 .sidebar ul.nav ul,
 .sidebar ul.nav ul li {
@@ -3315,7 +3315,7 @@ ul.posts-line .post .title {
 }
 
 .chat-box{
-	line-height: 10px
+	line-height: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #f0f0f0;
 	height: 90px;
