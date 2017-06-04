@@ -534,8 +534,7 @@ a.bg-danger:hover {
   }
 	.sidebar {
 		display: block;
-  		position: fixed;
-		/*top: 50px;*/
+  	position: fixed;
 		bottom: 0;
 		left: 0;
 
@@ -560,7 +559,7 @@ a.bg-danger:hover {
 .sidebar ul.nav .active > a:focus, .sidebar ul.nav li.parent a.active:focus {
 	color: #fff;
 	background-color: #30a5ff;
-}*/
+}
 
 .sidebar ul.nav ul,
 .sidebar ul.nav ul li {
@@ -936,14 +935,7 @@ h1.page-header {
 						COMMON STYLES
 -----------------------------------------------------------------------------------------*/
 
-/*body {
-  font-family: 'Hind', sans-serif;
-  font-size: 17px;
-  font-weight: lighter;
-  line-height: 1.5;
-  color: #555;
-  background: #fff;
-}*/
+
 
 #wrap {
   overflow: hidden;
@@ -1992,7 +1984,7 @@ a.panel-heading.collapsed:after {
 }
 
 .item-list-right li:last-child, .item-list-left li:last-child, .item-list-center li:last-child, .item-list li:last-child {
-  padding-bottom: 0 !important;
+  padding-bottom: 0px !important;
 }
 
 .dark-bg .item-list-right p, .dark-bg .item-list-left p, .dark-bg .item-list-center p {
@@ -3315,7 +3307,7 @@ ul.posts-line .post .title {
 }
 
 .chat-box{
-	line-height: 10px
+	line-height: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #f0f0f0;
 	height: 90px;
