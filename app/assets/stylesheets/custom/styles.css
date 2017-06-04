@@ -3575,7 +3575,7 @@ ul.posts-line .post .title {
 .map-section{
 	height: auto;
 	padding-top: 25px;
-	padding-bottom: 25px
+	padding-bottom: 25px;
 }
 
 .footer{
@@ -3599,7 +3599,7 @@ ul.posts-line .post .title {
 }
 
 .show-post-blog{
-	padding-bottom: 25px
+	padding-bottom: 25px;
 }
 .navbar .login-panel {
 	float: right;
