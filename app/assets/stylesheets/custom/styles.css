@@ -3308,12 +3308,13 @@ ul.posts-line .post .title {
 
 .chat-box{
 	line-height: 10px;
-	padding-bottom: 10px;
 	border-bottom: 1px solid #f0f0f0;
 	height: 90px;
 	overflow: hidden;
+	padding-bottom: 10px;
 
 }
+/*wok this time*/
 .chat-box img{
 	width: 70px;
 	height: 70px;
