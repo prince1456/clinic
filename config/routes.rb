@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
   mount Ckeditor::Engine => '/ckeditor'
+  
   devise_for :users
   resources :profiles do
     resources :directories

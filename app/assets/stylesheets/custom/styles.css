@@ -3308,6 +3308,10 @@ ul.posts-line .post .title {
 
 .chat-box{
 	line-height: 10px;
+<<<<<<< HEAD
+=======
+	padding-bottom: 10px;
+>>>>>>> 12dbfd3bd0f430fcabd59cbeedf840ccccefe97d
 	border-bottom: 1px solid #f0f0f0;
 	height: 90px;
 	overflow: hidden;
@@ -3793,4 +3797,23 @@ input:-moz-placeholder {
 	padding-top: 80px;
 	height: 90vh;
 
+}
+
+.two-row-form input{
+ width: 350px;
+}
+.two-row-form select{
+ width: 350px;
+}
+
+.form-profile{
+	padding-left: 100px;
+	padding-right: 100px;
+
+}
+
+.img-rounded{
+	border-radius: 6px;
+  height: 64px;
+  width: 64px;
 }
