@@ -3,8 +3,8 @@ Rails.application.configure do
   # action cable configrution
   config.action_cable.url = 'wss://clinic12.herokuapp.com/cable'
     config.action_cable.allowed_request_origins = [
-      'https://clinic12.herokuapp.com', /http://clinic12.herokuapp.com.*/]
-
+      'https://clinic12.herokuapp.com', 'http://clinic12.herokuapp.com']
+      
   # Code is not reloaded between requests.
   config.cache_classes = true
 
