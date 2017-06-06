@@ -18,7 +18,6 @@ gem 'ckeditor'
 gem "cancancan"
 gem 'faker'
 gem 'country_select'
-gem "redis"
 
 
 
