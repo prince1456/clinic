@@ -8,7 +8,11 @@
                          <% if other_user != current_user %>
                           <tr><td>
                                 <%= link_to user_chats_path(current_user, :other_user => other_user.id), method: :post  do %>
+                                  <% if other_user.profile.image.present? %>
                                      <%= image_tag other_user.profile.image, class: "img-chatlist img-circle img-responsive" %>
+                                  <% else %>
+                                    <%= image_tag "default.png", class: "img-chatlist img-circle img-responsive"%>
+                                  <% end %>
                                 <% end %>
                               </td>
                               <td class='name-chatlist'>
@@ -29,7 +33,11 @@
                             <% if other_user != current_user %>
                                 <tr><td>
                                         <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-                                             <%= image_tag other_user.profile.image, class: "img-chatlist img-circle img-responsive" %>
+                                            <% if other_user.profile.image.present? %>
+                                               <%= image_tag other_user.profile.image, class: "img-chatlist img-circle img-responsive" %>
+                                            <% else %>
+                                              <%= image_tag "default.png", class: "img-chatlist img-circle img-responsive"%>
+                                            <% end %>
                                          <% end %>
                                      </td>
                                      <td class='name-chatlist'>

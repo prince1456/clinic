@@ -4,9 +4,10 @@
       <div class="row">
         <div class="col-sm-6 col-md-4">
           <% if @profile.image.present? %>
-            <%= image_tag @profile.image, :size => "320x240", class: "img-rounded img-responsive" %>
+            <%= image_tag @profile.image, :size => "320x240"%>
           <% else %>
-            <%= image_tag "default.jpg", :size => "320x240", class: "img-rounded img-responsive"  %>
+            <%= image_tag "default.png", :size => "320x240"%>
+            <!-- <img src="/assets/default.jpg" size="320x240"  > -->
           <% end %>
         </div>
         <div class="col-sm-6 col-md-8">
@@ -26,7 +27,6 @@
               <h4><strong>Gender: </strong><%= @profile.gender.capitalize %></h4>
           <% end %>
           <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
-
         </div>
       </div>
     </div>
