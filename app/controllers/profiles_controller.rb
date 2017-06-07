@@ -24,6 +24,7 @@ class ProfilesController < ApplicationController
   def edit
   end
   def update
+    byebug
     if @profile.update strong_params
       redirect_to profile_path(@profile), notice: "profile updated"
     else
@@ -44,6 +45,6 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:first_name, :last_name, :address,
                                     :phone_number, :emr_name, :emr_phone,
                                     :gender, :age, :nationality, :married,
-                                    :job, :image, :user_id)
+                                    :job, :image, :user_id, :bio ,  :position)
   end
 end
