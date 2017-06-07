@@ -1,4 +1,25 @@
 <div class="container">
+<<<<<<< HEAD
+  <div class="container">
+<%= simple_form_for(@profile, html: {class: 'form-horizontal'}) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :gender, collection: [:male, :female] %>
+  <%= f.input :age %>
+  <%= f.country_select :nationality %>
+  <%= f.input :job, label: 'occupation' %>
+  <%= f.input :married, label: 'Marital Status' ,collection: [:single, :married] %>
+  <%= f.input :emr_name, label: "Emergency Contact Name" %>
+  <%= f.input :emr_phone, label: "Emergency Contact Number" %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <br>
+  <%= f.submit class: 'btn, btn-default' %>
+  <% end %>
+=======
   <div class="form-profile">
         <%= simple_form_for(@profile, html: {class: 'form-horizontal'}) do |f| %>
           <div class="row ">
@@ -56,4 +77,6 @@
           <%= f.submit class: 'btn, btn-default' %>
           <% end %>
   </div>
+>>>>>>> 12dbfd3bd0f430fcabd59cbeedf840ccccefe97d
+</div>
 </div>

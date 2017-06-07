@@ -534,8 +534,7 @@ a.bg-danger:hover {
   }
 	.sidebar {
 		display: block;
-  		position: fixed;
-		/*top: 50px;*/
+  	position: fixed;
 		bottom: 0;
 		left: 0;
 
@@ -936,14 +935,7 @@ h1.page-header {
 						COMMON STYLES
 -----------------------------------------------------------------------------------------*/
 
-/*body {
-  font-family: 'Hind', sans-serif;
-  font-size: 17px;
-  font-weight: lighter;
-  line-height: 1.5;
-  color: #555;
-  background: #fff;
-}*/
+
 
 #wrap {
   overflow: hidden;
@@ -1992,7 +1984,7 @@ a.panel-heading.collapsed:after {
 }
 
 .item-list-right li:last-child, .item-list-left li:last-child, .item-list-center li:last-child, .item-list li:last-child {
-  padding-bottom: 0 !important;
+  padding-bottom: 0px !important;
 }
 
 .dark-bg .item-list-right p, .dark-bg .item-list-left p, .dark-bg .item-list-center p {
@@ -3316,12 +3308,17 @@ ul.posts-line .post .title {
 
 .chat-box{
 	line-height: 10px;
+<<<<<<< HEAD
+=======
 	padding-bottom: 10px;
+>>>>>>> 12dbfd3bd0f430fcabd59cbeedf840ccccefe97d
 	border-bottom: 1px solid #f0f0f0;
 	height: 90px;
 	overflow: hidden;
+	padding-bottom: 10px;
 
 }
+/*wok this time*/
 .chat-box img{
 	width: 70px;
 	height: 70px;
@@ -3582,7 +3579,7 @@ ul.posts-line .post .title {
 .map-section{
 	height: auto;
 	padding-top: 25px;
-	padding-bottom: 25px
+	padding-bottom: 25px;
 }
 
 .footer{
@@ -3606,7 +3603,7 @@ ul.posts-line .post .title {
 }
 
 .show-post-blog{
-	padding-bottom: 25px
+	padding-bottom: 25px;
 }
 .navbar .login-panel {
 	float: right;

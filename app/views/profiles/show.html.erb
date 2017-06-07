@@ -5,6 +5,8 @@
         <div class="col-sm-6 col-md-4">
           <% if @profile.image.present? %>
             <%= image_tag @profile.image, :size => "320x240", class: "img-rounded img-responsive" %>
+          <% else %>
+            <%= image_tag "default.jpg", :size => "320x240", class: "img-rounded img-responsive"  %>
           <% end %>
         </div>
         <div class="col-sm-6 col-md-8">
@@ -13,12 +15,16 @@
           <small><cite title="San Francisco, USA"><%= @profile.address %><i class="glyphicon glyphicon-map-marker">
                         </i></cite></small>
           <h4><i class="glyphicon glyphicon-envelope"></i> <%= current_user.email %></h4>
-          <h4><i class="glyphicon glyphicon-briefcase"></i> <%= @profile.job.capitalize %></h4>
+          <% if @profile.job.present? %>
+            <h4><i class="glyphicon glyphicon-briefcase"></i> <%= @profile.job.capitalize %></h4>
+          <% end %>
           <h4><i class="glyphicon glyphicon-briefcase"></i> <%= @profile.nationality %></h4>
           <% if @profile.phone_number.present? %>
             <h4><i class="glyphicon glyphicon-phone"></i><%= @profile.phone_number.floor %></h4>
           <% end %>
-          <h4><strong>Gender: </strong><%= @profile.gender.capitalize %></h4>
+          <% if @profile.gender.present? %>
+              <h4><strong>Gender: </strong><%= @profile.gender.capitalize %></h4>
+          <% end %>
           <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
 
         </div>
