@@ -12,6 +12,7 @@ if message.save
       image: message.user.profile.image.thumb.url
 
       )
+    #  redirect_to :back
     else
       redirect_to chats_path
     end

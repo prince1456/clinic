@@ -5,7 +5,7 @@ function createMessageChannel() {
         },
         {
         received: function(data) {
-          $("#messages").removeClass('hidden')
+          $("#messages ul").removeClass('hidden')
           return $('#messages ul').append(this.renderMessage(data));
         },
         renderMessage: function(data) {
