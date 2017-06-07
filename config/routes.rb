@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
-  
+
   devise_for :users
   resources :profiles do
     resources :directories
   end
 
   # Serve websocket cable requests in-process
-    mount ActionCable.server => '/cable'
+    mount ActionCable.server, at: '/cable'
     root "pages#index"
   resources :posts do
     resources :comments
