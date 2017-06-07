@@ -11,7 +11,7 @@
 					<div class="slogan">
 						<h1 data-selector="h1"><strong>Advanced Medicine.</strong><br>
 							Trusted Care.</h1>
-						<p data-selector="p">No fluff. Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
+						<p data-selector="p"> Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
 					</div>
 					<%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
 								<i class="icon icon-info" data-selector=".icon"></i> About Clinic
@@ -34,16 +34,16 @@
 							<div class="border-block">
 								<div class="row">
 									<div class="col-sm-4">
-										<% if doctor.profile != nil %>
-												<%= image_tag doctor.profile.image, class: 'screen'%>
-										<% else %>
-										<img src="images/photo-medic-team-1.jpg" class="screen" alt="Team 1">
+										<%= link_to profile_path(doctor.profile) do %>
+											<% if doctor.profile != nil %>
+													<%= image_tag doctor.profile.image, class: 'screen'%>
+											<% end %>
 										<% end %>
 									</div>
 									<div class="col-sm-8">
 										<h3 class="title"><%= doctor.profile.first_name %></h3>
-										<h4>Head of the Department</h4>
-										<p class="text-white">No fluff. Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
+										<h4><%= doctor.profile.position %></h4>
+										<p class="text-white"><%=  doctor.profile.bio  %></p>
 									</div>
 								</div>
 							</div>
@@ -70,7 +70,7 @@
 							<div class="post-content">
 								<p class="title">
 									<%= link_to post_path(post) do  %>
-										<%= truncate(post.content, length: 80) %>
+										<%= raw truncate( post.content, length: 80) %>
 									<% end %>
 								</p>
 							</div>

@@ -42,6 +42,16 @@
               <%= f.input :emr_name, label: "Emergency Contact Name" %>
             </div>
           </div>
+          <% if current_user.role == "doctor" || current_user.role == "admin" %>
+            <div class="row">
+              <div class=" col-md-6 two-row-form">
+                <%= f.text_field :bio%>
+              </div>
+              <div class="col-md-6  two-row-form">
+                <%= f.input :position%>
+              </div>
+            </div>
+          <% end %>
           <div class="row ">
             <div class="col-md-6 two-row-form">
               <%= f.input :emr_phone, label: "Emergency Contact Number" %>

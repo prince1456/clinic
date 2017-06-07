@@ -14,7 +14,11 @@
   <tbody>
     <% @profiles.each do |profile| %>
     <tr>
-      <td><%=image_tag profile.image_url(:thumb), :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+      <% if profile.image.present? %>
+        <td><%=image_tag profile.image_url(:thumb), :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+      <% else %>
+        <td><%= image_tag "default.png", :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+      <% end %>
       <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
       <td><%= profile.phone_number %></td>
       <td><%= profile.address %></td>
