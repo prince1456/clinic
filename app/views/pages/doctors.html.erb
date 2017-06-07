@@ -15,7 +15,7 @@
         <% if doctor.profile.image.present? %>
             <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
         <% else %>
-          <img src="/assets/doctor.png" class='img-rounded img-responsive img-chatlist' >
+            <%= image_tag doctor.profile.image, class: 'img-rounded img-responsive img-chatlist' %>
         <% end %>
           </td>
       <% end %>
