@@ -6,7 +6,7 @@
           <% if @profile.image.present? %>
             <%= image_tag @profile.image, :size => "320x240"%>
           <% else %>
-            <%= image_tag "default.png", :size => "320x240"%>
+            <img style="width:320px;height:240px" src="/assets/default.png"  >
           <% end %>
         </div>
         <div class="col-sm-6 col-md-8">
@@ -23,8 +23,9 @@
           <% end %>
           <% if @profile.gender.present? %>
               <h4><strong>Gender: </strong><%= @profile.gender.capitalize %></h4>
-              <p><%= @profile.bio %></p>
           <% end %>
+          <p><%= @profile.bio %></p>
+
           <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
         </div>
       </div>

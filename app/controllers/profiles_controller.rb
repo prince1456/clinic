@@ -24,7 +24,6 @@ class ProfilesController < ApplicationController
   def edit
   end
   def update
-    byebug
     if @profile.update strong_params
       redirect_to profile_path(@profile), notice: "profile updated"
     else
