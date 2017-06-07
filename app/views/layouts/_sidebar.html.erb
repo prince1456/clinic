@@ -31,12 +31,18 @@
 									<i class="fa fa-users" aria-hidden="true"></i> Profile
 							<% end %>
 					</li>
-          <li><a href="tables.html"><i class="fa fa-rss" aria-hidden="true"></i> Blogs</a></li>
+          <li><%= link_to posts_path do %>
+						<i class="fa fa-rss" aria-hidden="true"></i> Posts</a>
+						<% end %>
+					</li>
 					<li><%= link_to chats_path do %>
 						<i class="fa fa-comments" aria-hidden="true"></i> Chats
 						<% end %>
 					</li>
-          <li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Patients</a></li>
+          <li><%= link_to  patients_path do %>
+								<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Patients</a>
+							<% end %>
+					</li>
 
       <% else %>
           <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>

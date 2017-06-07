@@ -11,9 +11,14 @@
   <tbody>
     <% @doctors.each do |doctor| %>
     <tr>
-      <td>
-        <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
-      </td>
+      <td> <%= link_to profile_path(doctor.profile) do %>
+        <% if doctor.profile.image.present? %>
+            <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
+        <% else %>
+            <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
+        <% end %>
+          </td>
+      <% end %>
       <td>
             <%= doctor.profile.first_name %>
       </td>
