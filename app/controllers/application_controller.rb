@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_user
   after_filter :store_action
+  before_filter :set_locale
 
   def store_action
     return unless request.get?
@@ -29,6 +30,15 @@ class ApplicationController < ActionController::Base
      "application"
    end
  end
+
+ def set_locale
+   I18n.locale = params[:locale] if params[:locale].present?
+ end
+
+ def default_url_options(options = {})
+   {locale: I18n.locale}
+ end
+
   # def after_sign_in_path_for(resource)
   #   '/profiles/new'
   # end
@@ -46,7 +56,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:sign_up, keys: [ :email,:password,:password_confirmation,profile_attributes:  [:id,:first_name, :last_name]])
   end
-
 
 
 end

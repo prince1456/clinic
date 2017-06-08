@@ -24,7 +24,12 @@
 						<i class="fa fa-comments" aria-hidden="true"></i> Chats
 						<% end %>
 					</li>
+					<li>
+						<%= link_to_unless_current "Switch to English", locale: "en" %>
+						|
+						<%= link_to "Switch to Arabic", locale: "ar" %>
 
+					</li>
       <% elsif current_user.role == 'doctor' %>
           <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
 					<li><%= link_to profiles_path do %>

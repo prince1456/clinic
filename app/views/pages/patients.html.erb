@@ -1,5 +1,7 @@
 <br>
-<h2>List of patients </h2>
+
+<h2><%= t "patients.title" %></h2>
+<!-- <h2>List of patients </h2> -->
 <table class="table table-hover table-striped">
   <thead>
     <tr>
@@ -15,7 +17,7 @@
               <% if patient.profile.image.present? %>
                 <%= image_tag patient.profile.image_url(:thumb), class: 'img-chatlist img-responsive img-rounded' %>
               <% else %>
-                <%= image_tag "default.png", class: 'img-chatlist img-responsive img-rounded' %>
+              <%= image_tag patient.profile.image, class: 'img-chatlist img-responsive img-rounded' %>
               <% end %>
             <% end %>
         </td>
@@ -23,7 +25,9 @@
          <%= patient.profile.first_name %>
        </td>
 
-      <td><%= patient.profile.last_name %></td>
+      <td>
+        <%= patient.profile.last_name %>
+      </td>
 </tr>
   <% end %>
 <tbody>

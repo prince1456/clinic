@@ -45,7 +45,7 @@
           <% if current_user.role == "doctor" || current_user.role == "admin" %>
             <div class="row">
               <div class=" col-md-6 two-row-form">
-                <%= f.text_field :bio%>
+                <%= f.input :bio, as: :string%>
               </div>
               <div class="col-md-6  two-row-form">
                 <%= f.input :position%>
