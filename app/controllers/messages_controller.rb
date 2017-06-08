@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 def create
     message = Message.new(message_params)
     message.user = current_user
+    @chats = Chat.find message_params[:chat_id]
 if message.save
       #broadcasting out to messages channel including the chat_id so messages are broadcasted to specific chat only
       ActionCable.server.broadcast( "messages_#{message_params[:chat_id]}",
@@ -12,6 +13,10 @@ if message.save
       image: message.user.profile.image.thumb.url
 
       )
+      (@chats.users.uniq - [current_user]).each do |user|
+        Notification.create(recipent: user, actor: current_user,
+                            action: "message", notifiable: message)
+      end
     #  redirect_to :back
     else
       redirect_to chats_path

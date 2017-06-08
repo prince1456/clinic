@@ -12,6 +12,28 @@
 				<% end %>
 
 				<ul class="user-menu navbar-right">
+					<li class="dropdown" data-behavior= 'notifications'>
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-behavior= 'notifications-link'><i class="fa fa-bell" data-behavior='unread-count'></i><b class="caret"></b></a>
+                 <ul class="dropdown-menu alert-dropdown">
+
+                     <div data-behavior='notification-items'>
+
+                     </div>
+                     <!-- <li>
+                         <a href="#"> you have  <span class="label label-info"><%#=pluralize(Notification.count_message, 'Message', 'Messsages') %></span></a>
+                     </li>
+                     <li>
+                         <a href="#"> you have  <span class="label label-info"><%#= pluralize(Notification.count_visitor, 'Visitor', 'Visitors') %></span></a>
+                     </li> -->
+
+
+                     <li class="divider"></li>
+                     <li>
+                         <%#= link_to "View All", admin_notifications_path %>
+                     </li>
+                 </ul>
+             </li>
+
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">

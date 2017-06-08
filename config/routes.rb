@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :notifications do
+    collection do
+      post :mark_as_read
+    end
+  end
+
   mount Ckeditor::Engine => '/ckeditor'
 
   devise_for :users
