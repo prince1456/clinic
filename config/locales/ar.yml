@@ -1,0 +1,9 @@
+ar:
+  patients:
+    title: "قائمة المرضى "
+  activerecord:
+    attributes:
+      user:
+        email: "البريد الإلكتروني "
+      profile:
+        last_name: "أسم العائلة "

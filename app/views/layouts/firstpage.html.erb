@@ -8,12 +8,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+<% if params[:locale] === "ar" %>
+  <body id="front-end" data-spy="scroll" data-target=".navMenuCollapse" style=" direction: rtl">
+        <%= render 'layouts/navbar2' %>
+c        <%= yield %>
+        <%= render 'layouts/footer' %>
+    <% else %>
   <body id="front-end" data-spy="scroll" data-target=".navMenuCollapse">
         <%= render 'layouts/navbar2' %>
         <%= yield %>
         <%= render 'layouts/footer' %>
-
+<% end %>
 
 
     <!-- MODALS BEGIN-->
