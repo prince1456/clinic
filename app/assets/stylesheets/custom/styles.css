@@ -3817,3 +3817,9 @@ input:-moz-placeholder {
   height: 64px;
   width: 64px;
 }
+.dropdown-menu li a{
+	color: black;
+}
+.dropdown-menu li a:hover{
+	color: skyblue;
+}

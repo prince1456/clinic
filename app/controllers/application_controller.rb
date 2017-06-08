@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  def my_notification(user)
+        Notification.where(recipent_id: user).where(action: "message")
+  end
+  helper_method :my_notification
+
   layout :layout_by_resource
 
  private
