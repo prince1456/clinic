@@ -8,8 +8,5 @@ class Chat < ApplicationRecord
      case_sensitive: false
 
 
-  after_save :notify
-  def notify
-    notifications.build.save
-  end
+
 end
