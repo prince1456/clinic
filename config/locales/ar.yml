@@ -1,9 +1,43 @@
 ar:
   patients:
     title: "قائمة المرضى "
+    picture: "صورة"
+    name: "اسم"
+    last_name: "أسم العائلة "
+  doctors:
+    title: "قائمة الأطباء"
+    picture: "صورة"
+    name: "اسم"
+    last_name: "أسم العائلة "
+  posts:
+    index:
+      id: "الرقم التسلسلي"
+      title: "عنوان"
+      content: "مضمون"
+      auther: "مؤلف"
   activerecord:
     attributes:
       user:
         email: "البريد الإلكتروني "
+        password: "كلمة السر"
+        password_confirmation: "تأكيد كلمة السر"
       profile:
+        first_name: "الاسم الاول"
         last_name: "أسم العائلة "
+        phone_number: "رقم الهاتف"
+        address: "عنوان"
+        gender: "جنس"
+        age: "السن"
+        nationality: "جنسية"
+        job: "مهنة"
+        married: "الحالة الإجتماعية"
+        bio: "سيرة شخصية"
+        position: "المسمى الوظيفي"
+        image: "صورة"
+      post:
+        title: "عنوان"
+        content: "مضمون"
+        auther: "مؤلف"
+        picture: "صورة"
+        video: "فيديو"
+        attachments: "مرفقات"
