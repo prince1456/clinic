@@ -7,6 +7,8 @@
 
 			<header id="intro-half-left-3" class="intro-block bg-color3 fixed-bg double-padding" style="background-image: url(<%= asset_path('bg37.jpg')%>);" data-selector="header">
 				<div class="container">
+
+					<h2 class="title"><%= t "index.doctors.title" %></h2>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="slogan">
@@ -25,49 +27,48 @@
 
 
 
-					<!-- TEAM BORDER -->
-					<section id="team-border" class="dark-bg bg-color2 team-member">
-						<div class="container">
-							<h2 class="title">Meet Our Doctors</h2>
-							<div class="row">
-								<% @doctors.each do |doctor| %>
-								<div class="col-md-6 sep-half-bottom">
-									<div class="border-block">
-										<div class="row">
-											<div class="col-sm-4">
-												<%= link_to profile_path(doctor.profile) do %>
-													<% if doctor.profile != nil %>
-															<%= image_tag doctor.profile.image, class: 'screen'%>
+        <section id="team-border" class="dark-bg bg-color2 team-member">
+							<div class="container">
+								<h2 class="title">Meet Our Doctors</h2>
+								<div class="row">
+									<% @doctors.each do |doctor| %>
+									<div class="col-md-6 sep-half-bottom">
+										<div class="border-block">
+											<div class="row">
+												<div class="col-sm-4">
+													<%= link_to profile_path(doctor.profile) do %>
+														<% if doctor.profile != nil %>
+																<%= image_tag doctor.profile.image, class: 'screen'%>
+														<% end %>
 													<% end %>
-												<% end %>
-											</div>
-											<div class="col-sm-8">
-												<h3 class="title"><%= doctor.profile.first_name %></h3>
-												<h4><%= doctor.profile.position %></h4>
-												<p class="text-white"><%=  doctor.profile.bio  %></p>
+												</div>
+												<div class="col-sm-8">
+													<h3 class="title"><%= doctor.profile.first_name %></h3>
+													<h4><%= doctor.profile.position %></h4>
+													<p class="text-white"><%=  doctor.profile.bio  %></p>
+												</div>
 											</div>
 										</div>
 									</div>
+									<% end %>
 								</div>
-								<% end %>
 							</div>
-						</div>
-					</section>
+				</section>
 
 				<section id="blog" data-selector="section" class="team-member">
 					<div class="container">
-						<h2 class="title text-center" data-selector="h2">Recent posts</h2>
-						<div class="row">
-							<% @posts.last(4).each do |post| %>
-							<div class="col-sm-3">
-								<div class="post" data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle">
-									<div class="post-media">
-										<%= link_to post_path(post) do %>
-											<% if post.picture.present? %>
-												<%= image_tag post.picture_url(:large), class:'img-responsive image-frontend', alt: post.title, data:{selector: 'img'}%>
-												<% end %>
-											<% end %>
-									</div>
+				<h2 class="title text-center" data-selector="h2"><%= t "index.posts.title" %></h2>
+				<div class="row">
+					<% @posts.last(4).each do |post| %>
+					<div class="col-sm-3">
+						<div class="post" data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle">
+							<div class="post-media">
+								<%= link_to post_path(post) do %>
+									<% if post.picture.present? %>
+										<%= image_tag post.picture_url(:large), class:'img-responsive image-frontend', alt: post.title, data:{selector: 'img'}%>
+										<% end %>
+									<% end %>
+							</div>
 									<div class="post-content">
 										<p class="title">
 											<%= link_to post_path(post) do  %>
@@ -80,9 +81,7 @@
 							<% end %>
 						</div>
 					</div>
-				</section><!-- MAP HALF LEFT BLOCK -->
-
-
+				</section>
 
 
 		    	<!-- TESTIMONIALS SLIDER STAR BLOCK -->
@@ -149,6 +148,7 @@
 						</a>
 					</div>
 				</section>
+    
 
 				<section id="maps" class="cover-bg bg-color2 map-section" data-selector="section">
 					<div class="container">

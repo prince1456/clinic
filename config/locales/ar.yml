@@ -1,4 +1,12 @@
 ar:
+  index:
+    doctors:
+      title: "فرق العمل"
+    posts:
+      title: "مدونة إلكترونية"
+    location:
+      title: "موقع العيادة"
+
   patients:
     title: "قائمة المرضى "
     picture: "صورة"
@@ -9,6 +17,12 @@ ar:
     picture: "صورة"
     name: "اسم"
     last_name: "أسم العائلة "
+  profiles:
+      index:
+        picture: "صورة"
+        fullname: "اسم"
+        phonenumber:  "رقم الهاتف"
+        address: "محل الاقامة"
   posts:
     index:
       id: "الرقم التسلسلي"

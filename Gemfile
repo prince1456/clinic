@@ -19,7 +19,8 @@ gem 'ckeditor'
 gem "cancancan"
 gem 'faker'
 gem 'country_select'
-
+gem 'globalize', github: 'globalize/globalize'
+gem 'activemodel-serializers-xml'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
