@@ -14,7 +14,9 @@ class PagesController < ApplicationController
   def dashboard
     @users = User.all
     @comments= Comment.all
-    @posts = Post.all
+    @posts = Post.order(created_at: :DESC).includes(:comments).limit(5)
+    
+    @existing_chats_users = current_user.existing_chats_users
 
   end
   def patients

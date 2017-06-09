@@ -1,6 +1,117 @@
+<% if current_user.role == "admin" || current_user.role == "doctor"%>
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+          <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="panel panel-blue panel-widget ">
+                <div class="row no-padding">
+                  <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>
+                  </div>
+                  <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="large"><%= @users.where(role: "doctor").count %></div>
+                    <div class="text-muted">Doctors</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="panel panel-orange panel-widget">
+                <div class="row no-padding">
+                  <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg>
+                  </div>
+                  <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="large"><%= @posts.count %></div>
+                    <div class="text-muted">Blogs Post</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="panel panel-teal panel-widget">
+                <div class="row no-padding">
+                  <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked female user"><use xlink:href="#stroked-female-user"/></svg>
+                  </div>
+                  <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="large"><%= @users.where(role: "patient").count %></div>
+                    <div class="text-muted">Comments</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+              <div class="panel panel-red panel-widget">
+                <div class="row no-padding">
+                  <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked sound on"><use xlink:href="#stroked-sound-on"/></svg>
+                  </div>
+                  <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="large" data-behavior='unread-count'></div>
+                    <div class="text-muted">Notification</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--/.row-->
+          <!-- table -->
+          <div class="row">
+              <div class="col-md-12">
+        				<div class="panel panel-default">
+        					<div class="panel-heading">Blog Post</div>
+        					<div class="panel-body">
+        						<table class=" table table-style">
+        						    <thead>
+        						    <tr>
+        						        <th>Title</th>
+        						        <th>Content</th>
+        						        <th>Last comment</th>
+        						    </tr>
+        						    </thead>
+                        <tbod>
+                          <% @posts.each do |post| %>
+                          <tr>
+                            <td><%= link_to post.title, post_path(post) %></td>
+                            <td><%= truncate(post.content, length: 60) %></td>
+                              <td><%= post.comments.count %></td>
+                          </tr>
+                          <% end %>
+                        </tbod>
+        						</table>
+        					</div>
+        				</div>
+        			</div>
+          </div>
+      <div>
+          <% if @existing_chats_users %>
+          <div class="row">
+              <% @existing_chats_users.take(8).each do |other_user| %>
+                 <% if other_user != current_user %>
+
+                      <div class="col-sm-6 col-md-3 col-xs-6">
+                        <div class="thumbnail">
+                              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                                  <% if other_user.profile.image.present? %>
+                                     <%= image_tag other_user.profile.image, class: "img-chatlist img-circle img-responsive" %>
+                                  <% else %>
+                                    <%= image_tag "default.png", class: "img-chatlist img-circle img-responsive"%>
+                                  <% end %>
+                             <% end %>
+                          <div class="caption">
+                          <h4><%= truncate(other_user.profile.first_name, length: 20) %></h4>
+                          </div>
+                        </div>
+                      </div>
+                <% end %>
+            <% end %>
+          </div>
+         <% end %>
+    </div>
+</div>
+<% else %>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
       <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="col-xs-12 col-md-4 col-lg-4">
           <div class="panel panel-blue panel-widget ">
             <div class="row no-padding">
               <div class="col-sm-3 col-lg-5 widget-left">
@@ -13,7 +124,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="col-xs-12 col-md-4 col-lg-4">
           <div class="panel panel-orange panel-widget">
             <div class="row no-padding">
               <div class="col-sm-3 col-lg-5 widget-left">
@@ -26,52 +137,45 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <div class="panel panel-teal panel-widget">
-            <div class="row no-padding">
-              <div class="col-sm-3 col-lg-5 widget-left">
-                <svg class="glyph stroked female user"><use xlink:href="#stroked-female-user"/></svg>
-              </div>
-              <div class="col-sm-9 col-lg-7 widget-right">
-                <div class="large"><%= @users.where(role: "patient").count %></div>
-                <div class="text-muted">Comments</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="col-xs-12 col-md-4 col-lg-4">
           <div class="panel panel-red panel-widget">
             <div class="row no-padding">
               <div class="col-sm-3 col-lg-5 widget-left">
                 <svg class="glyph stroked sound on"><use xlink:href="#stroked-sound-on"/></svg>
               </div>
               <div class="col-sm-9 col-lg-7 widget-right">
-                <div class="large">12</div>
+                <div class="large" data-behavior='unread-count'></div>
                 <div class="text-muted">Notification</div>
               </div>
             </div>
           </div>
         </div>
       </div><!--/.row-->
+      <div>
+        <h2> Chat list</h2>
+          <% if @existing_chats_users %>
+          <div class="row">
+              <% @existing_chats_users.take(8).each do |other_user| %>
+                 <% if other_user != current_user %>
 
-
-      <!-- table -->
-      <div class="row">
-          <div class="col-md-6">
-    				<div class="panel panel-default">
-    					<div class="panel-heading">Basic Table</div>
-    					<div class="panel-body">
-    						<table class=" table table-style">
-    						    <thead>
-    						    <tr>
-    						        <th>Item ID</th>
-    						        <th>Item Name</th>
-    						        <th>Item Price</th>
-    						    </tr>
-    						    </thead>
-    						</table>
-    					</div>
-    				</div>
-    			</div>
+                      <div class="col-sm-6 col-md-3 col-xs-6">
+                        <div class="thumbnail">
+                              <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+                                  <% if other_user.profile.image.present? %>
+                                     <%= image_tag other_user.profile.image, class: "img-chatlist img-circle img-responsive" %>
+                                  <% else %>
+                                    <%= image_tag "default.png", class: "img-chatlist img-circle img-responsive"%>
+                                  <% end %>
+                             <% end %>
+                          <div class="caption">
+                          <h4><%= truncate(other_user.profile.first_name, length: 20) %></h4>
+                          </div>
+                        </div>
+                      </div>
+                <% end %>
+            <% end %>
+          </div>
+         <% end %>
       </div>
-</div>
+ <div>
+<% end %>
