@@ -3607,7 +3607,6 @@ ul.posts-line .post .title {
 	padding-left: 15px;
 	margin-right: -15px;
 }
-
 .navbar .login-panel .btn {
 	margin: 0;
 	border-radius: 0;
@@ -3615,6 +3614,20 @@ ul.posts-line .post .title {
 	padding: 0 20px;
 	line-height: 58px;
 }
+.navbar .login-panel-ar {
+	float: left;
+	font-size: 0;
+	padding-left: 15px;
+	margin-right: -15px;
+}
+.navbar .login-panel-ar .btn {
+	margin: 0;
+	border-radius: 0;
+	font-size: 14px;
+	padding: 0 20px;
+	line-height: 58px;
+}
+
 
 
 
