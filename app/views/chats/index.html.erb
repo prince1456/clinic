@@ -4,7 +4,8 @@
                 <h2>All Users: <%= paginate @users %></h2>
                 <table class="table table-hover">
                   <tbody>
-                       <% @users.each do |other_user| %>
+                      <% if current_user.role == "admin" || current_user.role == "doctor" %>
+                         <% @users.each do |other_user| %>
                          <% if other_user != current_user %>
                           <tr><td>
                                 <%= link_to user_chats_path(current_user, :other_user => other_user.id), method: :post  do %>
@@ -20,6 +21,25 @@
                               </td>
                           </tr>
                         <% end %>
+                      <% end %>
+                      <% else %>
+                         <% @doctors.each do |other_user| %>
+                           <% if other_user != current_user %>
+                            <tr><td>
+                                <%= link_to user_chats_path(current_user, :other_user => other_user.id), method: :post  do %>
+                                  <% if other_user.profile.image.present? %>
+                                     <%= image_tag other_user.profile.image, class: "img-chatlist img-circle img-responsive" %>
+                                  <% else %>
+                                    <%= image_tag "default.png", class: "img-chatlist img-circle img-responsive"%>
+                                  <% end %>
+                                <% end %>
+                              </td>
+                              <td class='name-chatlist'>
+                                <%= other_user.profile.first_name %>
+                              </td>
+                          </tr>
+                        <% end %>
+                      <% end %>
                       <% end %>
                   </tbody>
                 </table>

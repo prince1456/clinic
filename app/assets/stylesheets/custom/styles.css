@@ -502,7 +502,7 @@ a.bg-danger:hover {
 	margin-right: 10px;
 	float: right;
 	list-style: none;
-	padding: 0;
+	padding: 0 100px 0 0;
 }
 
 .user-menu a {

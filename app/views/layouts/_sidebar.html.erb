@@ -31,7 +31,10 @@
 
 					</li>
       <% elsif current_user.role == 'doctor' %>
-          <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+					<li class="active"><%= link_to dashboard_path do %>
+																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+															<% end %>
+					</li>
 					<li><%= link_to profiles_path do %>
 									<i class="fa fa-users" aria-hidden="true"></i> Profile
 							<% end %>
@@ -50,7 +53,10 @@
 					</li>
 
       <% else %>
-          <li class="active"><a href="index.html"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+					<li class="active"><%= link_to dashboard_path do %>
+																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+															<% end %>
+					</li>
           <li><%= link_to profile_path(current_user.profile.id) do %>
 									<i class="fa fa-users" aria-hidden="true"></i> Profile
 							<% end %></li>
