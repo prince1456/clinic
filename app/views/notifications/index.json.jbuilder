@@ -6,7 +6,7 @@ json.array! @notifications do |notification|
   json.notifiable do
     json.type "a #{ notification.notifiable.class.to_s.underscore.humanize.downcase}"
   end
-  json.url "users/#{current_user.id}/chats/#{notification.notifiable.chat_id}?other_user=#{notification.actor.id}"
+  json.url "../users/#{current_user.id}/chats/#{notification.notifiable.chat_id}?other_user=#{notification.actor.id}"
 
 
 end
