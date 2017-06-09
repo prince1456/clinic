@@ -17,8 +17,11 @@ class ChatsController < ApplicationController
     redirect_to user_chat_path(current_user, @chat,  :other_user => @other_user.id)
   end
   def show
-    @other_user = User.find(params[:other_user])
     @chat = Chat.find_by(id: params[:id])
+    (@chat.users - [current_user]).each do | user|
+        @other_user = user
+    end
+    # @other_user = User.find(params[:other_user])
     @message = Message.new
     @dd = @chat.messages.order(id: :asc)
   end
