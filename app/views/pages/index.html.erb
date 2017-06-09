@@ -27,7 +27,7 @@
 			<!-- TEAM BORDER -->
 			<section id="team-border" class="dark-bg bg-color2 team-member">
 				<div class="container">
-					<h2 class="title">Meet Our Doctors</h2>
+					<h2 class="title"><%= t "index.doctors.title" %></h2>
 					<div class="row">
 						<% @doctors.each do |doctor| %>
 						<div class="col-md-6 sep-half-bottom">
@@ -55,7 +55,7 @@
 
 		<section id="blog" data-selector="section" class="team-member">
 			<div class="container">
-				<h2 class="title text-center" data-selector="h2">Recent posts</h2>
+				<h2 class="title text-center" data-selector="h2"><%= t "index.posts.title" %></h2>
 				<div class="row">
 					<% @posts.last(4).each do |post| %>
 					<div class="col-sm-3">
@@ -153,8 +153,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 hidden-sm hidden-xs">
-						<h2 class="title text-white" data-selector="h2">Location</h2>
-						<h3 class="sep-bottom text-white" data-selector="h3"><i class="icon-pointer"></i> 14 Newell Ave.</h3>
+						<h2 class="title text-white" data-selector="h2"><%= t "index.location.title" %></h2>
+						<h3 class="sep-bottom text-white" data-selector="h3"><i class="icon-pointer"></i> 14 Newell Av</h3>
 						<p class="text-white">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible. </p>
 					</div>
 					<div class="col-md-6 col-md-offset-2 col-sm-12 col-xs-12">

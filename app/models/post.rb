@@ -6,7 +6,8 @@ class Post < ApplicationRecord
   mount_uploader :picture, ImageUploader
   mount_uploader :attachments, AvatarUploader
   mount_uploader :video, AvatarUploader
-  
+  # translates :title , :content
+
   def liked_by?(user)
     likes.exists?(user: user)
   end
