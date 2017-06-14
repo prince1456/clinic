@@ -6,6 +6,9 @@
       <%= f.input :picture %>
       <%= f.input :video %>
       <%= f.input :attachments %>
+    
+      <%= f.hidden_field :lang, value: "ar" %>
+
       <%= f.button :submit %>
     <% end %>
 </div>

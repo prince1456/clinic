@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608234322) do
+ActiveRecord::Schema.define(version: 20170612184606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,21 @@ ActiveRecord::Schema.define(version: 20170608234322) do
     t.index ["notifiable_type"], name: "index_notifications_on_notifiable_type", using: :btree
   end
 
+  create_table "post_translations", force: :cascade do |t|
+    t.integer  "post_id",     null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.text     "content"
+    t.string   "auther"
+    t.string   "picture"
+    t.string   "video"
+    t.string   "attachments"
+    t.index ["locale"], name: "index_post_translations_on_locale", using: :btree
+    t.index ["post_id"], name: "index_post_translations_on_post_id", using: :btree
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
@@ -117,6 +132,7 @@ ActiveRecord::Schema.define(version: 20170608234322) do
     t.integer  "user_id"
     t.string   "position"
     t.text     "bio"
+    t.string   "lang"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 

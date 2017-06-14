@@ -3,7 +3,12 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :about]
   def index
     @posts = Post.all
-    @doctors = User.where(role: "doctor")
+    if params[:locale] === "ar"
+      @doctors = User.where(role: "doctor")
+    else
+      @doctors = User.where(role: "doctor")
+    end
+
     @user = User.new
   end
 

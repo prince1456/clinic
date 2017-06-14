@@ -13,8 +13,8 @@
       <p><%= profile_form.text_field :first_name %></p>
       <h2><%= profile_form.label :last_name %></h2>
       <p><%= profile_form.text_field :last_name %></p>
-
-    <% end %>
+        <%= profile_form.hidden_field :lang, :value => "ar"   %>
+      <% end %>
   <!-- <div class="form-actions"> -->
     <%= f.button :submit, "Sign up" %>
   <!-- </div> -->
