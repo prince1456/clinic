@@ -24,6 +24,8 @@
             <li><a href="../#team-border">Our Team</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#maps">Location<span class="sr-only">(current)</span></a></li>
+            <li><%= link_to_unless_current "Switch to English", locale: "en" %></li>
+            <li><%= link_to "Switch to Arabic", locale: "ar" %></li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->

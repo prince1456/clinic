@@ -21,7 +21,7 @@
               <h4><strong>Gender: </strong><%= @profile.gender.capitalize %></h4>
           <% end %>
           <p><%= @profile.bio %></p>
-
+          <h5><%= @profile.lang %></h5>
           <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
         </div>
       </div>

@@ -44,6 +44,6 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:first_name, :last_name, :address,
                                     :phone_number, :emr_name, :emr_phone,
                                     :gender, :age, :nationality, :married,
-                                    :job, :image, :user_id, :bio ,  :position)
+                                    :job, :image, :user_id, :bio ,  :position, :lang)
   end
 end

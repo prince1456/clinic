@@ -20,5 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  index:
+    doctors:
+      title: "Meet Our Team"
+    posts:
+      title: "Blog Posts"
+    location:
+      title: "Location"
   patients:
     title: "List of patients"
