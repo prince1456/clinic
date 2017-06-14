@@ -1,54 +1,41 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
+
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<%= link_to dashboard_path, class: 'navbar-brand' do %>
-				<span>Uppercase</span> Clinic
-				<% end %>
-
-				<ul class="user-menu navbar-right">
-					<li class="dropdown" data-behavior= 'notifications'>
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-behavior= 'notifications-link'><i class="fa fa-bell" data-behavior='unread-count'></i><b class="caret"></b></a>
-                 <ul class="dropdown-menu alert-dropdown">
-
-                     <div data-behavior='notification-items'>
-
-                     </div>
-                     <!-- <li>
-                         <a href="#"> you have  <span class="label label-info"><%#=pluralize(Notification.count_message, 'Message', 'Messsages') %></span></a>
-                     </li>
-                     <li>
-                         <a href="#"> you have  <span class="label label-info"><%#= pluralize(Notification.count_visitor, 'Visitor', 'Visitors') %></span></a>
-                     </li> -->
-
-
-                     <li class="divider"></li>
-                     <li>
-                         <%#= link_to "View All", admin_notifications_path %>
-                     </li>
-                 </ul>
-             </li>
-
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><%= link_to profile_path(current_user.profile), class: 'text-center' do%>
-								<i class="fa fa-user-md" aria-hidden="true"></i>
-								<%= current_user.profile.last_name %>
-								<% end %></li>
-							<li> <%= link_to destroy_user_session_path, :method => :delete, class: "text-center" do  %>
-                                                                  <i class="fa fa-sign-out" aria-hidden="true"></i>
-                                                                Logout
-                                                              <% end %>
-						  </li>
-						</ul>
-					</li>
-				</ul>
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+							<%= link_to dashboard_path, class: 'navbar-brand' do %>
+							<span>Uppercase</span> Clinic
+							<% end %>
 			</div>
-		</div><!-- /.container-fluid -->
-	</nav>
+						<ul class="user-menu nav navbar-nav pull-right">
+							<li class="dropdown" data-behavior= 'notifications'>
+		                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-behavior= 'notifications-link'><i class="fa fa-bell" data-behavior='unread-count'></i><b class="caret"></b></a>
+		                 <ul class="dropdown-menu alert-dropdown">
+		                     <li data-behavior='notification-items'>
+		                     </li>
+		                     <li class="divider"></li>
+		                 </ul>
+		           </li>
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><%= link_to profile_path(current_user.profile), class: 'text-center' do%>
+										<i class="fa fa-user-md" aria-hidden="true"></i>
+										<%= current_user.profile.last_name %>
+										<% end %>
+									</li>
+									<li> <%= link_to destroy_user_session_path, :method => :delete, class: "text-center" do  %>
+		                                                                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+		                                                                Logout
+		                                                              <% end %>
+								  </li>
+								</ul>
+							</li>
+						</ul>
+
+</nav>

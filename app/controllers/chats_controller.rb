@@ -5,6 +5,7 @@ class ChatsController < ApplicationController
     chats = current_user.chats
     @existing_chats_users = current_user.existing_chats_users
     @users = User.all.order(id: :desc).page params[:page]
+    @doctors = User.where(role: ["doctor", "admin"])
   end
   def create
     @other_user = User.find(params[:other_user])
