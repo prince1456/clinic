@@ -11,12 +11,12 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="slogan">
-								<h1 data-selector="h1"><strong>Advanced Medicine.</strong><br>
-									Trusted Care.</h1>
+								<h1 data-selector="h1"><strong><%= t "index.introduction.strong" %></strong><br>
+									<%= t "index.introduction.title" %></h1>
 								<p data-selector="p"> Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
 							</div>
 							<%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
-										<i class="icon icon-info" data-selector=".icon"></i> About Clinic
+										<i class="icon icon-info" data-selector=".icon"></i> <%= t "index.introduction.button" %>
 							<% end %>
 
 						</div>

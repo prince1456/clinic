@@ -21,6 +21,10 @@
 
 en:
   index:
+    introduction:
+      strong: "Advanced Medicine."
+      title: "Trusted Care."
+      button: "About Clinic"
     doctors:
       title: "Meet Our Team"
     posts:
