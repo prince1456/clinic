@@ -13,10 +13,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse pull-left">
               <div class="login-panel-ar"> <%=link_to new_user_registration_path, class: 'btn btn-primary' do %>
-                <i class="fa fa-user-plus" aria-hidden="true"></i> تسجيل حساب
+                 تسجيل حساب <i class="fa fa-user-plus" aria-hidden="true"></i>
                     <% end %>
               </div>
-              <div class="login-panel-ar"><a class="btn btn-primary" href="#"  data-toggle="modal" data-target="#signup"> <i class="fa fa-sign-in" aria-hidden="true"></i> تسجيل الدخول </a></div>
+              <div class="login-panel-ar"><a class="btn btn-primary" href="#"  data-toggle="modal" data-target="#signup">  تسجيل الدخول <i class="fa fa-sign-in" aria-hidden="true"></i> </a>
+              </div>
           <ul class="nav navbar-nav navbar-left">
             <% if params[:id].present? %>
               <li><%= link_to "Home", root_path %></li>

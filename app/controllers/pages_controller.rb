@@ -5,8 +5,10 @@ class PagesController < ApplicationController
     @posts = Post.all
     if params[:locale] === "ar"
       @doctors = User.where(role: "doctor")
+      @posts = Post.where(lang: "ar")
     else
       @doctors = User.where(role: "doctor")
+      @posts = Post.where(lang: "en")
     end
 
     @user = User.new
@@ -20,7 +22,7 @@ class PagesController < ApplicationController
     @users = User.all
     @comments= Comment.all
     @posts = Post.order(created_at: :DESC).includes(:comments).limit(5)
-    
+
     @existing_chats_users = current_user.existing_chats_users
 
   end
