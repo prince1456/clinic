@@ -1,4 +1,4 @@
-<h2>Sign up salamn</h2>
+<h2>Sign up</h2>
 <% resource.build_profile %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -13,8 +13,7 @@
       <p><%= profile_form.text_field :first_name %></p>
       <h2><%= profile_form.label :last_name %></h2>
       <p><%= profile_form.text_field :last_name %></p>
-        <%= profile_form.hidden_field :lang, :value => "ar"   %>
-      <% end %>
+          <p><%= profile_form.text_field :lang, :value => "ar"   %></p>
   <!-- <div class="form-actions"> -->
     <%= f.button :submit, "Sign up" %>
   <!-- </div> -->

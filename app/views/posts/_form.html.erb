@@ -6,8 +6,11 @@
       <%= f.input :picture %>
       <%= f.input :video %>
       <%= f.input :attachments %>
-    
-      <%= f.hidden_field :lang, value: "ar" %>
+      <% if params[:locale] === "ar" %>
+        <%= f.input :lang,:input_html => { :value => 'ar' } %>
+      <% else %>
+        <% f.input :lang, :input_html => { :value => 'en' } %>
+      <% end %>
 
       <%= f.button :submit %>
     <% end %>
