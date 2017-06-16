@@ -73,14 +73,25 @@
 						<h2 class="title text-center"><%= t "index.doctors.title" %></h2>
 						<div class="row">
 							<% @doctors.each do |doctor| %>
-							<div class="col-sm-4">
-								<%= link_to profile_path(doctor.profile) do %>
-											<%= image_tag doctor.profile.image, class: 'screen'%>
+								<% if params[:locale] === "en" %>
+									<div class="col-sm-4">
+										<%= link_to profile_path(doctor.profile) do %>
+													<%= image_tag doctor.profile.image, class: 'screen'%>
+										<% end %>
+										<h3 class="name"><%= doctor.profile.first_name %></h3>
+										<h4 class="occupation"><%= doctor.profile.position %></h4>
+										<p class="editContent"><%=  doctor.profile.bio  %></p>
+									</div>
+								<% else %>
+									<div class="col-sm-4">
+										<%= link_to profile_path(doctor.profile) do %>
+													<%= image_tag doctor.profile.image, class: 'screen'%>
+										<% end %>
+										<h3 class="name"><%= doctor.profile.first_name_arabic %></h3>
+										<h4 class="occupation"><%= doctor.profile.position_arabic %></h4>
+										<p class="editContent"><%=  doctor.profile.bio_arabic  %></p>
+									</div>
 								<% end %>
-								<h3 class="name"><%= doctor.profile.first_name %></h3>
-								<h4 class="occupation"><%= doctor.profile.position %></h4>
-								<p class="editContent"><%=  doctor.profile.bio  %></p>
-							</div>
 							<% end %>
 						</div>
 					</div>
