@@ -24,35 +24,66 @@
 				</div>
 			</header><!-- TEAM 4COL BLOCK -->
 
+			<section id="why-choose-us" class="Why-choose-us">
+				<div class="container">
+					<div class="col-md-4 col-xs-12 wcu-column">
+						<i class="fa fa-hospital-o fa-3x icon-why-choose" aria-hidden="true"> </i> <span class="span-why-title">Why choose us</span>
+							<br>
+							<br>
+							<br>
+						<br>
+						<i class="fa fa-leaf fa-2x icon-why-choose-sec" aria-hidden="true"></i>  <Span class="span-why-sec-title">  Free medical consuling</span>
+						<p class="why-choose-use-paragraph">
+							some articleasff faslfjlas aslf asjla
+						</p>
 
+						<i class="fa fa-heartbeat fa-2x icon-why-choose-sec" aria-hidden="true"></i>  <Span class="span-why-sec-title">  Free medical consuling</span>
+						<p class="why-choose-use-paragraph">
+							some articleasff faslfjlas aslf asjla
+						</p>
 
-        <section id="team-border" class="dark-bg bg-color2 team-member">
-							<div class="container">
-								<h2 class="title"><%= t "index.doctors.title" %></h2>
-								<div class="row">
-									<% @doctors.each do |doctor| %>
-									<div class="col-md-6 sep-half-bottom">
-										<div class="border-block">
-											<div class="row">
-												<div class="col-sm-4">
-													<%= link_to profile_path(doctor.profile) do %>
-														<% if doctor.profile != nil %>
-																<%= image_tag doctor.profile.image, class: 'screen'%>
-														<% end %>
-													<% end %>
-												</div>
+						<i class="fa fa-user-md fa-2x icon-why-choose-sec" aria-hidden="true"></i>  <Span class="span-why-sec-title">  Free medical consuling</span>
+						<p class="why-choose-use-paragraph">
+							some articleasff faslfjlas aslf asjla
+						</p>
 
-												<div class="col-sm-8">
-													<h3 class="title"><%= doctor.profile.first_name %></h3>
-													<h4><%= doctor.profile.position %></h4>
-													<p class="text-white"><%=  doctor.profile.bio  %></p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<% end %>
-								</div>
+					</div>
+					<div class="col-md-3 col-xs-12">
+						<%= image_tag "dr-why-chooseus.png", class: "img-responsive" %>
+					</div>
+					<div class="col-md-4 col-xs-12 wcu-column">
+							<h2>Quick Look at Benefits</h2>
+							<p>We offer the best services with high quality</p>
+							<ul>
+								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Qualified Stuff & Doctors</li>
+								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Feel like you are at home services</li>
+								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>24x7 Emergency Services</li>
+								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Save your Money and Time with us</li>
+								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Easy and Affordable Billing</li>
+							</ul>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<section id="team" class="team-block team-member-sec">
+					<div class="container">
+						<h2 class="title text-center"><%= t "index.doctors.title" %></h2>
+						<div class="row">
+							<% @doctors.each do |doctor| %>
+							<div class="col-sm-4">
+								<%= link_to profile_path(doctor.profile) do %>
+											<%= image_tag doctor.profile.image, class: 'screen'%>
+								<% end %>
+								<h3 class="name"><%= doctor.profile.first_name %></h3>
+								<h4 class="occupation"><%= doctor.profile.position %></h4>
+								<p class="editContent"><%=  doctor.profile.bio  %></p>
 							</div>
+							<% end %>
+						</div>
+					</div>
 				</section>
 
 				<section id="blog" data-selector="section" class="team-member">
@@ -84,7 +115,7 @@
 				</section>
 
 		    	<!-- TESTIMONIALS SLIDER STAR BLOCK -->
-				<section id="testimonials-slider-star" class="quote-block text-center dark-bg bg-color1 cover-bg">
+				<section id="testimonials-slider-star" class="quote-block text-center dark-bg bg-color1 cover-bg team-member">
 
 					<div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner" role="listbox">
