@@ -11,12 +11,12 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="slogan">
-								<h1 data-selector="h1"><strong>Advanced Medicine.</strong><br>
-									Trusted Care.</h1>
+								<h1 data-selector="h1"><strong><%= t "index.introduction.strong" %></strong><br>
+									<%= t "index.introduction.title" %></h1>
 								<p data-selector="p"> Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
 							</div>
 							<%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
-										<i class="icon icon-info" data-selector=".icon"></i> About Clinic
+										<i class="icon icon-info" data-selector=".icon"></i> <%= t "index.introduction.button" %>
 							<% end %>
 
 						</div>
@@ -190,7 +190,7 @@
 								</div>
 							</div>
 							<div class="col-md-4 col-md-offset-2 hidden-sm hidden-xs ">
-								<h2 class="title text-white" data-selector="h2">Location</h2>
+								<h2 class="title text-white" data-selector="h2"><%= t "index.location.title" %></h2>
 								<h3 class="sep-bottom text-white" data-selector="h3"><i class="icon-pointer"></i> 14 Newell Ave.</h3>
 								<p class="text-white">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible. </p>
 							</div>

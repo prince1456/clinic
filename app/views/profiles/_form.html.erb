@@ -9,6 +9,16 @@
                 <%= f.input :last_name %>
             </div>
           </div>
+          <% if current_user.role == "doctor" || current_user.role == "admin" %>
+            <div class="row ">
+              <div class="col-md-6 two-row-form">
+                  <%= f.input :first_name_arabic %>
+              </div>
+              <div class="col-md-6 two-row-form">
+                  <%= f.input :last_name_arabic %>
+              </div>
+            </div>
+          <% end %>
           <div class="row ">
             <div class="col-md-6 two-row-form">
               <%= f.input :address %>
@@ -52,11 +62,27 @@
               </div>
             </div>
           <% end %>
+          <% if current_user.role == "doctor" || current_user.role == "admin" %>
+            <div class="row ">
+              <div class="col-md-6 two-row-form">
+                  <%= f.input :bio_arabic %>
+              </div>
+              <div class="col-md-6 two-row-form">
+                  <%= f.input :position_arabic %>
+              </div>
+            </div>
+          <% end %>
           <div class="row ">
             <div class="col-md-6 two-row-form">
               <%= f.input :emr_phone, label: "Emergency Contact Number" %>
             </div>
-            <%= f.input :lang, input_html: {:value => "ar"}   %>
+            <div class="col-md-6 two-row-form">
+              <% if params[:locale] === "ar" %>
+                <%= f.input :lang, input_html: {:value => "ar"}   %>
+              <% else %>
+                <%= f.input :lang, input_html: {:value => "en"}   %>
+              <% end %>
+            </div>
           </div>
             <div class="col-md-8 two-row-form">
               <%= f.label :image %>

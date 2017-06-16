@@ -1,12 +1,15 @@
 ar:
   index:
+    introduction:
+      strong: "أرقى التكنولوجيا الطبية"
+      title: عناية خاصة واهتمام لكل مرضانا
+      button: "من نحن"
     doctors:
       title: "فرق العمل"
     posts:
       title: "مدونة إلكترونية"
     location:
       title: "موقع العيادة"
-
   patients:
     title: "قائمة المرضى "
     picture: "صورة"
