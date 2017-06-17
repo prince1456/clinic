@@ -2014,9 +2014,10 @@ a.panel-heading.collapsed:after {
 ----------------------------------------------------------------------------------------*/
 
 .screen {
-  width: 350px;
-  height: 350px;
+  width: 350px !important;
+  height: 350px !important;
 	padding-bottom: 40px
+	border-block
 }
 
 .container-half {
@@ -3891,4 +3892,28 @@ input:-moz-placeholder {
 }
 .wcu-column ul li{
 	line-height: 40px;
+}
+.name-doctor{
+	color: white;
+	font-size: 35px;
+	font-weight: bold;
+}
+.occupation-doctor{
+	color: white !important;
+	font-size: 28px;
+	font-weight: 300;
+}
+
+.editcontent-doctor{
+	color: white;
+
+}
+.img-doctor{
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ text-align: center;
+ margin-bottom: 24px;
+}
+
+.title-doctor{
+	
 }
