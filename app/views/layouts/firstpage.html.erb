@@ -28,17 +28,17 @@
         <div class="modal-content">
                  <div class="login-wrap">
                     <div class="login-html">
-                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><%= t "index.sign_in" %> </label>
                         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                         <div class="login-form">
                             <div class="sign-in-htm">
                               <%= simple_form_for(:user, :url => session_path(:user)) do |f| %>
                                 <div class="group">
-                                    <label for="user" class="label">Username</label>
+                                    <label for="user" class="label"><%= t "index.email" %></label>
                                      <%= f.input_field :email, required: false, autofocus: true, class: 'input' %>
                                 </div>
                                 <div class="group">
-                                    <label for="pass" class="label">Password</label>
+                                    <label for="pass" class="label"><%= t "index.password" %></label>
                                     <%= f.input_field :password, id:"pass",required: false, class: "input", placeholder:"Password" %>
                                 </div>
                                 <div class="group">

@@ -5,7 +5,6 @@ class PagesController < ApplicationController
     @posts = Post.all
     if params[:locale] === "ar"
       @doctors = User.where(role: "doctor").limit(3)
-      
       @posts = Post.where(lang: "ar")
     else
       @doctors = User.where(role: "doctor").order(updated_at: :desc).limit(3)

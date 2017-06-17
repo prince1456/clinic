@@ -1,5 +1,8 @@
 ar:
   index:
+    sign_in: "تسجيل الدخول"
+    email: "البريد الإلكتروني"
+    password: "كلمة السر "
     introduction:
       strong: "أرقى التكنولوجيا الطبية"
       title: عناية خاصة واهتمام لكل مرضانا
