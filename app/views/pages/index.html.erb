@@ -117,11 +117,11 @@
 									<% end %>
 							</div>
 									<div class="post-content">
-										<p class="title">
+
 											<%= link_to post_path(post) do  %>
-												<%= raw truncate( post.content, length: 80) %>
+												<%= strip_tags(post.content.first(100)) %>
 											<% end %>
-										</p>
+
 									</div>
 								</div>
 							</div>
