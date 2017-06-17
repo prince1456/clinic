@@ -26,6 +26,7 @@
 
 			<section id="why-choose-us" class="Why-choose-us">
 				<div class="container">
+					<center> <h2>hahahha salman</h2> </center>
 					<div class="col-md-4 col-xs-12 wcu-column">
 						<i class="fa fa-hospital-o fa-3x icon-why-choose" aria-hidden="true"> </i> <span class="span-why-title">Why choose us</span>
 							<br>
@@ -70,26 +71,30 @@
 
 			<section id="team" class="team-block team-member-sec">
 					<div class="container">
-						<h2 class="title text-center"><%= t "index.doctors.title" %></h2>
+						<h2 class="title text-center title-doctor"><%= t "index.doctors.title" %></h2>
 						<div class="row">
 							<% @doctors.each do |doctor| %>
 								<% if params[:locale] === "en" %>
 									<div class="col-sm-4">
+										<div class="img-doctor">
 										<%= link_to profile_path(doctor.profile) do %>
-													<%= image_tag doctor.profile.image, class: 'screen'%>
+													<%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
 										<% end %>
-										<h3 class="name"><%= doctor.profile.first_name %></h3>
-										<h4 class="occupation"><%= doctor.profile.position %></h4>
-										<p class="editContent"><%=  doctor.profile.bio  %></p>
+										</div>
+										<h3 class="name name-doctor"><%= doctor.profile.first_name %></h3>
+										<span class="occupation occupation-doctor"><%= doctor.profile.position %></span>
+										<p class="editContent editcontent-doctor"><%=  doctor.profile.bio  %></p>
 									</div>
 								<% else %>
 									<div class="col-sm-4">
+										<div class="img-doctor">
 										<%= link_to profile_path(doctor.profile) do %>
-													<%= image_tag doctor.profile.image, class: 'screen'%>
+													<%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
 										<% end %>
-										<h3 class="name"><%= doctor.profile.first_name_arabic %></h3>
-										<h4 class="occupation"><%= doctor.profile.position_arabic %></h4>
-										<p class="editContent"><%=  doctor.profile.bio_arabic  %></p>
+									</div>
+										<h3 class="name name-doctor"><%= doctor.profile.first_name_arabic %></h3>
+										<h4 class="occupation occupation-doctor"><%= doctor.profile.position_arabic %></h4>
+										<p class="editContent editcontent-doctor"><%=  doctor.profile.bio_arabic  %></p>
 									</div>
 								<% end %>
 							<% end %>
