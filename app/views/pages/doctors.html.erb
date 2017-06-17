@@ -1,17 +1,23 @@
 <% if params[:locale] === "ar" %>
   <br>
-  <h2><%= t "doctors.title" %></h2>
+  <center><h2><%= t "doctors.title" %></h2></center>
   <table class="table table-hover table-striped" >
     <thead>
       <tr>
-          <th><%= t "doctors.picture" %></th>
-          <th><%= t "doctors.name" %></th>
-          <th><%= t "doctors.last_name" %></th>
+          <th><center><%= t "doctors.name" %></center></th>
+          <th><center><%= t "doctors.last_name" %></center></th>
+          <th><center><%= t "doctors.picture" %></center></th>
       </tr>
     </thead>
     <tbody>
       <% @doctors.each do |doctor| %>
       <tr>
+        <td>
+          <%= doctor.profile.first_name %>
+        </td>
+        <td>
+          <%= doctor.profile.last_name %>
+        </td>
         <td> <%= link_to profile_path(doctor.profile) do %>
           <% if doctor.profile.image.present? %>
               <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
@@ -20,12 +26,38 @@
           <% end %>
             </td>
         <% end %>
+      </tr>
+          <% end %>
+    </tbody>
+  </table>
+  <% else %>
+  <br>
+  <center><h2><%= t "doctors.title" %></h2></center>
+  <table class="table table-hover table-striped" >
+    <thead>
+      <tr>
+          <th><%= t "doctors.name" %></th>
+          <th><%= t "doctors.last_name" %></th>
+          <th><%= t "doctors.picture" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @doctors.each do |doctor| %>
+      <tr>
+        <td>
+          <%= doctor.profile.last_name %>
+        </td>
         <td>
               <%= doctor.profile.first_name %>
         </td>
-        <td>
-              <%= doctor.profile.last_name %>
+        <td> <%= link_to profile_path(doctor.profile) do %>
+          <% if doctor.profile.image.present? %>
+          <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
+          <% else %>
+          <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
+          <% end %>
         </td>
+        <% end %>
       </tr>
           <% end %>
     </tbody>

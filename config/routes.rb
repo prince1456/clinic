@@ -6,10 +6,13 @@ Rails.application.routes.draw do
       post :mark_as_read
     end
   end
-
+  match "/en" => "pages#index", :via => [:get, :page]
   # Serve websocket cable requests in-process
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-  root to:  "pages#index"
+  # root to: "pages#index"
+  root to: redirect("pages#index", path: '/en?locale=en')
+  # map_match.root :controller => 'post#index', :locale => 'en'
+  # root :to => redirect('/en')
   mount ActionCable.server, at: '/cable'
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
