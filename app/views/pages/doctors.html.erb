@@ -1,31 +1,33 @@
-<br>
-<h2><%= t "doctors.title" %></h2>
-<table class="table table-hover table-striped">
-  <thead>
-    <tr>
-        <th><%= t "doctors.picture" %></th>
-        <th><%= t "doctors.name" %></th>
-        <th><%= t "doctors.last_name" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @doctors.each do |doctor| %>
-    <tr>
-      <td> <%= link_to profile_path(doctor.profile) do %>
-        <% if doctor.profile.image.present? %>
-            <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
-        <% else %>
-            <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
+<% if params[:locale] === "ar" %>
+  <br>
+  <h2><%= t "doctors.title" %></h2>
+  <table class="table table-hover table-striped" >
+    <thead>
+      <tr>
+          <th><%= t "doctors.picture" %></th>
+          <th><%= t "doctors.name" %></th>
+          <th><%= t "doctors.last_name" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @doctors.each do |doctor| %>
+      <tr>
+        <td> <%= link_to profile_path(doctor.profile) do %>
+          <% if doctor.profile.image.present? %>
+              <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
+          <% else %>
+              <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
+          <% end %>
+            </td>
         <% end %>
-          </td>
-      <% end %>
-      <td>
-            <%= doctor.profile.first_name %>
-      </td>
-      <td>
-            <%= doctor.profile.last_name %>
-      </td>
-    </tr>
-        <% end %>
-  </tbody>
-</table>
+        <td>
+              <%= doctor.profile.first_name %>
+        </td>
+        <td>
+              <%= doctor.profile.last_name %>
+        </td>
+      </tr>
+          <% end %>
+    </tbody>
+  </table>
+<% end %>

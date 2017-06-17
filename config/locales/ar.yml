@@ -1,6 +1,6 @@
 ar:
   index:
-    sign_in: "تسجيل الدخول"
+    sign_in: "تسجيل الدخول "
     email: "البريد الإلكتروني"
     password: "كلمة السر "
     introduction:
@@ -8,7 +8,7 @@ ar:
       title: عناية خاصة واهتمام لكل مرضانا
       button: "من نحن"
     doctors:
-      title: "فرق العمل"
+      title: "الأطباء"
     posts:
       title: "مدونة إلكترونية"
     location:

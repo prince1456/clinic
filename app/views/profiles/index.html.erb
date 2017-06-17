@@ -9,7 +9,6 @@
     <th><%= t "profiles.index.fullname" %></th>
     <th><%= t "profiles.index.phonenumber" %></th>
     <th><%= t "profiles.index.address" %></th>
-    <th>last visit</th>
   </thead>
   <tbody>
     <% @profiles.each do |profile| %>
@@ -22,7 +21,6 @@
       <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
       <td><%= profile.phone_number %></td>
       <td><%= profile.address %></td>
-      <td>faf</td>
     <% end %>
     </tr>
   </tbody>
