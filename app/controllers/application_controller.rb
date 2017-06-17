@@ -32,11 +32,11 @@ class ApplicationController < ActionController::Base
  end
 
  def set_locale
-   I18n.locale = params[:locale] if params[:locale].present?
+   I18n.locale = params[:locale] || I18n.default_locale
  end
 
  def default_url_options(options = {})
-   {locale: I18n.locale}
+   {locale: I18n.locale}.merge options
  end
 
   # def after_sign_in_path_for(resource)
