@@ -48,6 +48,7 @@
   </div>
 </nav>
 <% else %>
+<<<<<<< HEAD
 <nav class="navbar navbar-default navbar-fixed-top bg-nav-front bg-nav-front">
   <div class="container">
     <div class="navbar-header">
@@ -94,4 +95,52 @@
     <!--/.nav-collapse -->
   </div>
 </nav>
+=======
+  <nav class="navbar navbar-default navbar-fixed-top bg-nav-front bg-nav-front">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed round-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'Abdulrahman Clinic', root_path, class: 'navbar-brand' %>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <div class="login-panel">
+          <%=link_to new_user_registration_path, class: 'btn btn-primary' do %>
+          Sign Up
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+          <% end %>
+        </div>
+        <div class="login-panel">
+          <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#signup">Sign In
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+          </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <% if params[:id].present? %>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li>
+        <% else %>
+          <li>
+            <a href="../#team-border">Our Team</a>
+          </li>
+          <li>
+            <a href="#blog">Blog</a>
+          </li>
+          <li>
+            <a href="#maps">Location<span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li><%=link_to "Switch to Arabic", locale: "ar" %>
+           </li>
+          <% end %>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+>>>>>>> f08fe2483a7792bf1164928e241b13d57f10f276
 <% end %>
