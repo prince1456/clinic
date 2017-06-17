@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # Serve websocket cable requests in-process
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
-  root to:  "pages#index"
+  root to: "pages#index"
   mount ActionCable.server, at: '/cable'
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
