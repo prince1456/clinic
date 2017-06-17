@@ -52,24 +52,6 @@
               <%= f.input :emr_name, label: "Emergency Contact Name" %>
             </div>
           </div>
-          <% if current_user.role == "doctor" || current_user.role == "admin" %>
-            <div class="row">
-              <div class=" col-md-6 two-row-form">
-                <%= f.input :bio, as: :string%>
-              </div>
-              <div class="col-md-6  two-row-form">
-                <%= f.input :position%>
-              </div>
-            </div>
-            <div class="row ">
-              <div class="col-md-6 two-row-form">
-                  <%= f.input :bio_arabic , as: :string %>
-              </div>
-              <div class="col-md-6 two-row-form">
-                  <%= f.input :position_arabic %>
-              </div>
-            </div>
-          <% end %>
           <div class="row ">
             <div class="col-md-6 two-row-form">
               <%= f.input :emr_phone, label: "Emergency Contact Number" %>
@@ -82,10 +64,43 @@
               <% end %>
             </div>
           </div>
-            <div class="col-md-8 two-row-form">
-              <%= f.label :image %>
-              <%= f.file_field :image %>
-            </div>
+          <% if current_user.role == "doctor" || current_user.role == "admin" %>
+              <% if params[:locale] === "ar" %>
+                <div class="row ">
+                  <div class="col-md-12">
+                    <%= f.label "Biography" %>
+                    <%= f.cktext_area :bio_arabic , as: :string %>
+                  </div>
+                </div>
+
+                  <div class="row">
+                      <div class="col-md-6 two-row-form">
+                        <%= f.input :position_arabic %>
+                      </div>
+                      <div class="col-md-6 two-row-form">
+                        <%= f.label :image %>
+                        <%= f.file_field :image %>
+                      </div>
+                  </div>
+                <% else %>
+                  <div class="row">
+                    <div class=" col-md-12">
+                      <%= f.label "Biography" %>
+                      <%= f.cktext_area :bio, as: :string%>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6  two-row-form">
+                        <%= f.input :position%>
+                      </div>
+                      <div class="col-md-6 two-row-form">
+                        <%= f.label :image %>
+                        <%= f.file_field :image %>
+                      </div>
+                  </div>
+                  <% end %>
+          <% end %>
+
             <hr>
           <br>
           <%= f.submit class: 'btn, btn-default' %>
