@@ -36,20 +36,14 @@
   <table class="table table-hover table-striped" >
     <thead>
       <tr>
-          <th><%= t "doctors.name" %></th>
+        <th><%= t "doctors.picture" %></th>
+        <th><%= t "doctors.name" %></th>
           <th><%= t "doctors.last_name" %></th>
-          <th><%= t "doctors.picture" %></th>
       </tr>
     </thead>
     <tbody>
       <% @doctors.each do |doctor| %>
       <tr>
-        <td>
-          <%= doctor.profile.last_name %>
-        </td>
-        <td>
-              <%= doctor.profile.first_name %>
-        </td>
         <td> <%= link_to profile_path(doctor.profile) do %>
           <% if doctor.profile.image.present? %>
           <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
@@ -58,6 +52,12 @@
           <% end %>
         </td>
         <% end %>
+        <td>
+          <%= doctor.profile.last_name %>
+        </td>
+        <td>
+          <%= doctor.profile.first_name %>
+        </td>
       </tr>
           <% end %>
     </tbody>
