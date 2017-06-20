@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  sidebar:
+    dashboard: "Dashboard"
+    doctors: "Doctors"
+    pastients: "Pastients"
   index:
     introduction:
       strong: "Advanced Medicine."

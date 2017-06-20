@@ -9,7 +9,7 @@
           <h2><%= @profile.first_name.capitalize %> <%= @profile.last_name.capitalize %></h2>
           <small><cite title="San Francisco, USA"><%= @profile.address %><i class="glyphicon glyphicon-map-marker">
                         </i></cite></small>
-          <h4><i class="glyphicon glyphicon-envelope"></i> <%= current_user.email %></h4>
+          <h4><i class="glyphicon glyphicon-envelope"></i> <%= @profile.user.email %></h4>
           <% if @profile.job.present? %>
             <h4><i class="glyphicon glyphicon-briefcase"></i> <%= @profile.job.capitalize %></h4>
           <% end %>

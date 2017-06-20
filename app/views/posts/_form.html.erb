@@ -6,12 +6,7 @@
       <%= f.input :picture %>
       <%= f.input :video %>
       <%= f.input :attachments %>
-      <% if params[:locale] === "ar" %>
-        <%= f.input :lang,:input_html => { :value => 'ar' } %>
-      <% else %>
-        <% f.input :lang, :input_html => { :value => 'en' } %>
-      <% end %>
-
+      <%= f.input :lang, collection: [:ar, :en] %>
       <%= f.button :submit %>
     <% end %>
 </div>

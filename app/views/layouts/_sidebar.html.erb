@@ -1,27 +1,27 @@
 		<ul class="nav menu text-center">
       <% if current_user.role == "admin" %>
           <li class="active"><%= link_to dashboard_path do %>
-																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+																<i class="fa fa-tachometer" aria-hidden="true"></i> <%= t "sidebar.dashboard" %>
 															<% end %>
 					</li>
 					<li><%= link_to doctors_path do %>
-						<i class="fa fa-user-md" aria-hidden="true"></i> Doctors
+						<i class="fa fa-user-md" aria-hidden="true"></i> <%= t "sidebar.doctors" %>
 						<% end %>
 					</li>
 					<li><%= link_to  patients_path do %>
-						<i class="fa fa-user-md" aria-hidden="true"></i> Patients
+						<i class="fa fa-user-md" aria-hidden="true"></i> <%= t "sidebar.patients" %>
 						<% end %>
 					</li>
 					<li><%= link_to posts_path do %>
-							<i class="fa fa-rss" aria-hidden="true"></i> Posts</a>
+							<i class="fa fa-rss" aria-hidden="true"></i> <%= t "sidebar.posts" %></a>
 							<% end %>
 						</li>
 					<li><%= link_to profiles_path do %>
-									<i class="fa fa-users" aria-hidden="true"></i> Profile
+									<i class="fa fa-users" aria-hidden="true"></i> <%= t "sidebar.profile" %>
 							<% end %>
 					</li>
 					<li><%= link_to chats_path do %>
-						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<i class="fa fa-comments" aria-hidden="true"></i><%= t "sidebar.chats" %>
 						<% end %>
 					</li>
 					<li>
