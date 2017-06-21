@@ -1,3 +1,4 @@
+<% if params[:locale] === "ar" %>
 		<ul class="nav menu text-center">
       <% if current_user.role == "admin" %>
           <li class="active"><%= link_to dashboard_path do %>
@@ -25,10 +26,9 @@
 						<% end %>
 					</li>
 					<li>
-						<%= link_to_unless_current "Switch to English", locale: "en" %>
-						|
-						<%= link_to "Switch to Arabic", locale: "ar" %>
-
+						<li>
+							<%=link_to "Switch to English", locale: "en" %>
+						</li>
 					</li>
       <% elsif current_user.role == 'doctor' %>
 					<li class="active"><%= link_to dashboard_path do %>
@@ -51,6 +51,9 @@
 								<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Patients</a>
 							<% end %>
 					</li>
+					<li>
+						<%=link_to "Switch to English", locale: "en" %>
+					</li>
 
       <% else %>
 					<li class="active"><%= link_to dashboard_path do %>
@@ -64,6 +67,9 @@
 						<i class="fa fa-comments" aria-hidden="true"></i> Chats
 						<% end %>
 					</li>
+					<li>
+						<%=link_to "Switch to English", locale: "en" %>
+					</li>
       <% end %>
 				</ul>
 			</li>
@@ -72,3 +78,84 @@
 		</ul>
 		<br>
 		<div class="attribution">Proudly developed by  <a href="http://www.uppercaseyvr.com">Uppercase</a></div>
+<% else %>
+		<ul class="nav menu text-center">
+			<% if current_user.role == "admin" %>
+					<li class="active"><%= link_to dashboard_path do %>
+																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+															<% end %>
+					</li>
+					<li><%= link_to doctors_path do %>
+						<i class="fa fa-user-md" aria-hidden="true"></i> Doctors
+						<% end %>
+					</li>
+					<li><%= link_to  patients_path do %>
+						<i class="fa fa-user-md" aria-hidden="true"></i> Patients
+						<% end %>
+					</li>
+					<li><%= link_to posts_path do %>
+							<i class="fa fa-rss" aria-hidden="true"></i> Posts</a>
+							<% end %>
+						</li>
+					<li><%= link_to profiles_path do %>
+									<i class="fa fa-users" aria-hidden="true"></i> Profile
+							<% end %>
+					</li>
+					<li><%= link_to chats_path do %>
+						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<% end %>
+					</li>
+					<li>
+						<li>
+							<%=link_to "Switch to Arabic", locale: "ar" %>
+						</li>
+					</li>
+			<% elsif current_user.role == 'doctor' %>
+					<li class="active"><%= link_to dashboard_path do %>
+																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+															<% end %>
+					</li>
+					<li><%= link_to profiles_path do %>
+									<i class="fa fa-users" aria-hidden="true"></i> Profile
+							<% end %>
+					</li>
+					<li><%= link_to posts_path do %>
+						<i class="fa fa-rss" aria-hidden="true"></i> Posts</a>
+						<% end %>
+					</li>
+					<li><%= link_to chats_path do %>
+						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<% end %>
+					</li>
+					<li><%= link_to  patients_path do %>
+								<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Patients</a>
+							<% end %>
+					</li>
+					<li>
+						<%=link_to "Switch to Arabic", locale: "ar" %>
+					</li>
+
+			<% else %>
+					<li class="active"><%= link_to dashboard_path do %>
+																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+															<% end %>
+					</li>
+					<li><%= link_to profile_path(current_user.profile.id) do %>
+									<i class="fa fa-users" aria-hidden="true"></i> Profile
+							<% end %></li>
+					<li><%= link_to chats_path do %>
+						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<% end %>
+					</li>
+					<li>
+						<%=link_to "Switch to Arabic", locale: "ar" %>
+					</li>
+			<% end %>
+				</ul>
+			</li>
+			<li role="presentation" class="divider"></li>
+			<!-- <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li> -->
+		</ul>
+		<br>
+	<div class="attribution">Proudly developed by  <a href="http://www.uppercaseyvr.com">Uppercase</a></div>
+<% end %>

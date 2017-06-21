@@ -3915,5 +3915,12 @@ input:-moz-placeholder {
 }
 
 .title-doctor{
-	
+
+}
+
+
+@media (max-width: 767px){
+.panel-heading {
+    height: 100px;
+	}
 }
