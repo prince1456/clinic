@@ -7,7 +7,7 @@ class DirectoriesController < ApplicationController
     if @directory.save
       redirect_to profile_path(@profile), notice: "file uploaded"
     else
-      render "/profiles/show", alert: "can't upload"
+        redirect_to profile_path(@profile), alert: "can't upload"
     end
   end
   def edit

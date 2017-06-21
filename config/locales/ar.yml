@@ -1,4 +1,22 @@
 ar:
+  sidebar:
+    dashboard: "اللوحة الرئيسية"
+    doctors: "الأطباء"
+    patients: "المرضى "
+    posts: "مدونة إلكترونية"
+    profile: "الملف الشخصي"
+    chats: "الدردشة وإرسال رسائل"
+  pages:
+    dashboard:
+      doctors: "عدد الاطباء"
+      blog: "مدونة إلكترونية"
+      patients: "عدد المرضى"
+      notification: "الإشعارات"
+      body:
+        blog: "مدونة إلكترونية"
+        title: "عنوان"
+        content: "مضمون"
+        comment: "عدد تعليقات"
   index:
     sign_in: "تسجيل الدخول "
     email: "البريد الإلكتروني"

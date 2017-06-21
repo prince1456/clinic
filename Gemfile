@@ -11,6 +11,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'fog'

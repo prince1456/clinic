@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :find_params, only: [:edit, :show, :update, :destory]
+  before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
   def index
     @search = Profile.search(params[:q])
     @profiles = @search.result
@@ -22,8 +23,10 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    redirect_to root_path, alert: "access defined" unless can? :edit, @profile
   end
   def update
+    redirect_to root_path, alert: "access defined" unless can? :update, @profile
     if @profile.update strong_params
       redirect_to profile_path(@profile), notice: "profile updated"
     else

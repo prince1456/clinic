@@ -14,7 +14,7 @@
                       </div>
                       <div class="col-sm-9 col-lg-7 widget-right">
                         <div class="large"><%= @users.where(role: "doctor").count %></div>
-                        <div class="text-muted">Doctors</div>
+                        <div class="text-muted"><%= t "pages.dashboard.doctors" %></div>
                       </div>
                     </div>
                   </div>
@@ -27,7 +27,7 @@
                       </div>
                       <div class="col-sm-9 col-lg-7 widget-right">
                         <div class="large"><%= @posts.count %></div>
-                        <div class="text-muted">Blogs Post</div>
+                        <div class="text-muted"><%= t "pages.dashboard.blog" %></div>
                       </div>
                     </div>
                   </div>
@@ -40,7 +40,7 @@
                       </div>
                       <div class="col-sm-9 col-lg-7 widget-right">
                         <div class="large"><%= @users.where(role: "patient").count %></div>
-                        <div class="text-muted">Comments</div>
+                        <div class="text-muted"><%= t "pages.dashboard.patients" %></div>
                       </div>
                     </div>
                   </div>
@@ -53,7 +53,7 @@
                       </div>
                       <div class="col-sm-9 col-lg-7 widget-right">
                         <div class="large" data-behavior='unread-count'></div>
-                        <div class="text-muted">Notification</div>
+                        <div class="text-muted"><%= t "pages.dashboard.notification" %></div>
                       </div>
                     </div>
                   </div>
@@ -63,14 +63,14 @@
               <div class="row">
                   <div class="col-md-12">
             				<div class="panel panel-default">
-            					<div class="panel-heading">Blog Post</div>
+            					<div class="panel-heading"><%= t "pages.dashboard.body.blog" %></div>
             					<div class="panel-body">
             						<table class=" table table-style">
             						    <thead>
             						    <tr>
-            						        <th><center>Title</center></th>
-            						        <th><center>Content</center></th>
-            						        <th><center>Last comment</center></th>
+            						        <th><center><%= t "pages.dashboard.body.title" %></center></th>
+            						        <th><center><%= t "pages.dashboard.body.content" %></center></th>
+            						        <th><center><%= t "pages.dashboard.body.comment" %></center></th>
             						    </tr>
             						    </thead>
                             <tbod>

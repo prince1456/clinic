@@ -9,7 +9,7 @@
           <h2><%= @profile.first_name.capitalize %> <%= @profile.last_name.capitalize %></h2>
           <small><cite title="San Francisco, USA"><%= @profile.address %><i class="glyphicon glyphicon-map-marker">
                         </i></cite></small>
-          <h4><i class="glyphicon glyphicon-envelope"></i> <%= current_user.email %></h4>
+          <h4><i class="glyphicon glyphicon-envelope"></i> <%= @profile.user.email %></h4>
           <% if @profile.job.present? %>
             <h4><i class="glyphicon glyphicon-briefcase"></i> <%= @profile.job.capitalize %></h4>
           <% end %>
@@ -22,7 +22,10 @@
           <% end %>
           <p><%= @profile.bio %></p>
           <h5><%= @profile.lang %></h5>
-          <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
+          <%= current_user.role %>
+          <% if can? :manage, @profile  %>
+            <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -49,8 +52,16 @@
       <tr>
         <td><%= d.user.profile.first_name %></td>
         <td><%= d.name %></td>
-        <td><a class="btn btn-lik" href='<%= d.file.url  %>' download>
-                <%= File.basename(d.file.url) %>
+        <td><a class="btn btn-lik" href='<%= d.file.url  %>'>
+                <% if  d.file.file.extension == "docx" %>
+                  <i class="fa fa-2x fa-file-word-o" aria-hidden="true"></i>
+                <% elsif d.file.file.extension == "pdf" %>
+                  <i class="fa fa-2x fa-file-pdf-o" aria-hidden="true"></i>
+                <% elsif d.file.file.extension == "xslx" %>
+                  <i class="fa fa-2x fa-file-excel-o" aria-hidden="true"></i>
+                <% else %>
+                  <%= d.file.file.extension %>
+                <% end %>
               </a></td>
         <td><%= d.created_at %></h3></td>
       <td><%= link_to "Edit", edit_profile_directory_path(@profile, d) %>
