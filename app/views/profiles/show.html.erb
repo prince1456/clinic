@@ -22,7 +22,6 @@
           <% end %>
           <p><%= @profile.bio %></p>
           <h5><%= @profile.lang %></h5>
-          <%= current_user.role %>
           <% if can? :manage, @profile  %>
             <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
           <% end %>
