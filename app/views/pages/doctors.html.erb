@@ -1,12 +1,12 @@
 <% if params[:locale] === "ar" %>
   <br>
   <center><h2><%= t "doctors.title" %></h2></center>
-  <table class="table table-hover table-striped" >
+  <table class="table table-hover table-striped text-right " >
     <thead>
-      <tr>
-          <th><center><%= t "doctors.name" %></center></th>
-          <th><center><%= t "doctors.last_name" %></center></th>
-          <th><center><%= t "doctors.picture" %></center></th>
+      <tr class="text-right">
+          <th class="text-right"><%= t "doctors.name" %></th>
+          <th class="text-right"><%= t "doctors.last_name" %></th>
+          <th class="text-right"><%= t "doctors.picture" %></th>
       </tr>
     </thead>
     <tbody>
