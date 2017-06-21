@@ -1,29 +1,63 @@
-<%= search_form_for @search do |f|%>
-  <%= f.label :first_name_cont, "name" %>
-  <%= f.text_field :first_name_cont %>
-  <%= f.submit "Search" %>
-<% end  %>
-<table class="table table-responsive table-striped">
-  <thead>
-    <th><%= t "profiles.index.picture" %></th>
-    <th><%= t "profiles.index.fullname" %></th>
-    <th><%= t "profiles.index.phonenumber" %></th>
-    <th><%= t "profiles.index.address" %></th>
-  </thead>
-  <tbody>
-    <% @profiles.each do |profile| %>
-    <tr>
-      <% if profile.image.present? %>
-        <td><%=image_tag profile.image_url(:thumb), :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
-      <% else %>
-        <td><%= image_tag "default.png", :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
-      <% end %>
-      <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
-      <td><%= profile.phone_number %></td>
-      <td><%= profile.address %></td>
-    <% end %>
-    </tr>
-  </tbody>
-
-
-</table>
+<% if params[:locale] == "en" %>
+    <div class="col-md-4">
+        <%= search_form_for @search, class:"form-inline " do |f|%>
+        <div class="form-group">
+          <%= f.text_field :first_name_cont, class: "form-control", placeholder: "Search by name" %>
+        </div>
+          <%= f.submit "Search", class: "btn btn-default" %>
+        <% end  %>
+    </div>
+    <table class="table table-responsive table-striped">
+      <thead>
+        <th><%= t "profiles.index.picture" %></th>
+        <th><%= t "profiles.index.fullname" %></th>
+        <th><%= t "profiles.index.phonenumber" %></th>
+        <th><%= t "profiles.index.address" %></th>
+      </thead>
+      <tbody>
+        <% @profiles.each do |profile| %>
+        <tr>
+          <% if profile.image.present? %>
+            <td><%=image_tag profile.image_url(:thumb), :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+          <% else %>
+            <td><%= image_tag "default.png", :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+          <% end %>
+          <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
+          <td><%= profile.phone_number %></td>
+          <td><%= profile.address %></td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+<% else %>
+<div class="col-md-4 pull-right">
+    <%= search_form_for @search, class:"form-inline " do |f|%>
+    <div class="form-group">
+      <%= f.text_field :first_name_cont, class: "form-control", placeholder: "Search by name" %>
+    </div>
+      <%= f.submit "Search", class: "btn btn-default" %>
+    <% end  %>
+</div>
+    <table class="table table-responsive table-striped text-right">
+      <thead>
+        <th class="text-right"><%= t "profiles.index.picture" %></th>
+        <th class="text-right"><%= t "profiles.index.fullname" %></th>
+        <th class="text-right"><%= t "profiles.index.phonenumber" %></th>
+        <th class="text-right"><%= t "profiles.index.address" %></th>
+      </thead>
+      <tbody>
+        <% @profiles.each do |profile| %>
+        <tr>
+          <% if profile.image.present? %>
+            <td><%=image_tag profile.image_url(:thumb), :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+          <% else %>
+            <td><%= image_tag "default.png", :size => "70x70 ", class: 'img-responsive img-rounded'  %></td>
+          <% end %>
+          <td><%= link_to "#{profile.first_name} #{profile.last_name}", profile_path(profile) %></td>
+          <td><%= profile.phone_number %></td>
+          <td><%= profile.address %></td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+<% end %>
