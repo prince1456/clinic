@@ -26,7 +26,7 @@
 
 			<section id="why-choose-us" class="Why-choose-us">
 				<div class="container">
-					<center> <h2>hahahha salman</h2> </center>
+					<center> <h2></h2> </center>
 					<div class="col-md-4 col-xs-12 wcu-column">
 						<i class="fa fa-hospital-o fa-3x icon-why-choose" aria-hidden="true"> </i> <span class="span-why-title">Why choose us</span>
 							<br>
@@ -83,7 +83,7 @@
 										</div>
 										<h3 class="name name-doctor"><%= doctor.profile.first_name %></h3>
 										<span class="occupation occupation-doctor"><%= doctor.profile.position %></span>
-										<p class="editContent editcontent-doctor"><%=  doctor.profile.bio  %></p>
+										<p class="editContent editcontent-doctor"><%=  strip_tags(doctor.profile.bio)  %></p>
 									</div>
 								<% else %>
 									<div class="col-sm-4">
@@ -94,7 +94,8 @@
 									</div>
 										<h3 class="name name-doctor"><%= doctor.profile.first_name_arabic %></h3>
 										<h4 class="occupation occupation-doctor"><%= doctor.profile.position_arabic %></h4>
-										<p class="editContent editcontent-doctor"><%=  doctor.profile.bio_arabic  %></p>
+										<p class="editContent editcontent-doctor"><%=  strip_tags(doctor.profile.bio_arabic)  %></p>
+
 									</div>
 								<% end %>
 							<% end %>

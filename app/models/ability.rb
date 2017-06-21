@@ -7,9 +7,11 @@ class Ability
     can :manage, Post do |post|
       post.user == user
     end
-    can :manage, Post do
-       User.where(role: "admin")
+    can :manage, Profile do |profile|
+      profile.user ==  user
     end
+
+
 
     # can :manage, Comment do |comment|
     #   comment.user == user
@@ -17,11 +19,11 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
   # guest user (not logged in)
-      # if user_admin?
-      #   can :manage, :all
-      # else
-      #   can :read, :all
-      # end
+       if user.role == "admin"
+         can :manage, :all
+       else
+         can :read, :all
+       end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
