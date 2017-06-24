@@ -1,7 +1,8 @@
 <div class="container chats">
     <div class="col-md-12 col-sd-12 col-xs-12">
           <div class="col-md-6 col-sm-6 col-xs-12">
-                <h2>All Users: <%= paginate @users %></h2>
+                <h2> <%= t "chats.index.users" %></h2>
+                <%= paginate @users %>
                 <table class="table table-hover">
                   <tbody>
                       <% if current_user.role == "admin" || current_user.role == "doctor" %>
@@ -45,7 +46,7 @@
                 </table>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
-              <h2>Chat history:</h2>
+              <h2><%= t "chats.index.history" %>:</h2>
                   <table class="table table-hover">
                     <tbody>
                      <% if @existing_chats_users %>

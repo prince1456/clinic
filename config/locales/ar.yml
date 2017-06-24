@@ -1,4 +1,21 @@
 ar:
+  will_paginate:
+    previous_label: "&#8594; سابق"
+    next_label: "التالى &#8592 "
+    page_gap: "&hellip;"
+  links:
+    edit: "تحديث"
+    delete: "حذف"
+    new: "منشور جديد"
+  helpers:
+    submit:
+      create: "إنشاء"
+      update: " حفظ"
+      search: "بحث"
+  chats:
+    index:
+      history: "جهات الاتصال"
+      users: "جميع المستخدمين"
   sidebar:
     dashboard: "اللوحة الرئيسية"
     doctors: "الأطباء"
@@ -47,13 +64,23 @@ ar:
         fullname: "اسم"
         phonenumber:  "رقم الهاتف"
         address: "محل الاقامة"
+        placeholder: "بحث"
   posts:
     index:
+      number_posts: "عدد المنشورات"
       id: "الرقم التسلسلي"
       title: "عنوان"
       content: "مضمون"
       auther: "مؤلف"
+      placeholder: "بحث"
+    show:
+      by: "بواسطة"
+      comment: "اترك تعليقا"
   activerecord:
+    errors:
+      messages:
+         record_invalid: 'فشل التحقّق من: %{errors}'
+
     attributes:
       user:
         email: "البريد الإلكتروني "

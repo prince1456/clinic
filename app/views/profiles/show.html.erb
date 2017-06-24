@@ -52,6 +52,7 @@
         <td><%= d.user.profile.first_name %></td>
         <td><%= d.name %></td>
         <td><a class="btn btn-lik" href='<%= d.file.url  %>'>
+          <% if d.file.file.present? %>
                 <% if  d.file.file.extension == "docx" %>
                   <i class="fa fa-2x fa-file-word-o" aria-hidden="true"></i>
                 <% elsif d.file.file.extension == "pdf" %>
@@ -61,6 +62,7 @@
                 <% else %>
                   <%= d.file.file.extension %>
                 <% end %>
+            <% end %>
               </a></td>
         <td><%= d.created_at %></h3></td>
       <td><%= link_to "Edit", edit_profile_directory_path(@profile, d) %>

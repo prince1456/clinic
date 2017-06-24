@@ -22,6 +22,7 @@ gem 'faker'
 gem 'country_select'
 gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
+gem 'will_paginate'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

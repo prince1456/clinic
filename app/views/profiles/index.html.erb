@@ -2,9 +2,9 @@
     <div class="col-md-4">
         <%= search_form_for @search, class:"form-inline " do |f|%>
         <div class="form-group">
-          <%= f.text_field :first_name_cont, class: "form-control", placeholder: "Search by name" %>
+          <%= f.text_field :first_name_cont, class: "form-control", placeholder: t("profiles.index.placeholder") %>
         </div>
-          <%= f.submit "Search", class: "btn btn-default" %>
+          <%= f.submit t("helpers.submit.search"), class: "btn btn-default" %>
         <% end  %>
     </div>
     <table class="table table-responsive table-striped">
@@ -33,9 +33,9 @@
 <div class="col-md-4 pull-right">
     <%= search_form_for @search, class:"form-inline " do |f|%>
     <div class="form-group">
-      <%= f.text_field :first_name_cont, class: "form-control", placeholder: "Search by name" %>
+      <%= f.text_field :first_name_cont, class: "form-control", placeholder:  "بحث" %>
     </div>
-      <%= f.submit "Search", class: "btn btn-default" %>
+      <%= f.submit "بحث", class: "btn btn-default" %>
     <% end  %>
 </div>
     <table class="table table-responsive table-striped text-right">

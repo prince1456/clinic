@@ -1,35 +1,37 @@
 <% if params[:locale] === "ar" %>
   <br>
+
   <center><h2><%= t "doctors.title" %></h2></center>
   <table class="table table-hover table-striped text-right " >
     <thead>
       <tr class="text-right">
+        <th class="text-right"><%= t "doctors.picture" %></th>
           <th class="text-right"><%= t "doctors.name" %></th>
           <th class="text-right"><%= t "doctors.last_name" %></th>
-          <th class="text-right"><%= t "doctors.picture" %></th>
       </tr>
     </thead>
     <tbody>
       <% @doctors.each do |doctor| %>
       <tr>
-        <td>
-          <%= doctor.profile.first_name %>
-        </td>
-        <td>
-          <%= doctor.profile.last_name %>
-        </td>
         <td> <%= link_to profile_path(doctor.profile) do %>
           <% if doctor.profile.image.present? %>
-              <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
+          <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
           <% else %>
-              <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
+          <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
           <% end %>
-            </td>
+        </td>
+        <td>
+          <%= doctor.profile.first_name_arabic %>
+        </td>
+        <td>
+          <%= doctor.profile.last_name_arabic %>
+        </td>
         <% end %>
       </tr>
           <% end %>
     </tbody>
   </table>
+  <%= will_paginate @doctors %>
   <% else %>
   <br>
   <center><h2><%= t "doctors.title" %></h2></center>
@@ -62,4 +64,5 @@
           <% end %>
     </tbody>
   </table>
+  <%= will_paginate @doctors %>
 <% end %>

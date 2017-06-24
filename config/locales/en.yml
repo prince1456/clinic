@@ -20,6 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  posts:
+    index:
+      placeholder: "search by title"
+  profiles:
+    index:
+      placeholder: "search by name"
+  helpers:
+    submit:
+      search: "search"
+  links:
+    new: "New Post"
+  chats:
+    index:
+      history: "Chat history"
+      users: "All Users"
   sidebar:
     dashboard: "Dashboard"
     doctors: "Doctors"
@@ -37,3 +52,5 @@ en:
       title: "Location"
   patients:
     title: "List of patients"
+  doctors:
+    title: "List of Doctors"  

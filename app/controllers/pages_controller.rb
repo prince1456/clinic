@@ -15,7 +15,10 @@ class PagesController < ApplicationController
   end
 
   def doctors
-      @doctors = User.where(role: "doctor" )
+    q = params[:q]
+      @search = User.search(params[:q])
+      @doctors = @search.result.where(role: "doctor").paginate(page: params[:page], :per_page => 5)
+      # @doctors = User.where(role: "doctor" ).paginate(:page => params[:page], :per_page => 5)
   end
 
   def dashboard
@@ -27,11 +30,14 @@ class PagesController < ApplicationController
 
   end
   def patients
-    @patients = User.where(role: "patient")
+    @search = User.search(params[:q])
+    @patients = @search.result.where(role: "patient").paginate(page: params[:page], :per_page => 10)
+    # @patients = User.where(role: "patient").paginate(:page => params[:page], :per_page => 10)
   end
   def blogs
     @search = Post.search(params[:q])
     @posts = @search.result
+
   end
   def about
 

@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <%= link_to 'عيادات الدكتور عبدالرحمن', root_path, class: 'navbar-brand pull-right' %>
+    <%= link_to 'عيادات الدكتور عبدالرحمن', "/en?locale=ar", class: 'navbar-brand pull-right' %>
     <div id="navbar" class="navbar-collapse collapse">
         <% if !current_user %>
           <div class="login-panel-ar login-panel hidden-xs hidden-sm">
@@ -45,12 +45,12 @@
         </li>
           <% if current_user.present? %>
             <li>
-              <a href="en/dashboard">dashboard</a>
+              <a href="ar/dashboard">اللوحة الرئيسية</a>
             </li>
             <li>
               <%= link_to destroy_user_session_path, :method => :delete, class: "text-center" do  %>
                   <i class="fa fa-sign-out" aria-hidden="true"></i>
-                  Logout
+                  تسجيل الخروج
               <% end %>
             </li>
           <% else %>

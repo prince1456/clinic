@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   layout "firstpage", only: [:show]
   def index
     @search = Post.search(params[:q])
-    @posts = @search.result
+    @posts = @search.result.paginate(page: params[:page], :per_page => 10 )
   end
   def new
     @post = Post.new

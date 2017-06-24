@@ -8,7 +8,7 @@
                 <h1><%= @post.title %></h1>
                 <!-- Author -->
                 <p class="lead">
-                    by <a href="#"><%= @post.author %></a>
+                    <%= t "posts.show.by" %> <a href="#"><%= @post.author %></a>
                 </p>
                 <hr>
                 <!-- Date/Time -->
@@ -33,16 +33,20 @@
                 <% end  %>
                 <% if current_user.role == "admin"  %>
                   <% if can? :manage, @post %>
-                    <%= link_to 'Edit', edit_post_path(@post) %>
-                    <%= link_to "Delete",post_path(@post),
+                    <%= link_to t('links.edit'), edit_post_path(@post), class: "btn btn-default" %>
+                    <%= link_to t('links.delete'),post_path(@post),
                                       method: :Delete,
-                                      data: {confirm: "Are you sure?"}%>
+                                      data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
                     <% end %>
                 <% end %>
                 <% if @post.liked_by?(current_user) %>
-                  <%= link_to "liked", post_like_path(@post, @post.like_for(current_user)) ,method: :delete %>
+                  <%= link_to post_like_path(@post, @post.like_for(current_user)) ,method: :delete  do %>
+                    <i class="fa fa-2x fa-thumbs-o-down" aria-hidden="true"></i>
+                  <% end %>
                 <% else %>
-                  <%= link_to "like" ,post_likes_path(@post) ,method: :post %>
+                  <%= link_to post_likes_path(@post) ,method: :post do %>
+                    <i class="fa fa-2x fa-thumbs-o-up" aria-hidden="true"></i>
+                  <% end %>
                 <% end %>
                 (<%= @post.likes.count %>)
                 <!-- Blog Comments -->
@@ -51,7 +55,7 @@
                   <!-- Comments Form -->
                     <div class="well">
                         <% if current_user.present?   %>
-                            <h4>Leave a Comment:</h4>
+                            <h4><%= t "posts.show.comment" %>:</h4>
                               <%= render "/comments/form" %>
                             <% else %>
                               <h4> For sending comment you need to sign in</h4>
