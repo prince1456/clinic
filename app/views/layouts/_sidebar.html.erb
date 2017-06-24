@@ -1,5 +1,5 @@
 <% if params[:locale] === "ar" %>
-		<ul class="nav menu text-center">
+		<ul class="nav text-center">
       <% if current_user.role == "admin" %>
           <li class="active"><%= link_to dashboard_path do %>
 																<i class="fa fa-tachometer" aria-hidden="true"></i> <%= t "sidebar.dashboard" %>
@@ -71,7 +71,7 @@
 						<%=link_to "Switch to English", locale: "en" %>
 					</li>
       <% end %>
-				</ul>
+
 			</li>
 			<li role="presentation" class="divider"></li>
 			<!-- <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li> -->
@@ -79,7 +79,7 @@
 		<br>
 		<div class="attribution">Proudly developed by  <a href="http://www.uppercaseyvr.com">Uppercase</a></div>
 <% else %>
-		<ul class="nav menu text-center">
+		<ul class="nav text-center">
 			<% if current_user.role == "admin" %>
 					<li class="active"><%= link_to dashboard_path do %>
 																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
@@ -151,7 +151,6 @@
 						<%=link_to "Switch to Arabic", locale: "ar" %>
 					</li>
 			<% end %>
-				</ul>
 			</li>
 			<li role="presentation" class="divider"></li>
 			<!-- <li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li> -->
