@@ -1,5 +1,27 @@
 <% if params[:locale] === "ar" %>
   <br>
+  <%= form_tag doctors_path, method: :get, class: 'something' do %>
+    <div class="input-group add-on">
+      <%= text_field_tag :search, "", class: 'form-control'  %>
+      <div class="input-group-btn">
+
+        <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+         <span class="icon-envelope"></span> Search
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+      <%= form_tag doctors_path, method: :get, class: 'something' do %>
+        <div class="input-group add-on">
+          <%= text_field_tag :search, "", class: 'form-control'  %>
+          <div class="input-group-btn">
+
+            <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+             <span class="icon-envelope"></span> Search
+            <% end %>
+          </div>
+        </div>
+      <% end %>
 
   <center><h2><%= t "doctors.title" %></h2></center>
   <table class="table table-hover table-striped text-right " >
@@ -33,6 +55,18 @@
   </table>
   <%= will_paginate @doctors %>
   <% else %>
+
+        <%= form_tag doctors_path, method: :get, class: 'something' do %>
+          <div class="input-group add-on">
+            <%= text_field_tag :search, "", class: 'form-control'  %>
+            <div class="input-group-btn">
+
+              <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+               <span class="icon-envelope"></span> Search
+              <% end %>
+            </div>
+          </div>
+        <% end %>
   <br>
   <center><h2><%= t "doctors.title" %></h2></center>
   <table class="table table-hover table-striped" >
@@ -44,6 +78,7 @@
       </tr>
     </thead>
     <tbody>
+
       <% @doctors.each do |doctor| %>
       <tr>
         <td> <%= link_to profile_path(doctor.profile) do %>
