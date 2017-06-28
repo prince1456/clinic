@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require pages
 //= require ckeditor/init
+//= require growlyflash
 //= require_tree
