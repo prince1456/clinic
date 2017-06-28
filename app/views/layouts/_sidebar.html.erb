@@ -32,23 +32,23 @@
 					</li>
       <% elsif current_user.role == 'doctor' %>
 					<li class="active"><%= link_to dashboard_path do %>
-																<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+																<i class="fa fa-tachometer" aria-hidden="true"></i> <%= t "sidebar.dashboard" %>
 															<% end %>
 					</li>
 					<li><%= link_to profiles_path do %>
-									<i class="fa fa-users" aria-hidden="true"></i> Profile
+									<i class="fa fa-users" aria-hidden="true"></i> <%= t "sidebar.profile" %>
 							<% end %>
 					</li>
           <li><%= link_to posts_path do %>
-						<i class="fa fa-rss" aria-hidden="true"></i> Posts</a>
+						<i class="fa fa-rss" aria-hidden="true"></i> <%= t "sidebar.posts" %></a> </a>
 						<% end %>
 					</li>
 					<li><%= link_to chats_path do %>
-						<i class="fa fa-comments" aria-hidden="true"></i> Chats
+						<i class="fa fa-comments" aria-hidden="true"></i> <%= t "sidebar.chats" %>
 						<% end %>
 					</li>
           <li><%= link_to  patients_path do %>
-								<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Patients</a>
+								<svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> <%= t "sidebar.patients" %></a>
 							<% end %>
 					</li>
 					<li>

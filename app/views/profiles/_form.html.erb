@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form-profile">
-        <%= simple_form_for(@profile, html: {class: 'form-horizontal'}) do |f| %>
+        <%= simple_form_for(@profile, html: {class: 'form-horizontal'}, defaults:{ :required => true}) do |f| %>
           <div class="row ">
             <div class="col-md-6 two-row-form">
                 <%= f.input :first_name %>
@@ -21,10 +21,10 @@
           <% end %>
           <div class="row ">
             <div class="col-md-6 two-row-form">
-              <%= f.input :address %>
+              <%= f.input :address, required: true %>
             </div>
             <div class="col-md-6 two-row-form">
-              <%= f.input :phone_number %>
+              <%= f.input :phone_number, required: true %>
             </div>
           </div>
           <div class="row ">
