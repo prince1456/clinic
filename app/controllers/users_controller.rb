@@ -11,8 +11,20 @@ class UsersController < ApplicationController
   #     render new_user_registration_path
   #   end
   # end
-  # private
-  # def user_params
-  #   params.require(:user).permit(:email, :password, :password_confirmation)
-  # end
+  def update
+    @profile = Profile.find(params[:id])
+    @user = @profile.user
+    if @user.update user_params
+      flash[:notice] = "changed user role"
+      redirect_to profile_path(@profile)
+    else
+      render profile_path(@profile)
+    end
+  end
+
+
+  private
+  def user_params
+    params.require(:user).permit(:role)
+  end
 end
