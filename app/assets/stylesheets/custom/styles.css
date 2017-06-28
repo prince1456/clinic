@@ -2015,8 +2015,8 @@ a.panel-heading.collapsed:after {
 .screen {
   width: 350px !important;
   height: 350px !important;
-	padding-bottom: 40px
-	border-block
+	padding-top: 10px;
+
 }
 
 .container-half {
@@ -2162,8 +2162,8 @@ img.full-width {
 
 @media (min-width: 992px) {
   .team-block [class^=col-] {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -3573,7 +3573,11 @@ ul.posts-line .post .title {
 	padding-bottom: 50px;
 }
 .team-member-sec{
-	background-color: #1aa5c6;
+	background-image: url(/assets/checkup_bg.jpg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
@@ -3923,3 +3927,51 @@ input:-moz-placeholder {
     height: 100px;
 	}
 }
+
+.doctor-boxes{
+	background-color: white;
+	padding-bottom: 25px;
+
+}
+.name{
+	color: white;
+	font-size: 16px;
+	font-weight: 800;
+	background-color: #30A5FF;
+	height: 50px;
+	padding-top: 8px;
+
+}
+.name-arabic{
+	color: white;
+	font-size: 16px;
+	font-weight: 800;
+	background-color: #30A5FF;
+	height: 50px;
+	padding-top: 8px;
+}
+.timetable{
+	padding-left: 15px;
+	font-size: 14px;
+	color: black
+
+}
+/*
+
+.team-member-sec{
+   background-image: url(/assets/chekup-bg.jpg);
+   background-color: red;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.parallax-overlay {
+position: absolute;
+width: 100%;
+height: 800px;
+z-index: 2;
+background-color: #080d15;
+opacity: .7;
+ }*/

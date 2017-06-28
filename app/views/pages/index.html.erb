@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+    <!--PRELOADER-->
+>>>>>>> 363207156fa36eb9b501e926d81bf3b37fb59efc
 
   <div id="wrap">
 			<header id="intro-half-left-3" class="intro-block bg-color3 fixed-bg double-padding" style="background-image: url(<%= asset_path('bg37.jpg')%>);" data-selector="header">
@@ -64,39 +68,48 @@
 
 			</section>
 
-			<section id="team" class="team-block team-member-sec">
+			<section id="team" class="team-block team-member-sec" style="background-image: url(<%= asset_path('team-carousel.jpg')%>)">
 					<div class="container">
-						<h2 class="title text-center title-doctor"><%= t "index.doctors.title" %></h2>
-						<div class="row">
-							<% @doctors.each do |doctor| %>
-								<% if params[:locale] === "en" %>
-									<div class="col-sm-4">
-										<div class="img-doctor">
-										<%= link_to profile_path(doctor.profile) do %>
-													<%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
-										<% end %>
-										</div>
-										<h3 class="name name-doctor"><%= doctor.profile.first_name %></h3>
-										<span class="occupation occupation-doctor"><%= doctor.profile.position %></span>
-										<p class="editContent editcontent-doctor"><%=  strip_tags(doctor.profile.bio)  %></p>
-									</div>
-								<% else %>
-									<div class="col-sm-4">
-										<div class="img-doctor">
-										<%= link_to profile_path(doctor.profile) do %>
-													<%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
-										<% end %>
-									</div>
-										<h3 class="name name-doctor"><%= doctor.profile.first_name_arabic %></h3>
-										<h4 class="occupation occupation-doctor"><%= doctor.profile.position_arabic %></h4>
-										<p class="editContent editcontent-doctor"><%=  strip_tags(doctor.profile.bio_arabic)  %></p>
+      						<h2 class="title text-center title-doctor"><%= t "index.doctors.title" %></h2>
+      						<div class="row">
+                          <% @doctors.each do |doctor| %>
+                               <div class="col-md-4">
+                                 <div class="doctor-boxes">
+                                       <div class="team-item">
+                                           <%= link_to profile_path(doctor.profile) do %>
+                       													<%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
+                       										<% end %>
+                                        </div>
+                                      <% if params[:locale] === "en" %>
 
-									</div>
-								<% end %>
-							<% end %>
-						</div>
-					</div>
-				</section>
+                       						      <div class="name text-center">
+                       			          	    <h4><%= doctor.profile.first_name %></h4>
+                       			          	    <span><%= doctor.profile.position %></span>
+                       			            </div>
+                       							    <div class="timetable">
+                       											<div class="item">
+                       							              <div class="label"><%= doctor.profile.bio %></div>
+
+                       						          </div>
+                       									</div>
+                                        <% else %>
+                                            <div class="name-arabic text-center">
+                                                <h4><%= doctor.profile.first_name_arabic %></h4>
+                                                <span><%= doctor.profile.position_arabic %></span>
+                                            </div>
+                                            <div class="timetable">
+                                                <div class="item">
+                                                      <div class="label text-right"><%= doctor.profile.bio_arabic %></div>
+
+                                                </div>
+                                            </div>
+                                          <% end %>
+                   				         	</div>
+                                  </div>
+                          <% end %>
+      						   </div>
+					  </div>
+		  </section>
 
 				<section id="blog" data-selector="section" class="team-member">
 					<div class="container">
