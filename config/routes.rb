@@ -37,6 +37,6 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # error message routes
-  match '/internal_server_error', :to => 'errors#internal_server_error'
-  match '/not_found', :to => 'errors#not_found'
+  get '/internal_server_error', :to => 'errors#internal_server_error'
+  get '/not_found', :to => 'errors#not_found'
 end
