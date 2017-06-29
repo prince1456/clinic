@@ -46,8 +46,6 @@ class PagesController < ApplicationController
     # @patients = User.where(role: "patient").paginate(:page => params[:page], :per_page => 10)
   end
   def blogs
-    @search = Post.search(params[:q])
-    @posts = @search.result
 
   end
   def about
