@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :find_params, only: [:edit, :show, :update, :destory]
-  before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :update, :destroy, :show]
   def index
     @search = Profile.search(params[:q])
     @profiles = @search.result

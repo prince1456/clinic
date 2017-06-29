@@ -31,14 +31,12 @@
                 <% if @post.video.present? %>
                 <%= video_tag @post.video, :size => "320x240", :controls => true %>
                 <% end  %>
-                <% if current_user.role == "admin"  %>
                   <% if can? :manage, @post %>
                     <%= link_to t('links.edit'), edit_post_path(@post), class: "btn btn-default" %>
                     <%= link_to t('links.delete'),post_path(@post),
                                       method: :Delete,
                                       data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
                     <% end %>
-                <% end %>
                 <% if @post.liked_by?(current_user) %>
                   <%= link_to post_like_path(@post, @post.like_for(current_user)) ,method: :delete  do %>
                     <i class="fa fa-2x fa-thumbs-o-down" aria-hidden="true"></i>
