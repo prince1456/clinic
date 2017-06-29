@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  registration:
+    new:
+      title: 'Sign Up'
   posts:
     index:
       placeholder: "search by title"
@@ -29,6 +32,9 @@ en:
   helpers:
     submit:
       search: "search"
+      sign_in: "Sign-in"
+      sign_up: "Sign Up"
+
   links:
     new: "New Post"
   chats:
@@ -53,4 +59,4 @@ en:
   patients:
     title: "List of patients"
   doctors:
-    title: "List of Doctors"  
+    title: "List of Doctors"

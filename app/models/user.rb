@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def self.search_users(search)
-    joins(:profile).where("first_name ILIKE ? OR email ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    joins(:profile).where("first_name ILIKE ? OR email ILIKE ? OR last_name ILIKE ? OR first_name_arabic ILIKE ? OR last_name_arabic ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}","#{search}" )
   end
 
 end

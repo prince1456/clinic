@@ -3,8 +3,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
   layout "firstpage", only: [:show]
   def index
-    @search = Post.search(params[:q])
-    @posts = @search.result.paginate(page: params[:page], :per_page => 10 )
+    if params[:search].present?
+      @posts = Post.search_posts(params[:search]).paginate(page: params[:page], :per_page => 5)
+    else
+      @posts = Post.all.paginate(page: params[:page], :per_page => 5)
+    end
   end
   def new
     @post = Post.new

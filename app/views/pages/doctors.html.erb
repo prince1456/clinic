@@ -1,4 +1,5 @@
 <% if params[:locale] === "ar" %>
+
 <div class="row">
 
   <div class=" col-md-4 pull-right"><h2><%= t "doctors.title" %></h2></div>
@@ -45,53 +46,53 @@
     </tbody>
   </table>
   <%= will_paginate @doctors %>
-  <% else %>
-  <div class="row">
+<% else %>
+    <div class="row">
 
-    <div class=" col-md-4 pull-left"><h2><%= t "doctors.title" %></h2></div>
-    <div class="col-md-5 pull-right">
-      <%= form_tag doctors_path, method: :get do %>
-        <div class="input-group add-on">
-          <%= text_field_tag :search, "", class: 'form-control'  %>
-                <span class="input-group-btn">
-                  <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-                  Search
-                  <% end %>
-                </span>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <table class="table table-hover table-striped" >
-    <thead>
-      <tr>
-        <th><%= t "doctors.picture" %></th>
-        <th><%= t "doctors.name" %></th>
-          <th><%= t "doctors.last_name" %></th>
-      </tr>
-    </thead>
-    <tbody>
-
-      <% @doctors.each do |doctor| %>
-      <tr>
-        <td> <%= link_to profile_path(doctor.profile) do %>
-          <% if doctor.profile.image.present? %>
-          <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
-          <% else %>
-          <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
-          <% end %>
-        </td>
+      <div class=" col-md-4 pull-left"><h2><%= t "doctors.title" %></h2></div>
+      <div class="col-md-5 pull-right">
+        <%= form_tag doctors_path, method: :get do %>
+          <div class="input-group add-on">
+            <%= text_field_tag :search, "", class: 'form-control'  %>
+                  <span class="input-group-btn">
+                    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+                    Search
+                    <% end %>
+                  </span>
+          </div>
         <% end %>
-        <td>
-          <%= doctor.profile.last_name %>
-        </td>
-        <td>
-          <%= doctor.profile.first_name %>
-        </td>
-      </tr>
+      </div>
+    </div>
+
+    <table class="table table-hover table-striped" >
+      <thead>
+        <tr>
+          <th><%= t "doctors.picture" %></th>
+          <th><%= t "doctors.name" %></th>
+            <th><%= t "doctors.last_name" %></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @doctors.each do |doctor| %>
+        <tr>
+          <td> <%= link_to profile_path(doctor.profile) do %>
+            <% if doctor.profile.image.present? %>
+            <%= image_tag doctor.profile.image_url(:thumb), class: 'img-rounded img-responsive img-chatlist' %>
+            <% else %>
+            <%= image_tag "default.png", class: 'img-rounded img-responsive img-chatlist' %>
+            <% end %>
+          </td>
           <% end %>
-    </tbody>
-  </table>
-  <%= will_paginate @doctors %>
+          <td>
+            <%= doctor.profile.last_name %>
+          </td>
+          <td>
+            <%= doctor.profile.first_name %>
+          </td>
+        </tr>
+            <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @doctors %>
 <% end %>
