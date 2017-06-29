@@ -36,5 +36,7 @@ Rails.application.routes.draw do
     resources :messages, only:[:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  # error message routes
+  get '/internal_server_error', :to => 'errors#internal_server_error'
+  get '/not_found', :to => 'errors#not_found'
 end

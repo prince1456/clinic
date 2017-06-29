@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :find_params, only: [:edit, :show, :update, :destory]
-  before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :update, :destroy, :show]
   def index
     if params[:search].present?
       @profiles = Profile.search_profiles(params[:search]).paginate(page: params[:page], :per_page => 5)

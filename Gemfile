@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+# nice flash
+gem 'growlyflash'
+# google docs
 gem 'redis', '~>3.2'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
