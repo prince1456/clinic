@@ -3654,17 +3654,23 @@ ul.posts-line .post .title {
 
 
 .background-register {
+		background-color: #00C0FF;
 		/*background-image:url('/assets/backlogin.jpg');*/
     font-family: "Helvetica Neue", Helvetica, Arial;
-    padding-top: 20px;
+    padding-top: 30px;
+
 }
 
 .containerss {
+	padding-bottom: 25px;
     width: 406px;
+		height: auto;
     max-width: 406px;
     margin: 0 auto;
 }
-
+.remember-me{
+	color: black;
+}
 #signup2 {
     padding: 0px 25px 25px;
     background: #fff;
@@ -3677,7 +3683,12 @@ ul.posts-line .post .title {
     display: table;
     position: static;
 }
-
+.sign-in{
+	height: 80vh;
+	background-color: #00C0FF;
+	padding-top: 40px;
+	color:black;
+}
 #signup2 .headerss {
     margin-bottom: 20px;
 }
@@ -3697,6 +3708,7 @@ ul.posts-line .post .title {
 
 #signup2 .sep {
     height: 1px;
+		margin-bottom: 10px
     background: #e8e8e8;
     width: 406px;
     margin: 0px -25px;

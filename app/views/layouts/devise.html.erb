@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Clinic</title>
+    <title>Abdulrahman clinic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -11,7 +11,8 @@
   </head>
 
       <body>
-        <%= render "layouts/navbar2" %>
+        <%= render "layouts/devisenavbar" %>
         <%= yield %>
+        <%= render "layouts/footer" %>
       </body>
 </html>

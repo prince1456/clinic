@@ -1,0 +1,137 @@
+<!-- Fixed navbar -->
+<% if params[:locale] === "ar" %>
+<nav class="navbar navbar-default navbar-fixed-top bg-nav-front">
+  <div class="container">
+    <div class="navbar-header pull-left">
+      <button type="button" class="navbar-toggle collapsed round-toggle " data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <%= link_to 'عيادات الدكتور عبدالرحمن', "/en?locale=ar", class: 'navbar-brand pull-right' %>
+    <div id="navbar" class="navbar-collapse collapse">
+        <% if !current_user %>
+          <div class="login-panel-ar login-panel hidden-xs hidden-sm">
+            <%=link_to new_user_registration_path, class: 'btn btn-primary' do %>
+            سـجّـل حساب
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <div class="login-panel-ar login-panel hidden-xs hidden-sm">
+            <a class="btn btn-primary" href="/users/sign_in" >تسجيل الدخول
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </a>
+          </div>
+      <% end %>
+      <ul class="nav navbar-nav navbar-center">
+        <% if params[:id].present? %>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+      <% else %>
+        <li>
+          <%= link_to "الأطباء", root_path(:anchor => "team-border") %>
+        </li>
+        <li>
+          <%= link_to "مدونة إلكترونية", root_path(:anchor => "blogs") %>
+          <a href="#blog">مدونة إلكترونية</a>
+        </li>
+        <li>
+          <%= link_to "موقعنا", root_path(:anchor => "maps") %>
+        </li>
+        <li>
+          <%=link_to "اللغة الإنجليزية", locale: "en" %>
+        </li>
+          <% if current_user.present? %>
+            <li>
+              <a href="ar/dashboard">اللوحة الرئيسية</a>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, :method => :delete, class: "text-center" do  %>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  تسجيل الخروج
+              <% end %>
+            </li>
+          <% else %>
+              <li class="visible-xs visible-sm">
+                  <%=link_to "", new_user_registration_path%>
+              </li>
+              <li class="visible-xs visible-sm">
+                  <a href="#" data-toggle="modal" data-target="#signup">Sign In</a>
+              </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+<% else %>
+    <nav class="navbar navbar-default navbar-fixed-top bg-nav-front bg-nav-front">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed round-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'Abdulrahman Clinic', root_path, class: 'navbar-brand' %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <% if !current_user %>
+            <div class="login-panel hidden-xs hidden-sm">
+              <%=link_to new_user_registration_path, class: 'btn btn-primary' do %>
+                  Sign Up
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+              <% end %>
+            </div>
+            <div class="login-panel hidden-xs hidden-sm">
+              <a class="btn btn-primary" href="/users/sign_in">Sign In
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+              </a>
+            </div>
+          <% end %>
+          <ul class="nav navbar-nav navbar-right">
+            <% if params[:id].present? %>
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "About", about_path %></li>
+            <% else %>
+                <li>
+                  <%= link_to "Our Team", root_path(:anchor => "team-border") %>
+                </li>
+                <li>
+                  <%= link_to "blog", root_path(:anchor => "blog") %>
+                </li>
+                <li>
+                  <%= link_to "blog", root_path(:anchor => "maps") %>
+                </li>
+                <li>
+                  <%=link_to "Switch to Arabic", locale: "ar" %>
+                </li>
+                <% if current_user.present? %>
+                    <li>
+                      <a href="en/dashboard">dashboard</a>
+                    </li>
+                    <li>
+                      <%= link_to destroy_user_session_path, :method => :delete, class: "text-center" do  %>
+                          <i class="fa fa-sign-out" aria-hidden="true"></i>
+                          Logout
+                      <% end %>
+                    </li>
+                <% else %>
+                      <li class="visible-xs visible-sm">
+                          <%=link_to "Sign up", new_user_registration_path%>
+                      </li>
+                      <li class="visible-xs visible-sm">
+                          <a href="#" data-toggle="modal" data-target="#signup">Sign In</a>
+                      </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+      <!--/.nav-collapse -->
+      </div>
+    </nav>
+<% end %>

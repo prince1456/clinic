@@ -1,29 +1,20 @@
 <% if params[:locale] === "ar" %>
-  <br>
-  <%= form_tag doctors_path, method: :get, class: 'something' do %>
-    <div class="input-group add-on">
-      <%= text_field_tag :search, "", class: 'form-control'  %>
-      <div class="input-group-btn">
+<div class="row">
 
-        <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-         <span class="icon-envelope"></span> Search
-        <% end %>
+  <div class=" col-md-4 pull-right"><h2><%= t "doctors.title" %></h2></div>
+  <div class="col-md-5 pull-left">
+    <%= form_tag doctors_path, method: :get do %>
+      <div class="input-group add-on">
+        <%= text_field_tag :search, "", class: 'form-control'  %>
+              <span class="input-group-btn">
+                <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+                Search
+                <% end %>
+              </span>
       </div>
-    </div>
-  <% end %>
-      <%= form_tag doctors_path, method: :get, class: 'something' do %>
-        <div class="input-group add-on">
-          <%= text_field_tag :search, "", class: 'form-control'  %>
-          <div class="input-group-btn">
-
-            <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-             <span class="icon-envelope"></span> Search
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-
-  <center><h2><%= t "doctors.title" %></h2></center>
+    <% end %>
+  </div>
+</div>
   <table class="table table-hover table-striped text-right " >
     <thead>
       <tr class="text-right">
@@ -55,20 +46,23 @@
   </table>
   <%= will_paginate @doctors %>
   <% else %>
+  <div class="row">
 
-        <%= form_tag doctors_path, method: :get, class: 'something' do %>
-          <div class="input-group add-on">
-            <%= text_field_tag :search, "", class: 'form-control'  %>
-            <div class="input-group-btn">
+    <div class=" col-md-4 pull-left"><h2><%= t "doctors.title" %></h2></div>
+    <div class="col-md-5 pull-right">
+      <%= form_tag doctors_path, method: :get do %>
+        <div class="input-group add-on">
+          <%= text_field_tag :search, "", class: 'form-control'  %>
+                <span class="input-group-btn">
+                  <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+                  Search
+                  <% end %>
+                </span>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-              <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-               <span class="icon-envelope"></span> Search
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-  <br>
-  <center><h2><%= t "doctors.title" %></h2></center>
   <table class="table table-hover table-striped" >
     <thead>
       <tr>
