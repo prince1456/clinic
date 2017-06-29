@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
   helper_method :my_notification
 
   layout :layout_by_resource
-
  private
 
  def layout_by_resource
