@@ -1,4 +1,4 @@
 <%= simple_form_for [@post, @comment] do |f| %>
-  <%= f.input :content%>
+  <%= f.input :content, as: :string%>
   <%= f.button :submit %>
 <% end %>

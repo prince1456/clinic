@@ -1,6 +1,6 @@
-<%= simple_form_for [@post, @comment], remote: true,role: 'form' do |f| %>
+<%= simple_form_for [@post, @comment],remote: true,role: 'form' do |f| %>
   <div class="form-group">
-    <%= f.input_field :content, class:'form-control', label: false%>
+  <%= f.input :content, as: :string, class:'form-control', label: false, require: true %>
   </div>
   <%= f.button :submit, class:'ntm btn-default' %>
 <% end %>

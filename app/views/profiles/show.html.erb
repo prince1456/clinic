@@ -25,6 +25,12 @@
           <% if can? :manage, @profile  %>
             <%= link_to "Edit profile", edit_profile_path(@profile), class: "btn btn-default" %>
           <% end %>
+          <% if current_user.role == 'admin'  %>
+            <%= simple_form_for @user do |f| %>
+              <%= f.input :role, collection: [:doctor, :admin, :patient], selected: @profile.user.role %>
+              <%= f.button :submit %>
+            <% end  %>
+          <% end %>
         </div>
       </div>
     </div>

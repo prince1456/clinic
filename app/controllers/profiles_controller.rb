@@ -20,6 +20,7 @@ class ProfilesController < ApplicationController
   end
   def show
     @directory = Directory.new
+    @user = User.find(params[:id])
   end
 
   def edit

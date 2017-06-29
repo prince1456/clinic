@@ -7,9 +7,10 @@ class Post < ApplicationRecord
   mount_uploader :attachments, AvatarUploader
   mount_uploader :video, AvatarUploader
   # translates :title , :content, :auther, :picture, :video, :attachments
-  validates :title, presence: true
-  validates :content, presence: true
-  validates :picture, presence: true
+  validates :title, presence: {message: "title has to be present"}
+  validates :content, presence: {message: 'content has to be present'}
+  validates :picture, presence: {message: 'picture has to be present'}
+  validates :author, presence: {message: 'auther has to be present'}
 
   def liked_by?(user)
     likes.exists?(user: user)
