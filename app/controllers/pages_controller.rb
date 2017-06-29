@@ -16,20 +16,10 @@ class PagesController < ApplicationController
 
   def doctors
     if params[:search].present?
-      @doctors = User.search_users(params[:search]).paginate(page: params[:page], :per_page => 5)
+      @doctors = User.where(role: "doctor").search_users(params[:search]).paginate(page: params[:page], :per_page => 5)
     else
       @doctors = User.where(role: "doctor").paginate(page: params[:page], :per_page => 5)
     end
-    # @u = User.find_by_name(params[:q])
-      # @search = Profile.ransack(params[:q])
-      # if params[:q].present?
-      #     @doctors = Profile.search.result.paginate(page: params[:page], :per_page => 5)
-      #     puts @doctors
-      #     byebug
-      # else
-      #     @doctors = User.where(role: "doctor").paginate(page:params[:page], :per_page => 5)
-      #     byebug
-      # end
   end
 
   def dashboard
@@ -41,13 +31,10 @@ class PagesController < ApplicationController
 
   end
   def patients
-    @search = User.search(params[:q])
-    @patients = @search.result.where(role: "patient").paginate(page: params[:page], :per_page => 10)
-    # @patients = User.where(role: "patient").paginate(:page => params[:page], :per_page => 10)
-  end
+    gfreq
   def blogs
-    @search = Post.search(params[:q])
-    @posts = @search.result
+  @posts = Post.all
+  end
 
   end
   def about

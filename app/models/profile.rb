@@ -13,4 +13,7 @@ class Profile < ApplicationRecord
   validates :emr_name, presence: {message: " Emergency Contact Name has to be present"}
   validates :emr_phone, presence: {message: "Emergency Contact Number has to be present"}
   validates :lang, presence: {message: "language e has to be present"}
+  def self.search_profiles(search)
+    where("first_name ILIKE ?  OR last_name ILIKE ? OR first_name_arabic ILIKE ? OR last_name_arabic ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}")
+  end
 end

@@ -2,8 +2,11 @@ class ProfilesController < ApplicationController
   before_action :find_params, only: [:edit, :show, :update, :destory]
   before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
   def index
-    @search = Profile.search(params[:q])
-    @profiles = @search.result
+    if params[:search].present?
+      @profiles = Profile.search_profiles(params[:search]).paginate(page: params[:page], :per_page => 5)
+    else
+      @profiles = Profile.all.paginate(page: params[:page], :per_page => 5)
+    end
   end
   def new
     @profile = Profile.new

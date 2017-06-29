@@ -19,4 +19,7 @@ class Post < ApplicationRecord
   def like_for(user)
     likes.find_by_user_id user
   end
+  def self.search_posts(search)
+    where("title ILIKE ? OR author ILIKE ?", "%#{search}", "%#{search}")
+  end
 end

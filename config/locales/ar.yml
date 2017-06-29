@@ -1,4 +1,7 @@
 ar:
+  registration:
+    new:
+      title: "سـجّـل حساب"
   will_paginate:
     previous_label: "&#8594; سابق"
     next_label: "التالى &#8592 "
@@ -12,6 +15,8 @@ ar:
       create: "إنشاء"
       update: " حفظ"
       search: "بحث"
+      sign_in: "تسجيل الدخول "
+      sign_up: "سـجّـل حساب"
   chats:
     index:
       history: "جهات الاتصال"
