@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  layout "firstpage", only: [:index, :about]
-  before_action :authenticate_user!, except: [:index, :about]
+  layout "firstpage", only: [:index, :about, :bariatrictreatment, :typeofbariatric, :costofbariatric, :lifeafterlose]
+  before_action :authenticate_user!, except: [:index, :about, :bariatrictreatment, :typeofbariatric, :costofbariatric, :lifeafterlose]
   def index
     @posts = Post.all
     if params[:locale] === "ar"
@@ -10,7 +10,6 @@ class PagesController < ApplicationController
       @doctors = User.where(role: "doctor").order(updated_at: :desc).limit(3)
       @posts = Post.where(lang: "en")
     end
-
     @user = User.new
   end
 
@@ -37,5 +36,13 @@ class PagesController < ApplicationController
   end
   def about
 
+  end
+  def bariatrictreatment
+  end
+  def typeofbariatric
+  end
+  def costofbariatric
+  end
+  def lifeafterlose
   end
 end

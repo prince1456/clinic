@@ -29,6 +29,10 @@ Rails.application.routes.draw do
     get "/patients" => 'pages#patients'
     get "/blogs" => 'pages#blogs'
     get "/about" => 'pages#about'
+    get '/bariatrictreatment' => "pages#bariatrictreatment"
+    get "/typeofbariatric" => "pages#typeofbariatric"
+    get "/costofbariatric" => "pages#costofbariatric"
+    get "/lifeafterlose" => "pages#lifeafterlose"
 
     resources :users do
       resources :chats, only: [:index, :show, :create]

@@ -1,248 +1,342 @@
-<<<<<<< HEAD
-=======
-    <!--PRELOADER-->
->>>>>>> 363207156fa36eb9b501e926d81bf3b37fb59efc
+<div id="wrap">
+  <header id="intro-half-left-3" class="intro-block bg-color3 fixed-bg double-padding" style="background-image: url(<%= asset_path('bg37.jpg')%>);" data-selector="header">
+    <div class="container">
 
-  <div id="wrap">
-			<header id="intro-half-left-3" class="intro-block bg-color3 fixed-bg double-padding" style="background-image: url(<%= asset_path('bg37.jpg')%>);" data-selector="header">
-				<div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="slogan">
+            <h1 data-selector="h1">
+              <strong><%= t "index.introduction.strong" %></strong><br>
+              <%= t "index.introduction.title" %></h1>
+            <p data-selector="p">
+              Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
+          </div>
+          <%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
+          <i class="icon icon-info" data-selector=".icon"></i>
+          <%= t "index.introduction.button" %>
+          <% end %>
 
-					<div class="row">
-						<div class="col-md-6">
-							<div class="slogan">
-								<h1 data-selector="h1"><strong><%= t "index.introduction.strong" %></strong><br>
-									<%= t "index.introduction.title" %></h1>
-								<p data-selector="p"> Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
-							</div>
-							<%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
-										<i class="icon icon-info" data-selector=".icon"></i> <%= t "index.introduction.button" %>
-							<% end %>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- TEAM 4COL BLOCK -->
 
-						</div>
-					</div>
-				</div>
-			</header><!-- TEAM 4COL BLOCK -->
+  <section id="why-choose-us" class="Why-choose-us">
+    <div class="container">
+      <center>
+        <h2></h2>
+      </center>
+      <div class="col-md-4 col-xs-12 wcu-column">
+        <i class="fa fa-hospital-o fa-3x icon-why-choose" aria-hidden="true"></i>
+        <span class="span-why-title">Why choose us</span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <i class="fa fa-leaf fa-2x icon-why-choose-sec" aria-hidden="true"></i>
+        <Span class="span-why-sec-title">
+          Free medical consuling</span>
+        <p class="why-choose-use-paragraph">
+          some articleasff faslfjlas aslf asjla
+        </p>
 
-			<section id="why-choose-us" class="Why-choose-us">
-				<div class="container">
-					<center> <h2></h2> </center>
-					<div class="col-md-4 col-xs-12 wcu-column">
-						<i class="fa fa-hospital-o fa-3x icon-why-choose" aria-hidden="true"> </i> <span class="span-why-title">Why choose us</span>
-							<br>
-							<br>
-							<br>
-						<br>
-						<i class="fa fa-leaf fa-2x icon-why-choose-sec" aria-hidden="true"></i>  <Span class="span-why-sec-title">  Free medical consuling</span>
-						<p class="why-choose-use-paragraph">
-							some articleasff faslfjlas aslf asjla
-						</p>
+        <i class="fa fa-heartbeat fa-2x icon-why-choose-sec" aria-hidden="true"></i>
+        <Span class="span-why-sec-title">
+          Free medical consuling</span>
+        <p class="why-choose-use-paragraph">
+          some articleasff faslfjlas aslf asjla
+        </p>
 
-						<i class="fa fa-heartbeat fa-2x icon-why-choose-sec" aria-hidden="true"></i>  <Span class="span-why-sec-title">  Free medical consuling</span>
-						<p class="why-choose-use-paragraph">
-							some articleasff faslfjlas aslf asjla
-						</p>
+        <i class="fa fa-user-md fa-2x icon-why-choose-sec" aria-hidden="true"></i>
+        <Span class="span-why-sec-title">
+          Free medical consuling</span>
+        <p class="why-choose-use-paragraph">
+          some articleasff faslfjlas aslf asjla
+        </p>
 
-						<i class="fa fa-user-md fa-2x icon-why-choose-sec" aria-hidden="true"></i>  <Span class="span-why-sec-title">  Free medical consuling</span>
-						<p class="why-choose-use-paragraph">
-							some articleasff faslfjlas aslf asjla
-						</p>
+      </div>
+      <div class="col-md-3 col-xs-12">
+        <%= image_tag "dr-why-chooseus.png", class: "img-responsive" %>
+      </div>
+      <div class="col-md-4 col-xs-12 wcu-column">
+        <h2>Quick Look at Benefits</h2>
+        <p>We offer the best services with high quality</p>
+        <ul>
+          <li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Qualified Stuff & Doctors</li>
+          <li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Feel like you are at home services</li>
+          <li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>24x7 Emergency Services</li>
+          <li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Save your Money and Time with us</li>
+          <li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Easy and Affordable Billing</li>
+        </ul>
 
-					</div>
-					<div class="col-md-3 col-xs-12">
-						<%= image_tag "dr-why-chooseus.png", class: "img-responsive" %>
-					</div>
-					<div class="col-md-4 col-xs-12 wcu-column">
-							<h2>Quick Look at Benefits</h2>
-							<p>We offer the best services with high quality</p>
-							<ul>
-								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Qualified Stuff & Doctors</li>
-								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Feel like you are at home services</li>
-								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>24x7 Emergency Services</li>
-								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Save your Money and Time with us</li>
-								<li><i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Easy and Affordable Billing</li>
-							</ul>
+      </div>
 
-					</div>
+    </div>
 
-				</div>
+  </section>
 
-			</section>
+  <section id="team" class="team-block team-member-sec" style="background-image: url(<%= asset_path('team-carousel.jpg')%>)">
+    <div class="container">
+      <h2 class="title text-center title-doctor"><%= t "index.doctors.title" %></h2>
+      <div class="row">
+        <% @doctors.each do |doctor| %>
+        <div class="col-md-4">
+          <div class="doctor-boxes">
+            <div class="team-item">
+              <%= link_to profile_path(doctor.profile) do %>
+              <%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
+              <% end %>
+            </div>
+            <% if params[:locale] === "en" %>
 
-			<section id="team" class="team-block team-member-sec" style="background-image: url(<%= asset_path('team-carousel.jpg')%>)">
-					<div class="container">
-      						<h2 class="title text-center title-doctor"><%= t "index.doctors.title" %></h2>
-      						<div class="row">
-                          <% @doctors.each do |doctor| %>
-                               <div class="col-md-4">
-                                 <div class="doctor-boxes">
-                                       <div class="team-item">
-                                           <%= link_to profile_path(doctor.profile) do %>
-                       													<%= image_tag doctor.profile.image, class: 'screen img-responsive'%>
-                       										<% end %>
-                                        </div>
-                                      <% if params[:locale] === "en" %>
+            <div class="name text-center">
+              <h4><%= doctor.profile.first_name %></h4>
+              <span><%= doctor.profile.position %></span>
+            </div>
+            <div class="timetable">
+              <div class="item">
+                <div class="label"><%= doctor.profile.bio %></div>
 
-                       						      <div class="name text-center">
-                       			          	    <h4><%= doctor.profile.first_name %></h4>
-                       			          	    <span><%= doctor.profile.position %></span>
-                       			            </div>
-                       							    <div class="timetable">
-                       											<div class="item">
-                       							              <div class="label"><%= doctor.profile.bio %></div>
+              </div>
+            </div>
+          <% else %>
+            <div class="name-arabic text-center">
+              <h4><%= doctor.profile.first_name_arabic %></h4>
+              <span><%= doctor.profile.position_arabic %></span>
+            </div>
+            <div class="timetable">
+              <div class="item">
+                <div class="label text-right"><%= doctor.profile.bio_arabic %></div>
 
-                       						          </div>
-                       									</div>
-                                        <% else %>
-                                            <div class="name-arabic text-center">
-                                                <h4><%= doctor.profile.first_name_arabic %></h4>
-                                                <span><%= doctor.profile.position_arabic %></span>
-                                            </div>
-                                            <div class="timetable">
-                                                <div class="item">
-                                                      <div class="label text-right"><%= doctor.profile.bio_arabic %></div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
 
-                                                </div>
-                                            </div>
-                                          <% end %>
-                   				         	</div>
-                                  </div>
-                          <% end %>
-      						   </div>
-					  </div>
-		  </section>
+  <section id="blog" data-selector="section" class="team-member">
+    <div class="container">
+      <h2 class="title text-center" data-selector="h2"><%= t "index.posts.title" %></h2>
+      <div class="row">
+        <% @posts.last(4).each do |post| %>
+        <div class="col-sm-3">
+          <div class="post" data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle">
+            <div class="post-media">
+              <%= link_to post_path(post) do %>
+              <% if post.picture.present? %>
+              <%= image_tag post.picture_url(:large), class:'img-responsive image-frontend', alt: post.title, data:{selector: 'img'}%>
+              <% end %>
+              <% end %>
+            </div>
+            <div class="post-content">
+              <%= link_to post_path(post) do  %>
+              <%= strip_tags(post.content.first(100)) %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
 
-				<section id="blog" data-selector="section" class="team-member">
-					<div class="container">
-				<h2 class="title text-center" data-selector="h2"><%= t "index.posts.title" %></h2>
-				<div class="row">
-					<% @posts.last(4).each do |post| %>
-					<div class="col-sm-3">
-						<div class="post" data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle">
-							<div class="post-media">
-								<%= link_to post_path(post) do %>
-									<% if post.picture.present? %>
-										<%= image_tag post.picture_url(:large), class:'img-responsive image-frontend', alt: post.title, data:{selector: 'img'}%>
-										<% end %>
-									<% end %>
-							</div>
-									<div class="post-content">
-											<%= link_to post_path(post) do  %>
-												<%= strip_tags(post.content.first(100)) %>
-											<% end %>
-									</div>
-								</div>
-							</div>
-							<% end %>
-						</div>
-					</div>
-				</section>
+  <!-- TESTIMONIALS SLIDER STAR BLOCK -->
+  <section id="testimonials-slider-star" class="quote-block text-center dark-bg bg-color1 cover-bg team-member">
 
-		    	<!-- TESTIMONIALS SLIDER STAR BLOCK -->
-				<section id="testimonials-slider-star" class="quote-block text-center dark-bg bg-color1 cover-bg team-member">
+    <div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
 
-					<div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="container quote editContent">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <h4>It’s just five stars. I will certainly come back and bring my friends with me.</h4>
+            <small>@multifourdesign</small>
+          </div>
+        </div>
 
-							<div class="item active">
-								<div class="container quote editContent">
-									<i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i>
-									<h4>It’s just five stars. I will certainly come back and bring my friends with me.</h4>
-									<small>@multifourdesign</small>
-								</div>
-							</div>
+        <div class="item">
+          <div class="container quote editContent">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <h4>I always thought that people used to pay much for quality. But these guys changed my opinion. The quality exceeds the price many times. I recommend it to everybody.</h4>
+            <small>Sarah Doe</small>
+          </div>
+        </div>
 
-							<div class="item">
-								<div class="container quote editContent">
-									<i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i>
-									<h4>I always thought that people used to pay much for quality. But these guys changed my opinion. The quality exceeds the price many times. I recommend it to everybody.</h4>
-									<small>Sarah Doe</small>
-								</div>
-							</div>
+        <div class="item">
+          <div class="container quote editContent">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <h4>I always thought that people used to pay much for quality. But these guys changed my opinion. The quality exceeds the price many times. I recommend it to everybody.</h4>
+            <small>John Doe</small>
+          </div>
+        </div>
 
-							<div class="item">
-								<div class="container quote editContent">
-									<i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i>
-									<h4>I always thought that people used to pay much for quality. But these guys changed my opinion. The quality exceeds the price many times. I recommend it to everybody.</h4>
-									<small>John Doe</small>
-								</div>
-							</div>
+        <div class="item">
+          <div class="container quote editContent">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <h4>This is a great product. It reveals an individual approach to each customer. I liked the level of the provided service.</h4>
+            <small>Melissa Smith</small>
+          </div>
+        </div>
 
-							<div class="item">
-								<div class="container quote editContent">
-									<i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i>
-									<h4>This is a great product. It reveals an individual approach to each customer. I liked the level of the provided service.</h4>
-									<small>Melissa Smith</small>
-								</div>
-							</div>
+        <div class="item">
+          <div class="container quote editContent">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <h4>This is a great product. It reveals an individual approach to each customer. I liked the level of the provided service.</h4>
+            <small>Tom Kross</small>
+          </div>
+        </div>
 
-							<div class="item">
-								<div class="container quote editContent">
-									<i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i>
-									<h4>This is a great product. It reveals an individual approach to each customer. I liked the level of the provided service.</h4>
-									<small>Tom Kross</small>
-								</div>
-							</div>
+        <div class="item">
+          <div class="container quote editContent">
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <i class="icon icon-star"></i>
+            <h4>I always thought that people used to pay much for quality. But these guys changed my opinion. The quality exceeds the price many times.</h4>
+            <small>Karl K.</small>
+          </div>
+        </div>
 
-							<div class="item">
-								<div class="container quote editContent">
-									<i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i><i class="icon icon-star"></i>
-									<h4>I always thought that people used to pay much for quality. But these guys changed my opinion. The quality exceeds the price many times.</h4>
-									<small>Karl K.</small>
-								</div>
-							</div>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-testimonials" role="button" data-slide="prev">
+        <span class="arrow"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-testimonials" role="button" data-slide="next">
+        <span class="arrow"></span>
+      </a>
+    </div>
+  </section>
+  <!-- BENEFITS GRID BORDER BLOCK-->
+  <section id="benefits-grid-border" class="text-center">
+    <div class="container">
+      <div class="row no-dev">
+        <div style="background-color: #10C45C" class="col-md-3 sec-col">
+          <ul class="item-list-border">
+            <%= link_to bariatrictreatment_path do%>
+            <li>
+              <img src="<%= asset_path('qualify_img.png')%>" alt="">
+              <h2>Do you Qualify?</h2>
+              <p>In addition to meeting weight requirements, patients must answer several questions before moving forward with surgery.</p>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div style="background-color: #F2BF34" class="col-md-3 sec-col ">
+          <ul class="item-list-border">
+            <%= link_to costofbariatric_path do %>
+            <li>
+              <img src="<%= asset_path('cost_img.png')%>" alt="">
+              <h2>Minimizing Costs</h2>
+              <p>Surgery costs depend on where you have it and what kind of insurance you have.</p>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div style="background-color: #307AD5" class="col-md-3 sec-col">
+          <ul class="item-list-border">
+            <%= link_to typeofbariatric_path do %>
+            <li>
+              <img src="<%= asset_path('produre_img.png')%>" alt="">
+              <h2>Compare Procedures
+              </h2>
+              <p>There are several procedures to choose from, and your choice will depend on your goals and circumstances.</p>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div style="background-color: #D94DA6; color: white" class="col-md-3 sec-col">
+          <ul class="item-list-border">
+            <%= link_to lifeafterlose_path do %>
+            <li>
+              <img src="<%= asset_path('life_img.png')%>" alt="">
+              <h2>Life After Surgery</h2>
+              <p>From recovery to long-term weight loss and health improvement, for most patients life after surgery is challenging but worth it.</p>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="maps" class="cover-bg bg-color2 map-section" data-selector="section">
+    <div class="container">
+      <div class="row">
+        <% if params[:locale] === "ar" %>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101418.0024137826!2d-122.07938838781939!3d37.40608616286838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo+Alto%2C+CA%2C+USA!5e0!3m2!1sen!2sua!4v1429695851173"></iframe>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-2 hidden-sm hidden-xs ">
+          <h2 class="title text-white" data-selector="h2"><%= t "index.location.title" %></h2>
+          <h3 class="sep-bottom text-white" data-selector="h3">
+            <i class="icon-pointer"></i>
+            14 Newell Ave.</h3>
+          <p class="text-white">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible.
+          </p>
+        </div>
+      <% else %>
+        <div class="col-md-4 hidden-sm hidden-xs ">
+          <h2 class="title text-white" data-selector="h2">Location</h2>
+          <h3 class="sep-bottom text-white" data-selector="h3">
+            <i class="icon-pointer"></i>
+            14 Newell Ave.</h3>
+          <p class="text-white">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible.
+          </p>
+        </div>
+        <div class="col-md-6 col-md-offset-2 col-sm-12 col-xs-12">
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101418.0024137826!2d-122.07938838781939!3d37.40608616286838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo+Alto%2C+CA%2C+USA!5e0!3m2!1sen!2sua!4v1429695851173"></iframe>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
 
-						</div>
-						<!-- Controls -->
-						<a class="left carousel-control" href="#carousel-testimonials" role="button" data-slide="prev">
-							<span class="arrow"></span>
-						</a>
-						<a class="right carousel-control" href="#carousel-testimonials" role="button" data-slide="next">
-							<span class="arrow"></span>
-						</a>
-					</div>
-				</section>
+</div>
+<!-- /#wrap -->
 
-
-				<section id="maps" class="cover-bg bg-color2 map-section" data-selector="section">
-					<div class="container">
-						<div class="row">
-							<% if params[:locale] === "ar" %>
-							<div class="col-md-6 col-sm-12 col-xs-12">
-								<div class="embed-responsive embed-responsive-4by3">
-									<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101418.0024137826!2d-122.07938838781939!3d37.40608616286838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo+Alto%2C+CA%2C+USA!5e0!3m2!1sen!2sua!4v1429695851173"></iframe>
-								</div>
-							</div>
-							<div class="col-md-4 col-md-offset-2 hidden-sm hidden-xs ">
-								<h2 class="title text-white" data-selector="h2"><%= t "index.location.title" %></h2>
-								<h3 class="sep-bottom text-white" data-selector="h3"><i class="icon-pointer"></i> 14 Newell Ave.</h3>
-								<p class="text-white">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible. </p>
-							</div>
-							<% else %>
-								<div class="col-md-4 hidden-sm hidden-xs ">
-									<h2 class="title text-white" data-selector="h2">Location</h2>
-									<h3 class="sep-bottom text-white" data-selector="h3"><i class="icon-pointer"></i> 14 Newell Ave.</h3>
-									<p class="text-white">In our work we try to use only the most modern, convenient and interesting solutions. We want the template you downloaded look unique and new for such a long time as it is possible. </p>
-								</div>
-								<div class="col-md-6 col-md-offset-2 col-sm-12 col-xs-12">
-									<div class="embed-responsive embed-responsive-4by3">
-										<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101418.0024137826!2d-122.07938838781939!3d37.40608616286838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb07b9dba1c39%3A0xe1ff55235f576cf!2sPalo+Alto%2C+CA%2C+USA!5e0!3m2!1sen!2sua!4v1429695851173"></iframe>
-									</div>
-								</div>
-							<% end %>
-						</div>
-					</div>
-				</section>
-				<!-- FOOTER -->
-
-	</div><!-- /#wrap -->
-
-
-	<!-- MODALS BEGIN-->
-	<div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h3 class="modal-title">&nbsp;</h3>
-			</div>
-		</div>
-	</div>
+<!-- MODALS BEGIN-->
+<div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 class="modal-title">&nbsp;</h3>
+    </div>
+  </div>
+</div>
