@@ -30,6 +30,11 @@ class PagesController < ApplicationController
 
   end
   def patients
+    if params[:search].present?
+      @patients = User.where(role: "doctor").search_users(params[:search]).paginate(page: params[:page], :per_page => 5)
+    else
+      @patients = User.where(role: "doctor").paginate(page: params[:page], :per_page => 5)
+    end
   end
   def blogs
 
