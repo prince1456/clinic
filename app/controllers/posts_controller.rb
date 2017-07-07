@@ -1,3 +1,4 @@
+
 class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
@@ -26,7 +27,11 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @posts= Post.all.order(id: :desc)
+    if params[:locale] == "ar"
+      @posts= Post.where(lang: "ar").order(id: :desc)
+    else
+      posts= Post.where(lang: "en").order(id: :desc)
+    end
   end
 
   def edit
