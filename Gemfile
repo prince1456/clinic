@@ -27,7 +27,8 @@ gem 'country_select'
 gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 gem 'will_paginate'
-
+gem 'mail_form'
+gem "figaro"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.3'
@@ -63,6 +64,7 @@ group :development, :test do
   gem 'hirb'
   gem 'awesome_print'
   gem 'interactive_editor'
+
 end
  group :production do
    gem 'pg'
