@@ -3968,6 +3968,38 @@ input:-moz-placeholder {
 	color: black
 
 }
+
+.no-dev{
+	color: white;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+.no-dev h3, p{
+	color: white;
+
+}
+.no-dev p{
+	font-size: 16px
+}
+.item-list-border li {
+	border: none !important;
+}
+.item-list-border a:hover{
+		color: black !important;
+		text-decoration: none;
+
+}
+.item-list-border a:hover p{
+		color: black !important;
+		text-decoration: none;
+
+}
+/*.sec-col{
+	margin-bottom: 100%;
+	position: absolute;
+}*/
+
 /*
 
 .team-member-sec{
