@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     get "/patients" => 'pages#patients'
     get "/blogs" => 'pages#blogs'
     get "/about" => 'pages#about'
+    match '/contacts',     to: 'contacts#new',             via: 'get'
+    resources "contacts", only: [:new, :create]
     get '/bariatrictreatment' => "pages#bariatrictreatment"
     get "/typeofbariatric" => "pages#typeofbariatric"
     get "/costofbariatric" => "pages#costofbariatric"
