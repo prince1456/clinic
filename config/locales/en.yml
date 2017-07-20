@@ -49,7 +49,34 @@ en:
     introduction:
       strong: "Advanced Medicine."
       title: "Trusted Care."
-      button: "About Clinic"
+      des: "We have the best team of doctors who will guide you through your process of weight reduction"
+      button: "Book An Appointment"
+    promotion:
+      title: "Quick Look at Benefits"
+      list:
+        first: "Qualified Stuff & Doctors"
+        second: "Feel like you are at home services"
+        third: "24x7 Emergency Services"
+        fourth: "Save your Money and Time with us"
+        fifth: "Easy and Affordable Billing"
+      why: "Why choose us"
+      item:
+        one: "Free medical consuling"
+        two: "Free medical consuling"
+        three: "Free medical consuling"
+    info:
+      qualify:
+        title: "Do you Qualify?"
+        des: "In addition to meeting weight requirements, patients must answer several questions before moving forward with surgery."
+      cost:
+        title: "Minimum Cost"
+        des: "Surgery costs depend on where you have it and what kind of insurance you have."
+      compare:
+        title: "Compare Procedures"
+        des: "There are several procedures to choose from, and your choice will depend on your goals and circumstances."
+      life:
+        title: "Life After Surgery"
+        des: "From recovery to long-term weight loss and health improvement, for most patients life after surgery is challenging but worth it."
     doctors:
       title: "Meet Our Team"
     posts:

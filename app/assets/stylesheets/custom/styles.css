@@ -3975,10 +3975,10 @@ input:-moz-placeholder {
 	flex-direction: row;
 	position: relative;
 }
-.no-dev h3, p{
+/*.no-dev h3, p{
 	color: white;
 
-}
+}*/
 .no-dev p{
 	font-size: 16px
 }

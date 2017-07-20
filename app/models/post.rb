@@ -12,6 +12,21 @@ class Post < ApplicationRecord
   validates :picture, presence: {message: 'picture has to be present'}
   validates :author, presence: {message: 'auther has to be present'}
 
+def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |post|
+      csv << post.attributes.values_at(*column_names)
+    end
+  end
+end
+
+def self.import(file)
+  CSV.foreach(file.path, header: true) do |row|
+    Post.create! row.to_hash
+  end
+end
+
   def liked_by?(user)
     likes.exists?(user: user)
   end

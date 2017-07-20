@@ -1,16 +1,31 @@
-<div>
-<h3>Send A message to Us</h3>
-
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message,  :required => true %>
-    <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-    </div>
-    <div>
-      </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-    </div>
-  <% end %>
+<div class="container">
+  <% if params[:locale] === "en" %>
+    <h3>Book an appointment</h3>
+      <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+        <%= f.input :name, :required => true %>
+        <%= f.input :email, :required => true %>
+        <%= f.input :message,  :required => true %>
+        <div class= "hidden">
+          <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+        </div>
+        <div>
+          </br>
+          <%= f.button :submit, 'Book Now', :class=> "btn btn-primary" %>
+        </div>
+      <% end %>
+  <% else %>
+    <h3>احجز موعد </h3>
+    <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+      <%= f.input :name, :required => true, label: "أسم" %>
+      <%= f.input :email, :required => true, label: "البريد الإلكتروني" %>
+      <%= f.input :message,  :required => true, label: "رسالة" %>
+      <div class= "hidden">
+        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+      </div>
+      <div>
+        </br>
+        <%= f.button :submit, 'احجز الآن', :class=> "btn btn-primary" %>
+      </div>
+    <% end %>
+  <% end  %>
 </div>

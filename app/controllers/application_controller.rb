@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :set_user
   after_filter :store_action
   before_filter :set_locale
+  require 'csv'
+
 
   def store_action
     return unless request.get?

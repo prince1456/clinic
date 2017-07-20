@@ -6,9 +6,24 @@ class PostsController < ApplicationController
   def index
     if params[:search].present?
       @posts = Post.search_posts(params[:search]).paginate(page: params[:page], :per_page => 5)
+      respond_to do |format|
+        format.html
+        format.csv { send_data @posts.to_csv }
+        format.xls  { send_data @products.to_csv(col_sep: "\t") }
+      end
     else
       @posts = Post.all.paginate(page: params[:page], :per_page => 5)
+      respond_to do |format|
+        format.html
+        format.csv { send_data @posts.to_csv }
+        format.xls  { send_data @posts.to_csv(col_sep: "\t") }
+      end
     end
+  end
+
+  def import
+    Post.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
   end
   def new
     @post = Post.new

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :directories
   end
     resources :posts do
+      collection {post :import}
       resources :comments
       resources :likes, only: [:create, :destroy]
     end
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
     get "/typeofbariatric" => "pages#typeofbariatric"
     get "/costofbariatric" => "pages#costofbariatric"
     get "/lifeafterlose" => "pages#lifeafterlose"
+    get "/thanks" => "pages#thanks"
 
     resources :users do
       resources :chats, only: [:index, :show, :create]

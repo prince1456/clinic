@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  layout "firstpage", only: [:index, :about, :bariatrictreatment, :typeofbariatric, :costofbariatric, :lifeafterlose]
-  before_action :authenticate_user!, except: [:index, :about, :bariatrictreatment, :typeofbariatric, :costofbariatric, :lifeafterlose]
+  layout "firstpage", only: [:index, :about, :bariatrictreatment, :typeofbariatric, :costofbariatric, :lifeafterlose, :thanks]
+  before_action :authenticate_user!, except: [:index, :about, :bariatrictreatment, :typeofbariatric, :costofbariatric, :lifeafterlose, :thanks]
   def index
     @posts = Post.all
     if params[:locale] === "ar"
@@ -49,5 +49,8 @@ class PagesController < ApplicationController
   def costofbariatric
   end
   def lifeafterlose
+  end
+  
+  def thanks
   end
 end

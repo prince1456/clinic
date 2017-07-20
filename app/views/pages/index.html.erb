@@ -7,10 +7,10 @@
             <h1 data-selector="h1">
               <strong><%= t "index.introduction.strong" %></strong><br>
               <%= t "index.introduction.title" %></h1>
-            <p data-selector="p">
-              Nothing should lead the visitor away from the main essence of website. There must be just important information.</p>
+            <h3 data-selector="h3">
+              <%= t "index.introduction.des" %></h3>
           </div>
-          <%= link_to about_path, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
+          <%= link_to contacts_path	, class: 'btn btn-lg btn-default goto',data: { selector: 'a.btn, a.download-btn, button.btn, a.goto' } do  %>
           <i class="icon icon-info" data-selector=".icon"></i>
           <%= t "index.introduction.button" %>
           <% end %>
@@ -27,30 +27,28 @@
       </center>
       <div class="col-md-4 col-xs-12 wcu-column">
         <i class="fa fa-hospital-o fa-3x icon-why-choose" aria-hidden="true"></i>
-        <span class="span-why-title">Why choose us</span>
+        <span class="span-why-title"><%= t "index.promotion.why" %></span>
         <br>
         <br>
         <br>
         <br>
         <i class="fa fa-leaf fa-2x icon-why-choose-sec" aria-hidden="true"></i>
-        <Span class="span-why-sec-title">
-          Free medical consuling</span>
+        <Span class="span-why-sec-title"><%= t "index.promotion.item.one" %></span>
         <p class="why-choose-use-paragraph">
-          some articleasff faslfjlas aslf asjla
+          <%= t "index.promotion.item.des1" %>
         </p>
 
         <i class="fa fa-heartbeat fa-2x icon-why-choose-sec" aria-hidden="true"></i>
-        <Span class="span-why-sec-title">
-          Free medical consuling</span>
+        <Span class="span-why-sec-title"><%= t "index.promotion.item.two" %></span>
         <p class="why-choose-use-paragraph">
-          some articleasff faslfjlas aslf asjla
+          <%= t "index.promotion.item.des2" %>
         </p>
 
         <i class="fa fa-user-md fa-2x icon-why-choose-sec" aria-hidden="true"></i>
         <Span class="span-why-sec-title">
-          Free medical consuling</span>
+        <%= t "index.promotion.item.three" %></span>
         <p class="why-choose-use-paragraph">
-          some articleasff faslfjlas aslf asjla
+          <%= t "index.promotion.item.des3" %>
         </p>
 
       </div>
@@ -58,19 +56,20 @@
         <%= image_tag "dr-why-chooseus.png", class: "img-responsive" %>
       </div>
       <div class="col-md-4 col-xs-12 wcu-column">
-        <h2>Quick Look at Benefits</h2>
-        <p>We offer the best services with high quality</p>
+        <h2><%= t "index.promotion.title" %></h2>
+        <br>
+        <br>
         <ul>
           <li>
-            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Qualified Stuff & Doctors</li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i><%= t "index.promotion.list.first" %></li>
           <li>
-            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Feel like you are at home services</li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i><%= t "index.promotion.list.second" %></li>
           <li>
-            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>24x7 Emergency Services</li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i> <%= t "index.promotion.list.third" %></li>
           <li>
-            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Save your Money and Time with us</li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i><%= t "index.promotion.list.fourth" %></li>
           <li>
-            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i>Easy and Affordable Billing</li>
+            <i class="fa fa-plus icon-why-choose-third" aria-hidden="true"></i><%= t "index.promotion.list.fifth" %></li>
         </ul>
 
       </div>
@@ -242,8 +241,8 @@
             <%= link_to bariatrictreatment_path do%>
             <li>
               <img src="<%= asset_path('qualify_img.png')%>" alt="">
-              <h2>Do you Qualify?</h2>
-              <p>In addition to meeting weight requirements, patients must answer several questions before moving forward with surgery.</p>
+              <h2><%= t "index.info.qualify.title" %></h2>
+              <p><%= t "index.info.qualify.des" %></p>
             </li>
             <% end %>
           </ul>
@@ -253,8 +252,8 @@
             <%= link_to costofbariatric_path do %>
             <li>
               <img src="<%= asset_path('cost_img.png')%>" alt="">
-              <h2>Minimizing Costs</h2>
-              <p>Surgery costs depend on where you have it and what kind of insurance you have.</p>
+              <h2><%= t "index.info.cost.title" %></h2>
+              <p><%= t "index.info.cost.des" %></p>
             </li>
             <% end %>
           </ul>
@@ -264,9 +263,9 @@
             <%= link_to typeofbariatric_path do %>
             <li>
               <img src="<%= asset_path('produre_img.png')%>" alt="">
-              <h2>Compare Procedures
+              <h2><%= t "index.info.compare.title" %>
               </h2>
-              <p>There are several procedures to choose from, and your choice will depend on your goals and circumstances.</p>
+              <p><%= t "index.info.compare.des" %></p>
             </li>
             <% end %>
           </ul>
@@ -276,8 +275,8 @@
             <%= link_to lifeafterlose_path do %>
             <li>
               <img src="<%= asset_path('life_img.png')%>" alt="">
-              <h2>Life After Surgery</h2>
-              <p>From recovery to long-term weight loss and health improvement, for most patients life after surgery is challenging but worth it.</p>
+              <h2><%= t "index.info.life.title" %></h2>
+              <p><%= t "index.info.life.des" %></p>
             </li>
             <% end %>
           </ul>
